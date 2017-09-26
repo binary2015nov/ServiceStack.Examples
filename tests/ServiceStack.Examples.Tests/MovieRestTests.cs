@@ -12,13 +12,13 @@ namespace ServiceStack.Examples.Tests
 	public class MovieRestTests
 		: TestHostBase
 	{
-        [SetUp]
-        public void SetUp()
-        {
-            //ConfigureDatabase.Init();
-        }
+		[SetUp]
+		public void SetUp()
+		{
+			//ConfigureDatabase.Init();
+		}
 
-	    [Test]
+		[Test]
 		public void Can_list_all_movies()
 		{
 			var response = base.Send<MoviesResponse>(new Movies());
@@ -74,7 +74,7 @@ namespace ServiceStack.Examples.Tests
 			var topMovie = ConfigureDatabase.Top5Movies[0];
 
 			base.Send<MoviesResponse>(new Movies { Id = topMovie.Id },
-                RequestAttributes.HttpDelete);
+				RequestAttributes.HttpDelete);
 
 			var response = base.Send<MoviesResponse>(new Movies { Id = topMovie.Id });
 			Assert.That(response.Movies, Has.Count.EqualTo(0));

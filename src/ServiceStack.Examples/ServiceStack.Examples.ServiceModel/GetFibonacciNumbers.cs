@@ -8,20 +8,20 @@ namespace ServiceStack.Examples.ServiceModel
 	/// This purpose of this example is how you would implement a more advanced
 	/// web service returning a slightly more 'complex object'.
 	/// </summary>
-    [DataContract(Namespace = ExampleConfig.DefaultNamespace)]
-    public class GetFibonacciNumbers
+	[DataContract(Namespace = ExampleConfig.DefaultNamespace)]
+	public class GetFibonacciNumbers
 	{
-        [DataMember]
-        public long? Skip { get; set; }
+		[DataMember]
+		public long? Skip { get; set; }
 
-        [DataMember]
-        public long? Take { get; set; }
+		[DataMember]
+		public long? Take { get; set; }
 	}
 
-    [DataContract(Namespace = ExampleConfig.DefaultNamespace)]
-    public class GetFibonacciNumbersResponse
+	[DataContract(Namespace = ExampleConfig.DefaultNamespace)]
+	public class GetFibonacciNumbersResponse
 	{
-        [DataMember]
-        public ArrayOfLong Results { get; set; }
+		[DataMember]
+		public ArrayOfLong Results { get; set; }
 	}
 }
