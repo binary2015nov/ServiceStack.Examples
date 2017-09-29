@@ -21,7 +21,7 @@ namespace Docs.Logic
 			if (File.Exists(filePath))
 			{
 				var json = File.ReadAllText(filePath);
-                this.Pages = json.FromJson<List<Page>>();
+				this.Pages = json.FromJson<List<Page>>();
 				this.Pages.ForEach(x => x.FilePath = x.FilePath.MapServerPath());
 			}
 			else

@@ -1,7 +1,7 @@
 ﻿using System;
+using Funq;
 using ServiceStack;
 using ServiceStack.Redis;
-using Funq;
 
 //The entire C# source code for the ServiceStack + Redis TODO REST backend. There is no other .cs :)
 namespace Backbone.Todos

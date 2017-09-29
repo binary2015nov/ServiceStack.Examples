@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Threading;
+using ServiceStack.Logging;
 
 namespace ServiceStack.Examples.Host.Console
 {
@@ -10,12 +11,13 @@ namespace ServiceStack.Examples.Host.Console
 
 		static void Main(string[] args)
 		{
-			var appHost = new AppHost();
+            LogManager.LogFactory = new ConsoleLogFactory();
+
+            var appHost = new AppHost();
 			appHost.Init();
 			appHost.Start(ListeningOn);
 
-			System.Console.WriteLine("AppHost Created at {0}, listening on {1}",
-				DateTime.Now, ListeningOn);
+			System.Console.WriteLine("AppHost Created at {0}, listening on {1}", appHost.CreatedAt, ListeningOn);
 
 			var sb = new StringBuilder();
 			sb.AppendLine("Some urls for you to try:\n");

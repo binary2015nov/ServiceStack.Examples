@@ -1,12 +1,9 @@
-﻿
-
+﻿using ServiceStack.Caching;
+using ServiceStack.Northwind.ServiceModel.Operations;
 
 namespace ServiceStack.Northwind.ServiceInterface
 {
-    using Caching;
-    using ServiceModel.Operations;
-
-    public class CachedCustomersService : Service
+	public class CachedCustomersService : Service
 	{
 		public ICacheClient CacheClient { get; set; }
 
@@ -29,7 +26,7 @@ namespace ServiceStack.Northwind.ServiceInterface
 			var cacheKey = UrnId.Create<CustomerDetails>(request.Id);
 			return base.Request.ToOptimizedResultUsingCache(
 				this.CacheClient, cacheKey, () => 
-                    this.ResolveService<CustomerDetailsService>().Get(new CustomerDetails { Id = request.Id }));
+					this.ResolveService<CustomerDetailsService>().Get(new CustomerDetails { Id = request.Id }));
 		}
 	}
 

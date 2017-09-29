@@ -2,17 +2,17 @@
 
 namespace ServiceStack.Examples.ServiceModel
 {
-    [DataContract(Namespace = ExampleConfig.DefaultNamespace)]
-    public class Greet
+	[DataContract(Namespace = ExampleConfig.DefaultNamespace)]
+	public class Greet
 	{
-        [DataMember]
-        public string Name { get; set; }
+		[DataMember]
+		public string Name { get; set; }
 	}
 
-    [DataContract(Namespace = ExampleConfig.DefaultNamespace)]
-    public class GreetResponse
+	[DataContract(Namespace = ExampleConfig.DefaultNamespace)]
+	public class GreetResponse
 	{
-        [DataMember]
-        public string Result { get; set; }
+		[DataMember]
+		public string Result { get; set; }
 	}
 }

@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 
 namespace ServiceStack.Examples.ServiceModel.Types
 {
-	[DataContract(Namespace = ExampleConfig.DefaultNamespace)]
 	public class Movie 
 	{
 		public Movie()
 		{
 			this.Genres = new List<string>();
 		}
-		
+
 		public string Id { get; set; }		
 		public string Title { get; set; }		
 		public decimal Rating { get; set; }		

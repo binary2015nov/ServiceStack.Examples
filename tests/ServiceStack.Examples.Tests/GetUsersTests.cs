@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using ServiceStack.Data;
 using ServiceStack.Examples.ServiceInterface;
 using ServiceStack.Examples.ServiceModel;
 using ServiceStack.Examples.ServiceModel.Types;
@@ -8,10 +9,10 @@ using ServiceStack.Testing;
 namespace ServiceStack.Examples.Tests
 {
 	[TestFixture]
-	public class GetUsersTests : TestHostBase
+	public class GetUsersTests
 	{
 		[Test]
-		public void GetUsers_Test()
+		public void Get_Users()
 		{
 			using (var appHost = new BasicAppHost(typeof(GetUsersService).Assembly).Init())
 			{
@@ -21,9 +22,9 @@ namespace ServiceStack.Examples.Tests
 					UserNames = new ArrayOfString("User3", "User4")
 				};
 
-				var factory = new OrmLiteConnectionFactory(
-					InMemoryDb, SqliteDialect.Provider);
-
+				appHost.Container.Register<IDbConnectionFactory>(c =>
+					new OrmLiteConnectionFactory(":memory:", SqliteDialect.Provider));
+				var factory = appHost.Resolve<IDbConnectionFactory>();
 				using (var db = factory.Open())
 				{
 					db.DropAndCreateTable<User>();

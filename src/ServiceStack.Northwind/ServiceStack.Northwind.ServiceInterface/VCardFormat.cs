@@ -1,12 +1,11 @@
+using System;
+using System.IO;
 using ServiceStack.Web;
+using ServiceStack.Northwind.ServiceModel.Operations;
+using ServiceStack.Northwind.ServiceModel.Types;
 
 namespace ServiceStack.Northwind.ServiceInterface
 {
-    using System;
-    using System.IO;
-    using ServiceModel.Operations;
-    using ServiceModel.Types;
-
     public class VCardFormat
     {
         private const string VCardContentType = "text/x-vcard";

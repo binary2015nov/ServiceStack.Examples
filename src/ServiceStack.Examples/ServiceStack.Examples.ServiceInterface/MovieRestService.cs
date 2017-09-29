@@ -14,8 +14,6 @@ namespace ServiceStack.Examples.ServiceInterface
     /// </summary>
     public class MovieRestService : Service
     {
-        private static readonly ILog Log = LogManager.GetLogger(typeof(MovieRestService));
-
         public object Any(Movies request)
         {
             return Get(request);
@@ -29,10 +27,6 @@ namespace ServiceStack.Examples.ServiceInterface
         /// <returns></returns>
         public object Get(Movies request)
         {
-            //Alternatively you can infer the HTTP method by inspecting the RequestContext attributes
-            Log.InfoFormat("Using RequestContext to inspect Endpoint attributes: {0}",
-                this.Request.RequestAttributes);
-
             var response = new MoviesResponse();
 
             if (request.Id != null)
@@ -60,7 +54,7 @@ namespace ServiceStack.Examples.ServiceInterface
         /// <returns></returns>
         public object Put(Movies request)
         {
-            Db.Insert(request.Movie);
+            Db.Update(request.Movie);
 
             return new MoviesResponse();
         }
@@ -84,7 +78,7 @@ namespace ServiceStack.Examples.ServiceInterface
         /// <returns></returns>
         public object Post(Movies request)
         {
-            Db.Update(request.Movie);
+            Db.Insert(request.Movie);
 
             return new MoviesResponse();
         }

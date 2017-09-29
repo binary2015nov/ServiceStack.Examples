@@ -154,25 +154,7 @@ namespace RestFiles.Tests
          * Error Handling Tests
          */
         [Test]
-        public async Task GET_a_file_that_doesnt_exist_throws_a_404_FileNotFoundException()
-        {
-            var restClient = CreateAsyncRestClient();
-
-            try
-            {
-                await restClient.GetAsync<FilesResponse>("files/UnknownFolder");
-            }
-            catch (WebServiceException webEx)
-            {
-                var response = (FilesResponse)webEx.ResponseDto;
-                Assert.That(webEx.StatusCode, Is.EqualTo(404));
-                Assert.That(response.ResponseStatus.ErrorCode, Is.EqualTo(typeof(FileNotFoundException).Name));
-                Assert.That(response.ResponseStatus.Message, Is.EqualTo("Could not find: UnknownFolder"));
-            }
-        }
-
-        [Test]
-        public async Task POST_to_an_existing_file_throws_a_500_NotSupportedException()
+        public void POST_to_an_existing_file_throws_a_500_NotSupportedException()
         {
             var restClient = (IRestClient)CreateAsyncRestClient();
 
@@ -192,6 +174,24 @@ namespace RestFiles.Tests
                 Assert.That(response.ResponseStatus.ErrorCode, Is.EqualTo(typeof(NotSupportedException).Name));
                 Assert.That(response.ResponseStatus.Message,
                     Is.EqualTo("POST only supports uploading new files. Use PUT to replace contents of an existing file"));
+            }
+        }
+
+        [Test]
+        public async Task GET_a_file_that_doesnt_exist_throws_a_404_FileNotFoundException()
+        {
+            var restClient = CreateAsyncRestClient();
+
+            try
+            {
+                await restClient.GetAsync<FilesResponse>("files/UnknownFolder");
+            }
+            catch (WebServiceException webEx)
+            {
+                var response = (FilesResponse)webEx.ResponseDto;
+                Assert.That(webEx.StatusCode, Is.EqualTo(404));
+                Assert.That(response.ResponseStatus.ErrorCode, Is.EqualTo(typeof(FileNotFoundException).Name));
+                Assert.That(response.ResponseStatus.Message, Is.EqualTo("Could not find: UnknownFolder"));
             }
         }
 

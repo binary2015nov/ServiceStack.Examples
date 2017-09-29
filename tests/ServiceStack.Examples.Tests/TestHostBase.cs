@@ -9,6 +9,7 @@ using ServiceStack.Host;
 using ServiceStack.Logging;
 using ServiceStack.OrmLite;
 using ServiceStack.Testing;
+using ServiceStack.Web;
 
 namespace ServiceStack.Examples.Tests
 {
@@ -22,7 +23,7 @@ namespace ServiceStack.Examples.Tests
 
 		public TestHostBase()
 		{
-			LogManager.LogFactory = new ConsoleLogFactory();
+			LogManager.LogFactory = new DebugLogFactory();
 			log = LogManager.GetLogger(GetType());
 
 			appHost = new BasicAppHost(typeof(GetFactorialService).Assembly) {
@@ -30,7 +31,7 @@ namespace ServiceStack.Examples.Tests
 			}.Init();
 		}
 
-		[OneTimeSetUp]
+		[OneTimeTearDown]
 		public void TestFixtureTearDown()
 		{
 			appHost.Dispose();
@@ -62,17 +63,17 @@ namespace ServiceStack.Examples.Tests
 		/// Process a webservice in-memory
 		/// </summary>
 		/// <typeparam name="TResponse"></typeparam>
-		/// <param name="request"></param>
+		/// <param name="requestDto"></param>
 		/// <returns></returns>
-		public TResponse Send<TResponse>(object request)
+		public TResponse Send<TResponse>(object requestDto)
 		{
-			return Send<TResponse>(request, RequestAttributes.None);
+			return Send<TResponse>(requestDto, new BasicRequest());
 		}
 
-		public TResponse Send<TResponse>(object request, RequestAttributes endpointAttrs)
+		public TResponse Send<TResponse>(object requestDto, IRequest request)
 		{
-			return (TResponse)appHost.ServiceController.Execute(request,
-				new BasicRequest(request, endpointAttrs));
+			return (TResponse)appHost.ServiceController.Execute(requestDto,
+				request);
 		}
 	}
 }

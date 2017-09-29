@@ -18,7 +18,7 @@ namespace ServiceStack.Examples.Tests.Integration
 
 		public override void Configure(Container container)
 		{
-			container.Register<IAppSettings>(new AppSettings());
+			container.Register<IAppSettings>(AppSettings);
 
 			container.Register(c => new ExampleConfig(c.Resolve<IAppSettings>()));
 			var appConfig = container.Resolve<ExampleConfig>();

@@ -19,19 +19,12 @@ namespace ServiceStack.Examples.ServiceInterface.Support
 
         public static void Init(IDbConnectionFactory connectionFactory)
         {
-            try
+            using (var dbConn = connectionFactory.OpenDbConnection())
             {
-                using (var dbConn = connectionFactory.OpenDbConnection())
-                {
-                    dbConn.CreateTable<User>(false);
-                    dbConn.CreateTable<Movie>(false);
-                    dbConn.CreateTable<Logger>(false);
-                    dbConn.SaveAll(Top5Movies);			//insert or update the Top5Movies
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+                dbConn.CreateTable<User>(true);
+                dbConn.CreateTable<Movie>(true);
+                dbConn.CreateTable<Logger>(true);
+                dbConn.SaveAll(Top5Movies);			//insert or update the Top5Movies
             }
         }
     }

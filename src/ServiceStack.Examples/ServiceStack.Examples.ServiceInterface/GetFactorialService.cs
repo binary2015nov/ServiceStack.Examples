@@ -8,7 +8,7 @@ namespace ServiceStack.Examples.ServiceInterface
 	/// </summary>
 	public class GetFactorialService : Service
 	{
-        public GetFactorialResponse Any(GetFactorial request)
+		public GetFactorialResponse Any(GetFactorial request)
 		{
 			return new GetFactorialResponse { Result = GetFactorial(request.ForNumber) };
 		}

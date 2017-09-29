@@ -96,7 +96,6 @@
     <Compile Include="ResetMovieDatabaseService.cs" />
     <Compile Include="MovieRestService.cs" />
     <Compile Include="GetNorthwindCustomerOrdersCachedService.cs" />
-    <Compile Include="ExampleConfig.cs" />
     <Compile Include="GetFactorialService.cs" />
     <Compile Include="GetAllUsersService.cs" />
     <Compile Include="GetNorthwindCustomerOrdersService.cs" />

@@ -1,7 +1,7 @@
 using System.IO;
 using System.Linq;
-using RestFiles.ServiceModel;
 using ServiceStack;
+using RestFiles.ServiceModel;
 
 namespace RestFiles.ServiceInterface
 {

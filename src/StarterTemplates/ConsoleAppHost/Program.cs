@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
+using Funq;
 using ServiceStack;
 using ServiceStack.Configuration;
 using StarterTemplates.Common;
-using Funq;
 
 namespace ConsoleAppHost
 {
@@ -39,8 +39,7 @@ namespace ConsoleAppHost
 
             Console.WriteLine("Started listening on: " + ListeningOn);
 
-            Console.WriteLine("AppHost Created at {0}, listening on {1}",
-                DateTime.Now, ListeningOn);
+            Console.WriteLine("AppHost Created at {0}, listening on {1}", appHost.CreatedAt, ListeningOn);
 
 
             Process.Start(ListeningOn);

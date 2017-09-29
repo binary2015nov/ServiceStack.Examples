@@ -1,8 +1,8 @@
+using System;
+using System.Runtime.Serialization;
+
 namespace ServiceStack.Northwind.ServiceModel.Types
 {
-	using System;
-	using System.Runtime.Serialization;
-
 	[DataContract]
 	public class Employee
 	{

@@ -3,14 +3,13 @@ using ServiceStack;
 
 namespace StarterTemplates.Common
 {
-
 	//ASP.NET Hosts
 	public class StarterTemplateAppHost : AppHostBase
 	{
 		public StarterTemplateAppHost() : base(string.Empty, typeof(HelloService).Assembly)
-        {
-            ServiceName = AppSettings.GetString("ServiceName") ?? "StarterTemplate ASP.NET Host";
-        }
+		{
+			ServiceName = AppSettings.GetString("ServiceName") ?? "StarterTemplate ASP.NET Host";
+		}
 
 		public override void Configure(Container container)
 		{
@@ -22,9 +21,9 @@ namespace StarterTemplates.Common
 	public class StarterTemplateAppListenerHost : AppHostHttpListenerBase
 	{
 		public StarterTemplateAppListenerHost() : base(string.Empty, typeof(HelloService).Assembly)
-        {
-            ServiceName = AppSettings.GetString("ServiceName") ?? "StarterTemplate HttpListener";
-        }
+		{
+			ServiceName = AppSettings.GetString("ServiceName") ?? "StarterTemplate HttpListener";
+		}
 
 		public override void Configure(Container container)
 		{

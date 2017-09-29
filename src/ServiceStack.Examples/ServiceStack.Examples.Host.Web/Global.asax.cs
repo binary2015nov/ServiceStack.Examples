@@ -12,13 +12,12 @@ namespace ServiceStack.Examples.Host.Web
 		{
 			LogManager.LogFactory = new ConsoleLogFactory();
 
-			if (File.Exists(@"C:\src\appsettings.license.txt"))
-				Licensing.RegisterLicenseFromFile(@"C:\src\appsettings.license.txt");
-			else if (string.IsNullOrEmpty(ConfigUtils.GetNullableAppSetting("servicestack:license")))
-				throw new ConfigurationErrorsException("A valid license key is required for this demo");
+			//if (File.Exists(@"C:\src\appsettings.license.txt"))
+			//	Licensing.RegisterLicenseFromFile(@"C:\src\appsettings.license.txt");
+			//else if (string.IsNullOrEmpty(ConfigUtils.GetNullableAppSetting("servicestack:license")))
+			//	throw new ConfigurationErrorsException("A valid license key is required for this demo");
 
-			var appHost = new AppHost();
-			appHost.Init();
+			new AppHost().Init();
 		}
 	}
 }

@@ -30,7 +30,7 @@ namespace RootPath45
         void Application_Start(object sender, EventArgs e)
         {
             //Initialize your application
-            (new AppHost()).Init();
+            new AppHost().Init();
         }
     }
 }

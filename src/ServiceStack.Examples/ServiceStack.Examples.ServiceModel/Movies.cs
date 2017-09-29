@@ -4,18 +4,18 @@ using ServiceStack.Examples.ServiceModel.Types;
 
 namespace ServiceStack.Examples.ServiceModel
 {
-    [DataContract(Namespace = ExampleConfig.DefaultNamespace)]
-    public class Movies
+	[DataContract(Namespace = ExampleConfig.DefaultNamespace)]
+	public class Movies
 	{
-        [DataMember]
-        public string Id { get; set; }
+		[DataMember]
+		public string Id { get; set; }
 
-        [DataMember]
-        public Movie Movie { get; set; }
+		[DataMember]
+		public Movie Movie { get; set; }
 	}
 
-    [DataContract(Namespace = ExampleConfig.DefaultNamespace)]
-    public class MoviesResponse
+	[DataContract(Namespace = ExampleConfig.DefaultNamespace)]
+	public class MoviesResponse
 	{
 		public MoviesResponse()
 		{
@@ -23,10 +23,10 @@ namespace ServiceStack.Examples.ServiceModel
 			this.Movies = new List<Movie>();
 		}
 
-        [DataMember]
-        public ResponseStatus ResponseStatus { get; set; }
+		[DataMember]
+		public ResponseStatus ResponseStatus { get; set; }
 
-        [DataMember]
-        public List<Movie> Movies { get; set; }
+		[DataMember]
+		public List<Movie> Movies { get; set; }
 	}
 }

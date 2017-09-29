@@ -7,7 +7,6 @@ using ServiceStack.Examples.ServiceModel;
 using ServiceStack.Logging;
 using ServiceStack.OrmLite;
 using ServiceStack.OrmLite.Sqlite;
-using ExampleConfig = ServiceStack.Examples.ServiceInterface.ExampleConfig;
 
 namespace ServiceStack.Examples.Host.Console
 {
@@ -16,19 +15,16 @@ namespace ServiceStack.Examples.Host.Console
 	/// </summary>
 	public class AppHost : AppHostHttpListenerBase
 	{
-		private static ILog log;
+		private static ILog Logger = LogManager.GetLogger(typeof(AppHost));
 
 		public AppHost() : base("ServiceStack Examples", typeof(GetFactorialService).Assembly)
 		{
-			LogManager.LogFactory = new DebugLogFactory();
-			log = LogManager.GetLogger(typeof(AppHost));
-            Config.DebugMode = true;
-
+			Config.DebugMode = true;
 		}
 
-        public override void Configure(Container container)
+		public override void Configure(Container container)
 		{
-			container.Register<IAppSettings>(AppSettings);
+			container.Register(AppSettings);
 
 			var appSettings = container.Resolve<IAppSettings>();
 
@@ -36,13 +32,11 @@ namespace ServiceStack.Examples.Host.Console
 			var appConfig = container.Resolve<ExampleConfig>();
 
 			container.Register<IDbConnectionFactory>(c => 
-				new OrmLiteConnectionFactory(
-					appConfig.ConnectionString.MapAbsolutePath(), 
-					SqliteOrmLiteDialectProvider.Instance));
+				new OrmLiteConnectionFactory(appConfig.ConnectionString.MapAbsolutePath(), SqliteOrmLiteDialectProvider.Instance));
 
 			if (appSettings.Get("PerformTestsOnInit", false))
 			{
-				log.Debug("Performing database tests...");
+				Logger.Debug("Performing database tests...");
 				DatabaseTest(container.Resolve<IDbConnectionFactory>());
 			}
 		}

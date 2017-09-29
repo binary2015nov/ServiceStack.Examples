@@ -10,15 +10,17 @@ namespace Docs
 {
 	public class AppHost : AppHostBase
 	{
-		public AppHost() : base("ServiceStack Docs", typeof(PageService).Assembly)
-		{
-			var baseUrl = ConfigUtils.GetAppSetting("WebHostUrl");
-			PageManager.Instance.Init("~/Pages.json".MapServerPath(), baseUrl);
-			Config.WebHostUrl = baseUrl; //replaces ~/ with Url
-			Config.MarkdownBaseType = typeof(CustomMarkdownPage); //set custom base for all Markdown pages
-		}
+		public AppHost() : base("ServiceStack Docs", typeof(PageService).Assembly) { }
 
-		public override void Configure(Container container)
+        protected override void OnBeforeInit()
+        {
+            var baseUrl = ConfigUtils.GetAppSetting("WebHostUrl");
+            PageManager.Instance.Init("~/Pages.json".MapServerPath(), baseUrl);
+            Config.WebHostUrl = baseUrl; //replaces ~/ with Url
+            Config.MarkdownBaseType = typeof(CustomMarkdownPage); //set custom base for all Markdown pages
+        }
+
+        public override void Configure(Container container)
 		{
 			container.Register(PageManager.Instance);
 

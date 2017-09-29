@@ -2,7 +2,6 @@ using System;
 using System.Net;
 using ServiceStack.Northwind.ServiceModel.Operations;
 using ServiceStack.Northwind.ServiceModel.Types;
-
 using ServiceStack.OrmLite;
 
 namespace ServiceStack.Northwind.ServiceInterface
