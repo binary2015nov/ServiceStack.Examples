@@ -47,4 +47,4 @@ App_Data/
 *.user
 *.ncrunch*
 *.gpState
-/src/ServiceStack.Hello/Properties/PublishProfiles
+/PublishProfiles

@@ -14,31 +14,25 @@ namespace ServiceStack.Examples.Host.Console
 	/// <summary>
 	/// An example of a AppHost to have your services running inside a webserver.
 	/// </summary>
-	public class AppHost
-		: AppHostHttpListenerBase
+	public class AppHost : AppHostHttpListenerBase
 	{
 		private static ILog log;
 
-		public AppHost()
-			: base("ServiceStack Examples", typeof(GetFactorialService).Assembly)
+		public AppHost() : base("ServiceStack Examples", typeof(GetFactorialService).Assembly)
 		{
 			LogManager.LogFactory = new DebugLogFactory();
 			log = LogManager.GetLogger(typeof(AppHost));
+            Config.DebugMode = true;
+
 		}
 
-		public override void Configure(Container container)
+        public override void Configure(Container container)
 		{
-			//Signal advanced web browsers what HTTP Methods you accept
-			base.SetConfig(new HostConfig
-			{
-                DebugMode = true,
-			});
+			container.Register<IAppSettings>(AppSettings);
 
-            container.Register<IAppSettings>(new AppSettings());
+			var appSettings = container.Resolve<IAppSettings>();
 
-            var appSettings = container.Resolve<IAppSettings>();
-
-            container.Register(c => new ExampleConfig(c.Resolve<IAppSettings>()));
+			container.Register(c => new ExampleConfig(c.Resolve<IAppSettings>()));
 			var appConfig = container.Resolve<ExampleConfig>();
 
 			container.Register<IDbConnectionFactory>(c => 
@@ -63,11 +57,11 @@ namespace ServiceStack.Examples.Host.Console
 				UserName = "new UserName"
 			};
 
-            var storeHandler = Container.Resolve<StoreNewUserService>();
+			var storeHandler = Container.Resolve<StoreNewUserService>();
 			storeHandler.Any(storeRequest);
 
-            var getAllHandler = Container.Resolve<GetAllUsersService>();
-            var response = (GetAllUsersResponse)getAllHandler.Any(new GetAllUsers());
+			var getAllHandler = Container.Resolve<GetAllUsersService>();
+			var response = (GetAllUsersResponse)getAllHandler.Any(new GetAllUsers());
 
 			var user = response.Users[0];
 

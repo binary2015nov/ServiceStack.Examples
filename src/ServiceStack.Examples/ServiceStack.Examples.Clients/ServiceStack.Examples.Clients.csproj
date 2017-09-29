@@ -27,6 +27,7 @@
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,24 +53,24 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ServiceStack, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\ServiceStack.4.5.0\lib\net45\ServiceStack.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\ServiceStack.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Client, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\ServiceStack.Client.4.5.0\lib\net45\ServiceStack.Client.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\ServiceStack.Client.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Common, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\ServiceStack.Common.4.5.0\lib\net45\ServiceStack.Common.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\ServiceStack.Common.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\ServiceStack.Interfaces.4.5.0\lib\portable-wp80+sl5+net45+win8+wpa81+monotouch+monoandroid+xamarin.ios10\ServiceStack.Interfaces.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Text, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\ServiceStack.Text.4.5.0\lib\net45\ServiceStack.Text.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\ServiceStack.Text.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -94,8 +95,8 @@
     <Content Include="clientaccesspolicy.xml" />
     <Content Include="ClientBin\ServiceStack.Examples.Clients.Silverlight.xap" />
     <Content Include="img\bg-body-1024.png" />
+    <Content Include="img\btn-download.gif" />
     <Content Include="js\jquery-1.4.2.min.js" />
-    <Content Include="packages.config" />
     <None Include="Service References\Soap11ServiceReference\Soap11.wsdl" />
     <None Include="Service References\Soap12ServiceReference\configuration91.svcinfo" />
     <None Include="Service References\Soap12ServiceReference\configuration.svcinfo" />
@@ -115,7 +116,6 @@
     <Content Include="default.css" />
     <Content Include="Flash.htm" />
     <Content Include="img\bg-body-large.png" />
-    <Content Include="img\demo-logo-servicestack.old.png" />
     <Content Include="img\demo-logo-servicestack.png" />
     <Content Include="img\Mono-powered-big.png" />
     <Content Include="img\small-logo-ajaxstack.png" />
@@ -129,7 +129,6 @@
     <Content Include="js\Silverlight.js" />
     <Content Include="Silverlight.js" />
     <Content Include="Soap11.aspx" />
-    <Content Include="sqlite3.dll" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

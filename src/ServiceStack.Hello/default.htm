@@ -4,18 +4,20 @@
     <title>Tutorial - Creating a Hello World ServiceStack Web Service</title>
     <link rel="stylesheet" type="text/css" href="Content/Css/default.css" />
 </head>
-<body style="margin: 0 auto; background-position-x: center;">
-    <a href="https://servicestack.net" style="position: relative; top:10px; left: 10px;">
-        <img src="https://servicestack.net/img/logo.png" alt="ServiceStack Home" width="180" height="30" /></a>
+<body>
+    <a href="https://servicestack.net" style="position: relative; top:5px; left: 10px; ">
+        <img src="Content/Images/logo-24x24.png" alt="ServiceStack Home" /></a>
 
     <div id="header-links">
-        <a href="../ServiceStack.Hello/">Hello World</a> <a href="../Backbone.Todos/">Todos</a>
-        <a href="../RedisStackOverflow/">Redis StackOverflow</a> <a href="../RestFiles/">REST
-            Files</a> <a href="../ServiceStack.MovieRest/">REST Movies</a> <a href="../ServiceStack.Northwind/">
+        <a href="http://mono.servicestack.net/ServiceStack.Hello/">Hello World</a> <a href="http://todos.servicestack.net/">Todos</a>
+        <a href="http://redisstackoverflow.servicestack.net/">Redis StackOverflow</a> <a href="http://restfiles.servicestack.net/">REST
+            Files</a> <a href="../ServiceStack.MovieRest/">REST Movies</a> <a href="http://northwind.servicestack.net/">
                 Northwind Database</a> <a href="../ServiceStack.Examples.Clients/">Ajax Client</a>
     </div>
-    <a class="lnk-src" href="https://github.com/ServiceStack/ServiceStack">
-        <img src="Content/Images/btn-github.png" width="186" height="84" /></a>
+    <a id="github" href="https://github.com/ServiceStack/ServiceStack">
+        <img src="Content/Images/btn-github.png" alt="ServiceStack" />
+    </a>
+
     <h1 class="title">
         Creating a Web service from scratch with ServiceStack</h1>
     <p>
@@ -266,7 +268,7 @@
         various end points its available on.
     </p>
     <p>
-        <img src="Content/Images/MetadataIndex.png" alt="Service Stack Metadata page" width="747" height="647" /></p>
+        <img src="Content/Images/MetadataIndex.png" alt="Service Stack Metadata page" /></p>
     <div>
         The <b>Metadata</b> page contains:
         <ul>
@@ -595,7 +597,7 @@
             examples</a> to see how useful servicestack becomes with just a little db code.
     </p>
 
-   <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-7722718-7']);
@@ -606,6 +608,6 @@
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
-    </script>-->
+    </script>
 </body>
 </html>

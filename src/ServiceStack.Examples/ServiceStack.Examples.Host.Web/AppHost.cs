@@ -16,22 +16,16 @@ namespace ServiceStack.Examples.Host.Web
     /// </summary>
     public class AppHost : AppHostBase
     {
-        private static ILog log;
+        private static readonly ILog Logger = LogManager.GetLogger(typeof(AppHost));
 
         public AppHost() : base("ServiceStack Examples", typeof(GetFactorialService).Assembly)
         {
-            LogManager.LogFactory = new ConsoleLogFactory();
-            log = LogManager.GetLogger(typeof (AppHost));
+            //Permit modern browsers (e.g. Firefox) to allow sending of any REST HTTP Method
+            Config.DebugMode = true;
         }
 
         public override void Configure(Container container)
         {
-            //Permit modern browsers (e.g. Firefox) to allow sending of any REST HTTP Method
-            base.SetConfig(new HostConfig
-            {
-                DebugMode = true,
-            });
-
             Plugins.Add(new CorsFeature());
 
             container.Register<IAppSettings>(new AppSettings());
@@ -49,7 +43,7 @@ namespace ServiceStack.Examples.Host.Web
             //If you give Redis a try, you won't be disappointed. This however requires Redis to be installed.
             //container.Register<ICacheClient>(c => new BasicRedisClientManager());
 
-            log.InfoFormat("AppHost Configured: {0}", DateTime.Now);
+            Logger.InfoFormat("AppHost Configured: {0}", DateTime.Now);
         }
     }
 

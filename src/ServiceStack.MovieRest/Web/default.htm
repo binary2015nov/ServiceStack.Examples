@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>ServiceStack Movie Database</title>
@@ -149,36 +149,40 @@
 
 			refreshExistingMovies();
 		});
-    </script>
+	</script>
 </head>
 <body>
-	<a href="http://mono.servicestack.net" style="display: block; position: absolute; top: 5px; left: 10px;">
-		<img src="http://mono.servicestack.net/icon-home.jpg" alt="ServiceStack Home" /></a>
+	<a href="https://servicestack.net" style="position: relative; top:5px; left: 10px; ">
+		<img src="Content/Images/logo-24x24.png" alt="ServiceStack Home" />
+	</a>
 	<div id="header-links">
-		<a href="../ServiceStack.Hello/">Hello World</a> <a href="../Backbone.Todos/">Todos</a>
-		<a href="../RedisStackOverflow/">Redis StackOverflow</a> 
-		<a href="../RestFiles/">REST Files</a> 
-		<a href="../ServiceStack.MovieRest/">REST Movies</a> 
-		<a href="../ServiceStack.Northwind/">Northwind Database</a> 
-		<a href="../ServiceStack.Examples.Clients/">Ajax Client</a>
+		<a href="http://mono.servicestack.net/ServiceStack.Hello/">Hello World</a> <a href="http://todos.servicestack.net/">Todos</a>
+		<a href="http://redisstackoverflow.servicestack.net/">Redis StackOverflow</a> <a href="http://restfiles.servicestack.net/">
+			REST
+			Files
+		</a> <a href="../ServiceStack.MovieRest/">REST Movies</a> <a href="../ServiceStack.Northwind/">
+			Northwind Database
+		</a> <a href="../ServiceStack.Examples.Clients/">Ajax Client</a>
 	</div>
 	<a class="lnk-src" href="https://github.com/ServiceStack/ServiceStack">
 		<img src="Content/Images/btn-github.png" width="186" height="84" /></a>
 	<h1>
-		<a href="default.htm">Nothing but REST!</a></h1>
+		<a href="./">Nothing but REST!</a></h1>
 	<div id="summary">
 		Clean mark-up, No config &amp; No code-gen - Complete Ajax CRUD app in <a href="https://github.com/ServiceStack/ServiceStack.Examples/blob/master/src/ServiceStack.MovieRest/default.htm">1 page of jQuery</a> and <a href="https://github.com/ServiceStack/ServiceStack.Examples/blob/master/src/ServiceStack.MovieRest/MovieService.cs">1 page of C# server code</a>.
    
 	</div>
 	<button id="btnReset">Reset Movie Database</button>
 	<h4>HTTP REST LOG</h4>
-	<code id="restlog"></code>
+
 	<div id="existing">
 		<select name="genres"></select>
 		<h2>Existing Movies</h2>
 		<dl id="existing-movies"></dl>
 		<button id="btnAdd">Add &gt;&gt;</button>
 	</div>
+	<code id="restlog"></code>
+
 	<form action="movies" method="post">
 		<h2></h2>
 		<input type="hidden" name="id" />
@@ -218,19 +222,19 @@
 		<b>Download movies</b> in the new <a href="https://github.com/ServiceStack/ServiceStack/wiki/ServiceStack-CSV-Format">CSV Format</a> or 
 		<strong><a href="movies">View movies</a></strong> in the new <a href="https://github.com/ServiceStack/ServiceStack/wiki/HTML5ReportFormat">HTML5 Format</a>
 	</div>
-	<a id="btn-download" href="https://github.com/ServiceStack/ServiceStack.Examples/downloads">
-		<img src="http://mono.servicestack.net/btn-download.gif" alt="Download ServiceStack.Examples.zip">
+	<a id="btn-download" href="https://github.com/ServiceStack/ServiceStack.Examples/archive/master.zip">
+		<img src="Content/Images/btn-download.gif" alt="Download ServiceStack.Examples.zip">
 	</a>
 
 	 <script>
-	 	(function (b, o, i, l, e, r) {
-	 		b.GoogleAnalyticsObject = l; b[l] || (b[l] =
-            function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
-	 		e = o.createElement(i); r = o.getElementsByTagName(i)[0];
-	 		e.src = '//www.google-analytics.com/analytics.js';
-	 		r.parentNode.insertBefore(e, r)
-	 	}(window, document, 'script', 'ga'));
-	 	ga('create', 'UA-7722718-7'); ga('send', 'pageview');
-        </script>
+		(function (b, o, i, l, e, r) {
+			b.GoogleAnalyticsObject = l; b[l] || (b[l] =
+			function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
+			e = o.createElement(i); r = o.getElementsByTagName(i)[0];
+			e.src = '//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e, r)
+		}(window, document, 'script', 'ga'));
+		ga('create', 'UA-7722718-7'); ga('send', 'pageview');
+		</script>
 </body>
 </html>

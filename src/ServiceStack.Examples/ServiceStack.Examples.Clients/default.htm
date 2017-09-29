@@ -132,16 +132,16 @@
 <body>
 
     <div id="header-links">
-        <a href="../ServiceStack.Hello/">Hello World</a>
-        <a href="../Backbone.Todos/">Todos</a>
-        <a href="../RedisStackOverflow/">Redis StackOverflow</a>
-        <a href="../RestFiles/">REST Files</a>
-        <a href="../ServiceStack.MovieRest/">REST Movies</a>
-        <a href="../ServiceStack.Northwind/">Northwind Database</a>
-        <a href="../ServiceStack.Examples.Clients/">Ajax Client</a>
+        <a href="http://mono.servicestack.net/ServiceStack.Hello/">Hello World</a> <a href="http://todos.servicestack.net/">Todos</a>
+        <a href="http://redisstackoverflow.servicestack.net/">Redis StackOverflow</a> <a href="http://restfiles.servicestack.net/">
+            REST
+            Files
+        </a> <a href="../ServiceStack.MovieRest/">REST Movies</a> <a href="http://northwind.servicestack.net/">
+            Northwind Database
+        </a> <a href="../ServiceStack.Examples.Clients/">Ajax Client</a>
     </div>
 
-    <a href="http://mono.servicestack.net"><img src="img/demo-logo-servicestack.png" alt="Service Stack Demo" /></a>
+    <a href="https://servicestack.net"><img src="img/demo-logo-servicestack.png" alt="Service Stack Demo" /></a>
 
     <h1>Calling ServiceStack Web Services with Ajax</h1>
 
@@ -159,7 +159,7 @@
     <code>
         //Create a ClientGateway passing in the baseUrl where your services are hosted.
         var gateway = new servicestack.ClientGateway(
-                location.protocol + "//" + location.host + '/ServiceStack.Examples.Host.Web/ServiceStack/');
+                location.protocol + "//" + location.host + '/ServiceStack/');
     </code>
 
     <h4>2. After that calling a service becomes as easy as:</h4>
@@ -557,10 +557,10 @@
         This means that calling your services using XML is as easy as sending your request to a different end point.
         So calling your service via XML is as easy as:
         <ol>
-            <li><a href="/ServiceStack.Examples.Host.Web/servicestack/xml/reply/GetFactorial?ForNumber=3" target="_blank">
+            <li><a href="servicestack/xml/reply/GetFactorial?ForNumber=3" target="_blank">
                 servicestack/xml/reply/GetFactorial?ForNumber=3</a>
             </li>
-            <li><a href="/ServiceStack.Examples.Host.Web/servicestack/xml/reply/GetFibonacciNumbers?Skip=3&Take=20" target="_blank">
+            <li><a href="servicestack/xml/reply/GetFibonacciNumbers?Skip=3&Take=20" target="_blank">
                 servicestack/xml/reply/GetFibonacciNumbers?Skip=3&Take=20</a>
             </li>
         </ol>
@@ -568,7 +568,7 @@
         Out of the box ServiceStack provides REST+JSON, REST+XML and <acronym title="Plain Old XML">POX</acronym>, SOAP 1.1 and SOAP 1.2 end points.
     </p>
     <p>
-        The dynamic <a href="/ServiceStack.Examples.Host.Web/ServiceStack/Metadata">metadata summary page</a>
+        The dynamic <a href="ServiceStack/Metadata">metadata summary page</a>
         has a complete list of web services and end points that are available.<br />
     </p>
 
@@ -580,21 +580,10 @@
         </a>
         or available to download as zip package from the link below:
 
-        <a id="btn-download" href="https://github.com/ServiceStack/ServiceStack.Examples/downloads">
-            <img src="http://mono.servicestack.net/btn-download.gif" alt="Download ServiceStack.Examples.zip">
+        <a id="btn-download" href="https://github.com/ServiceStack/ServiceStack.Examples/archive/master.zip">
+            <img src="img/btn-download.gif" alt="Download ServiceStack.Examples.zip" />
         </a>
     </p>
-
-
-    <div id="footer-links">
-        <a href="http://mono-project.com/">
-            <img src="img/Mono-powered-big.png" alt="powered by mono" />
-        </a>
-
-        <a href="http://www.ajaxstack.com">Ajax Stack</a> |
-        <a href="http://mono.servicestack.net">Service Stack</a>
-
-    </div>
 
 <script type="text/javascript">
   var _gaq = _gaq || [];

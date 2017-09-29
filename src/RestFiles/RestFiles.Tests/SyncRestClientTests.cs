@@ -109,7 +109,7 @@ namespace RestFiles.Tests
 
 			Assert.That(Directory.Exists(FilesRootDir + "UploadedFiles"));
 			Assert.That(File.ReadAllText(FilesRootDir + "UploadedFiles/TESTUPLOAD.txt"),
-			            Is.EqualTo(TestUploadFileContents));
+						Is.EqualTo(TestUploadFileContents));
 		}
 
 		[Test]
@@ -174,7 +174,7 @@ namespace RestFiles.Tests
 			}
 			catch (WebServiceException webEx)
 			{
-                Assert.That(webEx.StatusCode, Is.EqualTo(405));
+				Assert.That(webEx.StatusCode, Is.EqualTo(405));
 				var response = (FilesResponse)webEx.ResponseDto;
 				Assert.That(response.ResponseStatus.ErrorCode, Is.EqualTo(typeof(NotSupportedException).Name));
 				Assert.That(response.ResponseStatus.Message,

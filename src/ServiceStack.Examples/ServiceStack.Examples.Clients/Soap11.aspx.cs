@@ -21,9 +21,7 @@ namespace ServiceStack.Examples.Clients
             },
             new EndpointAddress(EndpointUri));
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-        }
+        protected void Page_Load(object sender, EventArgs e) { }
 
         protected void btnGetFactorial_Click(object sender, EventArgs e)
         {

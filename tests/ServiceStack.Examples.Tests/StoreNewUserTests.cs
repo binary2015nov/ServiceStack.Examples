@@ -8,8 +8,7 @@ using ServiceStack.OrmLite.Legacy;
 namespace ServiceStack.Examples.Tests
 {
     [TestFixture]
-    public class StoreNewUserTests
-        : TestHostBase
+    public class StoreNewUserTests : TestHostBase
     {
         readonly StoreNewUser request = new StoreNewUser
         {

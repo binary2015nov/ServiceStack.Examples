@@ -374,24 +374,29 @@
     </script>
 
 </head>
-<body>
+<body style="margin:0 auto; background-position-x:center">
 
-    <a href="http://mono.servicestack.net" style="display:block;position:absolute;top:5px;left:10px;"><img src="http://mono.servicestack.net/icon-home.jpg" alt="ServiceStack Home" /></a>
+    <a href="https://servicestack.net" style=" position:relative; top:5px; left:10px;">
+        <img src="Content/Images/logo-24x24.png" alt="ServiceStack Home" /></a>
 
     <div id="header-links">
-        <a href="../ServiceStack.Hello/">Hello World</a>
-        <a href="../Backbone.Todos/">Todos</a>
-        <a href="../RedisStackOverflow/">Redis StackOverflow</a>
+        <a href="http://mono.servicestack.net/ServiceStack.Hello/">Hello World</a>
+        <a href="http://todos.servicestack.net/">Todos</a>
+        <a href="http://redisstackoverflow.servicestack.net/">Redis StackOverflow</a>
         <a href="../RestFiles/">REST Files</a>
         <a href="../ServiceStack.MovieRest/">REST Movies</a>
         <a href="../ServiceStack.Northwind/">Northwind Database</a>
         <a href="../ServiceStack.Examples.Clients/">Ajax Client</a>
     </div>
 
-    <a class="lnk-src" href="https://github.com/ServiceStack/ServiceStack.Examples/tree/master/src/ServiceStack.Questions"><img src="Content/Images/btn-github.png" width="186" height="84" /></a>
+    <a id="github" href="https://github.com/ServiceStack/ServiceStack">
+        <img src="Content/Images/btn-github.png" alt="ServiceStack" />
+    </a>
 
     <h1><a href="./">Redis StackOverflow</a></h1>
-
+    <div id="disclaimer">*Not affiliated with Stack Overflow, which is a trademark of Stack Overflow Internet Services Inc.</div>
+    <div id="trivia" class="ib"><strong>Trivia:</strong> Its fast despite each <b>click</b> making <b>3 ajax</b> calls causing <b>30+ redis</b> operations</div>
+    <p />
     <div id="status"><h4></h4></div>
 
     <div id="user">
@@ -434,7 +439,7 @@
                 </dd>
                 <dd>
                     Uses no other external .dlls apart from
-                    <a href="http://mono.servicestack.net">ServiceStack</a>
+                    <a href="https://servicestack.net">ServiceStack</a>
                 </dd>
                 <dd>
                     <a href="/metadata">Checkout the complete Web Services API</a>
@@ -449,27 +454,27 @@
                 </dd>
             </dl>
 
-            <a id="btn-download" href="https://github.com/ServiceStack/ServiceStack.Examples/downloads">
-                <img src="http://mono.servicestack.net/btn-download.gif" alt="Download ServiceStack.Examples.zip">
+            <a id="btn-download" href="https://github.com/ServiceStack/ServiceStack.Examples/archive/master.zip">
+                <img src="Content/Images/btn-download.gif" alt="Download ServiceStack.Examples.zip">
             </a>
 
         </div>
     </div>
 
     <div id="questions">
+        
         <h2></h2>
+
         <div id="results"></div>
-        <div id="paging"></div>
-        <a id="mono" href="http://www.mono-project.com"><img src="Content/Images/Mono-powered-big.png" alt="Powered by Mono" /></a>
-        <div id="disclaimer">*Not affiliated with Stack Overflow, which is a trademark of Stack Overflow Internet Services Inc.</div>
-        <div id="trivia" class="ib"><strong>Trivia:</strong> Its fast despite each <b>click</b> making <b>3 ajax</b> calls causing <b>30+ redis</b> operations</div>
+        <div id="paging"></div>        
     </div>
 
     <div id="footer">
         Simple StackOverlow-like Ajax website using only <a href="http://jquery.com">jQuery</a> for UI,
-        calling <a href="http://mono.servicestack.net">Service Stack's</a> REST-ful web services,
+        calling <a href="https://servicestack.net">ServiceStack</a>'s REST-ful web services,
         powered entirely by <a href="http://redis.io">Redis</a>
-        on <a href="http://www.mono-project.com">Mono</a>.<br />
+        on <a href="http://redisstackoverflow.servicestack.net/">redisstackoverflow</a>.
+        <br />
 
         Takes advantage of
         <a href="http://redis.io/commands#string">STRING</a>,
@@ -481,17 +486,16 @@
         the fastest implementation of a StackOverflow-like website.
     </div>
 
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-7722718-7']);
+      _gaq.push(['_trackPageview']);
 
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-7722718-7']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
 </body>
 </html>

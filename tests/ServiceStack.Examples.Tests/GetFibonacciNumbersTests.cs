@@ -6,8 +6,7 @@ using ExampleConfig = ServiceStack.Examples.ServiceInterface.ExampleConfig;
 namespace ServiceStack.Examples.Tests
 {
 	[TestFixture]
-	public class GetFibonacciNumbersTests
-		: TestHostBase
+	public class GetFibonacciNumbersTests : TestHostBase
 	{
 		[Test]
 		public void GetFibonacciNumbers_Test()

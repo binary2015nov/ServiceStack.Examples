@@ -18,29 +18,29 @@ namespace ServiceStack.Examples.Tests
 		protected const string InMemoryDb = ":memory:";
 		private static ILog log;
 
-	    public readonly ServiceStackHost appHost;
+		public readonly ServiceStackHost appHost;
 
 		public TestHostBase()
 		{
-            LogManager.LogFactory = new ConsoleLogFactory();
-            log = LogManager.GetLogger(GetType());
+			LogManager.LogFactory = new ConsoleLogFactory();
+			log = LogManager.GetLogger(GetType());
 
-            appHost = new BasicAppHost(typeof(GetFactorialService).Assembly) {
-                ConfigureContainer = Configure
-            }.Init();
+			appHost = new BasicAppHost(typeof(GetFactorialService).Assembly) {
+				ConfigureContainer = Configure
+			}.Init();
 		}
 
-        [OneTimeSetUp]
-        public void TestFixtureTearDown()
-        {
-            appHost.Dispose();
-        }
+		[OneTimeSetUp]
+		public void TestFixtureTearDown()
+		{
+			appHost.Dispose();
+		}
 
 		protected IDbConnectionFactory ConnectionFactory
 		{
 			get
 			{
-                return appHost.Container.Resolve<IDbConnectionFactory>();
+				return appHost.Container.Resolve<IDbConnectionFactory>();
 			}
 		}		
 
@@ -66,12 +66,12 @@ namespace ServiceStack.Examples.Tests
 		/// <returns></returns>
 		public TResponse Send<TResponse>(object request)
 		{
-            return Send<TResponse>(request, RequestAttributes.None);
+			return Send<TResponse>(request, RequestAttributes.None);
 		}
 
-        public TResponse Send<TResponse>(object request, RequestAttributes endpointAttrs)
+		public TResponse Send<TResponse>(object request, RequestAttributes endpointAttrs)
 		{
-            return (TResponse)appHost.ServiceController.Execute(request,
+			return (TResponse)appHost.ServiceController.Execute(request,
 				new BasicRequest(request, endpointAttrs));
 		}
 	}

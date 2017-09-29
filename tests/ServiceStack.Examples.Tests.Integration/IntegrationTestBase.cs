@@ -10,24 +10,17 @@ using ServiceStack.OrmLite;
 
 namespace ServiceStack.Examples.Tests.Integration
 {
-    public class IntegrationTestAppHost
-        : AppHostHttpListenerBase
-    {
-		private static ILog log;
+	public class IntegrationTestAppHost : AppHostHttpListenerBase
+	{
+		private static ILog Logger = LogManager.GetLogger(typeof(IntegrationTestAppHost));
 
-        public IntegrationTestAppHost()
-			: base("ServiceStack Examples", typeof(MovieRestService).Assembly)
-		{
-			LogManager.LogFactory = new DebugLogFactory();
-			log = LogManager.GetLogger(GetType());
-			Instance = null;
-		}	
+		public IntegrationTestAppHost() : base("ServiceStack Examples", typeof(MovieRestService).Assembly) { }
 
 		public override void Configure(Container container)
 		{
-            container.Register<IAppSettings>(new AppSettings());
+			container.Register<IAppSettings>(new AppSettings());
 
-            container.Register(c => new ExampleConfig(c.Resolve<IAppSettings>()));
+			container.Register(c => new ExampleConfig(c.Resolve<IAppSettings>()));
 			var appConfig = container.Resolve<ExampleConfig>();
 
 			container.Register<IDbConnectionFactory>(c =>
@@ -37,28 +30,30 @@ namespace ServiceStack.Examples.Tests.Integration
 
 			ConfigureDatabase.Init(container.Resolve<IDbConnectionFactory>());
 		}
-    }
+	}
 
 	public class IntegrationTestBase
 	{
-        private const string BaseUrl = "http://127.0.0.1:8080/";
+		private const string BaseUrl = "http://127.0.0.1:8080/";
 
-        private readonly ServiceStackHost appHost;
+		private ServiceStackHost appHost;
 
-	    public IntegrationTestBase()
-	    {
-            appHost = new IntegrationTestAppHost()
-                .Init()
-                .Start(BaseUrl);
-	    }
+		[OneTimeSetUp]
+		public void TestFixtureSetUp()
+		{
+			LogManager.LogFactory = new ConsoleLogFactory();
+			appHost = new IntegrationTestAppHost()
+				.Init()
+				.Start(BaseUrl);
+		}
 
-        [TestFixtureTearDown]
-        public void TestFixtureTearDown()
-        {
-            appHost.Dispose();
-        }
+		[OneTimeTearDown]
+		public void TestFixtureTearDown()
+		{
+			appHost.Dispose();
+		}
 
-	    public void SendToEachEndpoint<TRes>(object request, Action<TRes> validate)
+		public void SendToEachEndpoint<TRes>(object request, Action<TRes> validate)
 		{
 			SendToEachEndpoint(request, null, validate);
 		}

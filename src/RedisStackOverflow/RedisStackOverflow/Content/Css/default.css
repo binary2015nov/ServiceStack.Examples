@@ -2,29 +2,26 @@ BODY
 {
     background: #fff url(../Images/bg-body-1024.png) repeat-y top left;
     font: normal normal normal 13.34px/normal helvetica, arial, freesans, clean, sans-serif;
-    padding: 0 5px 20px 10px;
     width: 940px;
 }
-DD, DL, DT, UL, LI {
-    margin: 0;
-    padding: 0;
-}
 
-A IMG
-{ 
-    border: none;
-}
 #header-links
 {
     top: 10px;
     left: 270px;
-    position: absolute;
+    position:relative;
 }
 #header-links A, #footer-links A
 {
     color: #0000FF;
     margin-left: 0.5em;
 }
+
+DD, DL, DT, UL, LI {
+    margin: 0;
+    padding: 0;
+}
+
 code
 {
     background-color: ghostWhite !important;
@@ -58,8 +55,9 @@ INPUT[type=text]
     width: 400px;
     padding: 2px 5px;
 }
-.lnk-src
+#github
 {
+    clear: right;
     padding: 26px 17px 0 0;
     float: right;
 }
@@ -77,16 +75,15 @@ INPUT[type=text]
 {
     display: inline;
 }
-H1 A
-{
-    background: url(http://mono.servicestack.net/logo-servicestack.png) no-repeat;
+
+H1 A {
     display: block;
     height: 38px;
-    padding: 70px 30px 0 120px;
-    color: #051;
-    margin: 0 50px 0 0;
+    color: #222;
+    font-size: 36px;
     text-decoration: none;
 }
+
 #summary
 {
     margin: 0 0 20px 0;
@@ -100,13 +97,6 @@ H1 A
 #summary A
 {
     color: blue;
-}
-#summary B
-{
-}
-
-H4
-{
 }
 
 FORM 
@@ -305,9 +295,6 @@ H4 EM
     margin: 15px 0 0 0;
 }
 
-#question
-{
-}
 .question-votes
 {
     vertical-align: top;
@@ -444,14 +431,14 @@ H4 EM
 {
     color: #333;	
 }
+
 #footer
 {
     position:fixed;
     height: 30px;
-    left: 0;
     bottom: 0;
-    width: 943px;
+    margin:auto;
     border-top: solid 1px #999;
     background: #f1f1f1;
-    padding: 10px;
+    padding: 10px 0 10px 0;
 }

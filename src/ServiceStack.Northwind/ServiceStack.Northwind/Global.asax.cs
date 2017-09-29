@@ -1,21 +1,20 @@
-﻿
+﻿using System;
+using System.Web;
+using Funq;
+using ServiceStack.Data;
+using ServiceStack.OrmLite;
+using ServiceStack.Northwind.ServiceInterface;
+
 namespace ServiceStack.Northwind
 {
-	using System;
-	using System.Web;
-	using Funq;
-	using ServiceInterface;
-	using OrmLite;
-    using Data;
-
-    public class AppHost : AppHostBase
+	public class AppHost : AppHostBase
 	{
-		public AppHost() : base("Northwind Web Services", typeof(CustomersService).Assembly) {}
+		public AppHost() : base("Northwind Web Services", typeof(CustomersService).Assembly) { }
 
 		public override void Configure(Container container)
 		{
 			container.Register<IDbConnectionFactory>(
-				new OrmLiteConnectionFactory("~/Northwind.sqlite".MapHostAbsolutePath(), SqliteDialect.Provider));
+				new OrmLiteConnectionFactory("~/App_Data/Northwind.sqlite".MapHostAbsolutePath(), SqliteDialect.Provider));
 
 			//Use Redis Cache
 			//container.Register<ICacheClient>(new PooledRedisClientManager());
@@ -28,7 +27,7 @@ namespace ServiceStack.Northwind
 	{
 		protected void Application_Start(object sender, EventArgs e)
 		{
-			new AppHost().Init();
+			(new AppHost()).Init();
 		}
 	}
 }

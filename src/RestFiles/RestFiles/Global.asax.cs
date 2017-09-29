@@ -16,7 +16,10 @@ namespace RestFiles
         /// <summary>
         /// Initializes a new instance of your ServiceStack application, with the specified name and assembly containing the services.
         /// </summary>
-        public AppHost() : base("REST Files", typeof(FilesService).Assembly) {}
+        public AppHost() : base("REST Files", typeof(FilesService).Assembly)
+        {
+            Config.DebugMode = true;
+        }
 
         /// <summary>
         /// Configure the container with the necessary routes for your ServiceStack application.
@@ -27,11 +30,7 @@ namespace RestFiles
             //Permit modern browsers (e.g. Firefox) to allow sending of any REST HTTP Method
             Plugins.Add(new CorsFeature());
 
-            SetConfig(new HostConfig {
-                DebugMode = true,
-            });
-
-            var config = new AppConfig(new AppSettings());
+            var config = new AppConfig(AppSettings);
             container.Register(config);
 
             if (!Directory.Exists(config.RootDirectory))

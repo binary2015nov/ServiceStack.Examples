@@ -11,7 +11,7 @@ namespace ServiceStack.Examples.ServiceInterface
 
 		public ExampleConfig() { }
 
-        public ExampleConfig(IAppSettings appConfig)
+		public ExampleConfig(IAppSettings appConfig)
 		{
 			ConnectionString = appConfig.GetString("ConnectionString");
 			DefaultFibonacciLimit = appConfig.Get("DefaultFibonacciLimit", 10);

@@ -9,8 +9,7 @@ using ServiceStack.Text;
 namespace ServiceStack.Examples.Tests
 {
 	[TestFixture]
-	public class MovieRestTests
-		: TestHostBase
+	public class MovieRestTests : TestHostBase
 	{
 		[SetUp]
 		public void SetUp()

@@ -2,7 +2,6 @@
 using ServiceStack;
 using ServiceStack.Redis;
 using Funq;
-using ServiceStack.Text;
 
 //The entire C# source code for the ServiceStack + Redis TODO REST backend. There is no other .cs :)
 namespace Backbone.Todos
@@ -66,7 +65,7 @@ namespace Backbone.Todos
         public override void Configure(Container container)
         {
             //Configure ServiceStack Json web services to return idiomatic Json camelCase properties.
-            JsConfig.EmitCamelCaseNames = true;
+            Config.UseCamelCase = true;
 
             //Register Redis factory in Funq IoC. The default port for Redis is 6379.
             container.Register<IRedisClientsManager>(new BasicRedisClientManager("localhost:6379"));

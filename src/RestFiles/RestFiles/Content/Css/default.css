@@ -1,6 +1,15 @@
 /*  HTML5 ✰ Boilerplate  */
+body {
+    background: #fff url(../Images/bg-body-1024.png) repeat-y top left;
+    font: normal normal normal 13.34px/normal helvetica, arial, freesans, clean, sans-serif;
+    width: 940px;
+    margin: 0 auto;
+    background-position-x: center;
+    font: 13px/1.231 sans-serif;
+    *font-size: small;
+}
 
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+html, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
 small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
@@ -30,8 +39,6 @@ table { border-collapse:collapse; border-spacing:0; }
 hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
 input, select { vertical-align:middle; }
 
-
-body { font:13px/1.231 sans-serif; *font-size:small; }
 select, input, textarea, button { font:99% sans-serif; }
 pre, code, kbd, samp { font-family: monospace, sans-serif; }
 
@@ -61,7 +68,6 @@ input[type="checkbox"] { vertical-align: bottom; }
 .ie6 input { vertical-align: text-bottom; }
 label, input[type=button], input[type=submit], button { cursor: pointer; }
 button, input, select, textarea { margin: 0; }
-input:valid, textarea:valid   {  }
 input:invalid, textarea:invalid { border-radius: 1px;  -moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow: 0px 0px 5px red;  box-shadow: 0px 0px 5px red; }
 .no-boxshadow input:invalid, 
 .no-boxshadow textarea:invalid { background-color: #f0dddd; }
@@ -98,32 +104,25 @@ Author: Demis Bellot (demis.bellot@gmail.com)
 {
     display: inline;
 }
-BODY
-{
-    background: url(../Images/bg-body-1024.png) repeat-y;
-    font: normal normal normal 13.34px/normal helvetica, arial, freesans, clean, sans-serif;
-}
+
 #github
 {
-    position: absolute;
-    top: 40px;
-    left: 755px;
+    clear: right;
+    padding: 10px 17px 0 0;
+    float: right;
 }
 #header-links {
     top: 10px;
     left: 270px;
-    position: absolute;
+    position: relative;
 }
-#header-links A
-{
-    font-size: 13px;
-    color: #00F;
+#header-links A, #footer-links A {
+    color: #0000FF;
     margin-left: 0.5em;
 }
 
 #title
 {
-    background: url(../Images/logo-24x24.png) no-repeat 0 10px;	
     padding: 10px 10px 5px 28px;
     margin: 30px 0 0 10px;
 }
@@ -132,8 +131,8 @@ BODY
     font-size: 20px;
     letter-spacing: -1px;
 }
-#title H1 A
-{	
+#title H1 A {
+
     text-decoration: none;
     color: #4183C4;
 }
@@ -149,6 +148,7 @@ BODY
 {
     text-decoration: underline;
 }
+
 #info
 {
     background: #EAF2F5 url(../Images/bg_gradient.gif) repeat-x 0px 100%;
@@ -351,9 +351,6 @@ A.file:hover B.del
 {
     padding: 0 5px;
 }
-#breadcrumb STRONG
-{
-}
 
 #btn-reset
 {
@@ -501,7 +498,8 @@ A.file:hover B.del
     height: 60px;
     position: fixed;
     bottom: 0;
-    width: 963px;
+    width:940px;
+    margin:auto;
 }
 #logo
 {
@@ -516,6 +514,7 @@ A.file:hover B.del
 }
 #demo
 {
+    margin:0;
     padding: 15px 0 5px 0;
     text-align: center;
 }

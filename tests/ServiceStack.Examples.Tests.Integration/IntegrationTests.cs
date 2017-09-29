@@ -12,8 +12,7 @@ namespace ServiceStack.Examples.Tests.Integration
 	/// Admin user privillages are required to host the Console Host (HttpListener)
 	/// </summary>
 	[TestFixture]
-	public class IntegrationTests
-		: IntegrationTestBase
+	public class IntegrationTests : IntegrationTestBase
 	{
 
 		[Test]

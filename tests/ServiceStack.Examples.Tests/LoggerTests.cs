@@ -19,27 +19,27 @@ namespace ServiceStack.Examples.Tests
 					Devices = new ArrayOfDevice
 					{
 						new Device
-                      	{
-                      		Id = 5955,
+						{
+							Id = 5955,
 							Type = "Panel",
 							TimeStamp = 1199303309,
 							Channels = new ArrayOfChannel
-				           	{
-				           		{new Channel("Temperature", "58")},
-				           		{new Channel("Status", "On")},
-				           	}
-                      	},
+							{
+								{new Channel("Temperature", "58")},
+								{new Channel("Status", "On")},
+							}
+						},
 						new Device
-                      	{
-                      		Id = 5956,
+						{
+							Id = 5956,
 							Type = "Tank",
 							TimeStamp = 1199303309,
 							Channels = new ArrayOfChannel
-				           	{
-				           		{ new Channel("Volume", "10035") },
-				           		{ new Channel("Status", "Full") },
-				           	}
-                      	},
+							{
+								{ new Channel("Volume", "10035") },
+								{ new Channel("Status", "Full") },
+							}
+						},
 					}
 				}
 			};

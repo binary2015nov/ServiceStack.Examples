@@ -17,7 +17,10 @@ namespace RedisStackOverflow
         /// <summary>
         /// Initializes a new instance of your ServiceStack application, with the specified name and assembly containing the services.
         /// </summary>
-        public AppHost() : base("Redis StackOverflow", typeof(QuestionsService).Assembly) { }
+        public AppHost() : base("Redis StackOverflow", typeof(QuestionsService).Assembly)
+        {
+            Config.DebugMode = true;
+        }
 
         /// <summary>
         /// Configure the container with the necessary routes for your ServiceStack application.
@@ -26,7 +29,6 @@ namespace RedisStackOverflow
         public override void Configure(Container container)
         {
             //Show StackTrace in Web Service Exceptions
-            SetConfig(new HostConfig { DebugMode = true });
 
             //Register any dependencies you want injected into your services
             container.Register<IRedisClientsManager>(c => new PooledRedisClientManager());

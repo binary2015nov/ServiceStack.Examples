@@ -16,8 +16,7 @@ namespace ServiceStack.Examples.Tests.Integration
 	/// including subsequent failing Add/PUT requests due to a Unique constraint violation.
 	/// </summary>
 	[TestFixture]
-	public class MovieRestTests
-		: IntegrationTestBase
+	public class MovieRestTests : IntegrationTestBase
 	{
 		[Test]
 		public void Can_list_all_movies()
