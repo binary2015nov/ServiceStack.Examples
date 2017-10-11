@@ -1,3 +1,3 @@
-SET MSBUILD=C:\Windows\Microsoft.NET\Framework\v3.5\MSBuild.exe
+SET MSBUILD="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\MSBuild.exe"
 
 %MSBUILD% build.msbuild

@@ -8,7 +8,7 @@ namespace StarterTemplates.Common
 	{
 		public StarterTemplateAppHost() : base(string.Empty, typeof(HelloService).Assembly)
 		{
-			ServiceName = AppSettings.GetString("ServiceName") ?? "StarterTemplate ASP.NET Host";
+			ServiceName = AppSettings.Get("ServiceName") ?? "StarterTemplate ASP.NET Host";
 		}
 
 		public override void Configure(Container container)
@@ -22,7 +22,7 @@ namespace StarterTemplates.Common
 	{
 		public StarterTemplateAppListenerHost() : base(string.Empty, typeof(HelloService).Assembly)
 		{
-			ServiceName = AppSettings.GetString("ServiceName") ?? "StarterTemplate HttpListener";
+			ServiceName = AppSettings.Get("ServiceName") ?? "StarterTemplate HttpListener";
 		}
 
 		public override void Configure(Container container)

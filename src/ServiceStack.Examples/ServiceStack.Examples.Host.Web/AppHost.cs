@@ -4,10 +4,10 @@ using ServiceStack.Configuration;
 using ServiceStack.Data;
 using ServiceStack.Examples.ServiceInterface;
 using ServiceStack.Examples.ServiceInterface.Support;
-using ServiceStack.Formats;
 using ServiceStack.Logging;
 using ServiceStack.OrmLite;
 using ServiceStack.OrmLite.Sqlite;
+using ServiceStack.Examples.ServiceModel;
 
 namespace ServiceStack.Examples.Host.Web
 {
@@ -16,8 +16,6 @@ namespace ServiceStack.Examples.Host.Web
     /// </summary>
     public class AppHost : AppHostBase
     {
-        private static readonly ILog Logger = LogManager.GetLogger(typeof(AppHost));
-
         public AppHost() : base("ServiceStack Examples", typeof(GetFactorialService).Assembly)
         {
             //Permit modern browsers (e.g. Firefox) to allow sending of any REST HTTP Method
@@ -42,8 +40,6 @@ namespace ServiceStack.Examples.Host.Web
 
             //If you give Redis a try, you won't be disappointed. This however requires Redis to be installed.
             //container.Register<ICacheClient>(c => new BasicRedisClientManager());
-
-            Logger.InfoFormat("AppHost Configured: {0}", DateTime.Now);
         }
     }
 

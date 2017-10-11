@@ -7,6 +7,7 @@ using ServiceStack.Examples.ServiceInterface;
 using ServiceStack.Examples.ServiceInterface.Support;
 using ServiceStack.Logging;
 using ServiceStack.OrmLite;
+using ServiceStack.Examples.ServiceModel;
 
 namespace ServiceStack.Examples.Tests.Integration
 {

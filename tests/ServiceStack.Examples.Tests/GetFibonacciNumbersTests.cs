@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using ServiceStack.Examples.ServiceInterface;
 using ServiceStack.Examples.ServiceModel;
-using ExampleConfig = ServiceStack.Examples.ServiceInterface.ExampleConfig;
 
 namespace ServiceStack.Examples.Tests
 {

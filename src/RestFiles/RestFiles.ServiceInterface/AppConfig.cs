@@ -15,7 +15,7 @@ namespace RestFiles.ServiceInterface
 
 		public AppConfig(IAppSettings resources)
 		{
-			this.RootDirectory = resources.GetString("RootDirectory").MapHostAbsolutePath()
+			this.RootDirectory = resources.Get("RootDirectory").MapHostAbsolutePath()
 				.Replace('\\', Path.DirectorySeparatorChar);
 
 			this.TextFileExtensions = resources.GetList("TextFileExtensions");
