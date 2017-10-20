@@ -1,11 +1,10 @@
 using System;
 using System.IO;
 using System.Net;
-using RestFiles.ServiceInterface.Support;
+using ServiceStack;
 using RestFiles.ServiceModel;
 using RestFiles.ServiceModel.Types;
-using ServiceStack;
-using File = System.IO.File;
+using RestFiles.ServiceInterface.Support;
 
 namespace RestFiles.ServiceInterface
 {
@@ -66,13 +65,13 @@ namespace RestFiles.ServiceInterface
             if (request.TextContents == null)
                 throw new ArgumentNullException("TextContents");
 
-            File.WriteAllText(targetFile.FullName, request.TextContents);
+            System.IO.File.WriteAllText(targetFile.FullName, request.TextContents);
         }
 
         public void Delete(Files request)
         {
             var targetFile = GetAndValidateExistingPath(request);
-            File.Delete(targetFile.FullName);
+            System.IO.File.Delete(targetFile.FullName);
         }
 
         private FolderResult GetFolderResult(string targetPath)
@@ -134,7 +133,7 @@ namespace RestFiles.ServiceInterface
                 Extension = fileInfo.Extension,
                 FileSizeBytes = fileInfo.Length,
                 IsTextFile = isTextFile,
-                Contents = isTextFile ? File.ReadAllText(fileInfo.FullName) : null,
+                Contents = isTextFile ? System.IO.File.ReadAllText(fileInfo.FullName) : null,
                 ModifiedDate = fileInfo.LastWriteTimeUtc,
             };
         }

@@ -7,7 +7,7 @@ namespace ServiceStack.Hello
         protected void Application_Start(object sender, EventArgs e)
         {
             //Initialize your application
-            (new HelloAppHost()).Init();
+            new HelloAppHost().Init();
         }
     }
 }

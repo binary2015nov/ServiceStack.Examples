@@ -1,29 +1,22 @@
-using Funq;
-using RestFiles.ServiceInterface;
 using ServiceStack;
+using RestFiles.ServiceInterface;
 
 namespace RestFiles.Tests
 {
-	public class RestFilesHttpListener
-		: AppHostHttpListenerBase
+	public class RestFilesHttpListener : AppHostHttpListenerBase
 	{
-		public const string ListeningOn = "http://localhost:8080/";
+		public const string ListeningOn = "http://localhost:8081/";
 
-		public RestFilesHttpListener()
-			: base("HttpListener Hosts for Unit Tests", typeof(FilesService).Assembly) { }
+		public RestFilesHttpListener() : base("HttpListener Hosts for Unit Tests", typeof(FilesService).Assembly) { }
 
-		public AppConfig Config { get; set; }
-
-		public override void Configure(Container container)
+		public override void Configure(Funq.Container container)
 		{
-			this.Config = new AppConfig
+			var config = new AppConfig
 			{
 				RootDirectory = "~/App_Data/files/".MapAbsolutePath(),
 				TextFileExtensions = ".txt,.sln,.proj,.cs,.config,.asax".Split(','),
 			};
-			container.Register(this.Config);
-
-			this.Start(ListeningOn);
+			container.Register(config);
 		}
 	}
 }

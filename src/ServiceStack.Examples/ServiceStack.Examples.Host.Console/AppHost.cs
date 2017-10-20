@@ -15,8 +15,6 @@ namespace ServiceStack.Examples.Host.Console
 	/// </summary>
 	public class AppHost : AppHostHttpListenerBase
 	{
-		private static ILog Logger = LogManager.GetLogger(typeof(AppHost));
-
 		public AppHost() : base("ServiceStack Examples", typeof(GetFactorialService).Assembly)
 		{
 			Config.DebugMode = true;
@@ -24,8 +22,6 @@ namespace ServiceStack.Examples.Host.Console
 
 		public override void Configure(Container container)
 		{
-			container.Register(AppSettings);
-
 			var appSettings = container.Resolve<IAppSettings>();
 
 			container.Register(c => new ExampleConfig(c.Resolve<IAppSettings>()));
@@ -36,7 +32,7 @@ namespace ServiceStack.Examples.Host.Console
 
 			if (appSettings.Get("PerformTestsOnInit", false))
 			{
-				Logger.Debug("Performing database tests...");
+				System.Console.WriteLine("Performing database tests...");
 				DatabaseTest(container.Resolve<IDbConnectionFactory>());
 			}
 		}
@@ -59,9 +55,7 @@ namespace ServiceStack.Examples.Host.Console
 
 			var user = response.Users[0];
 
-			System.Console.WriteLine("Stored and retrieved user: {0}, {1}, {2}",
-				user.Id, user.UserName, user.Email);
+			System.Console.WriteLine("Stored and retrieved user: {0}, {1}, {2}", user.Id, user.UserName, user.Email);
 		}
-
 	}
 }

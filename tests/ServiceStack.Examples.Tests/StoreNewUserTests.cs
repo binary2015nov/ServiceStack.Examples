@@ -33,7 +33,7 @@ namespace ServiceStack.Examples.Tests
                 };
                 var response = service.Any(newUserRequest);
 
-                var storedUser = db.SingleFmt<User>("UserName = {0}", newUserRequest.UserName);
+                var storedUser = db.Single<User>("UserName = @UserName", newUserRequest);
                 Assert.That(storedUser.Id, Is.EqualTo(response.UserId));
                 Assert.That(storedUser.Email, Is.EqualTo(newUserRequest.Email));
                 Assert.That(storedUser.Password, Is.EqualTo(newUserRequest.Password));

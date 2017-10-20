@@ -1,6 +1,6 @@
-using RestIntro.ServiceModel;
 using ServiceStack;
 using ServiceStack.OrmLite;
+using RestIntro.ServiceModel;
 
 namespace RestIntro.ServiceInterface
 {

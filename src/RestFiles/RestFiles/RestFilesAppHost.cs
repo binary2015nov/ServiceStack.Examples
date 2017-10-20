@@ -1,18 +1,21 @@
-﻿using System;
+﻿using System.IO;
 using ServiceStack;
-using StarterTemplates.Common;
+using RestFiles.ServiceInterface;
 
-namespace CustomPath45
+namespace RestFiles
 {
     /// <summary>
     /// Create your ServiceStack web service application with a singleton AppHost.
     /// </summary> 
-    public class AppHost : AppHostBase
+    public class RestFilesAppHost : AppHostBase
     {
         /// <summary>
         /// Initializes a new instance of your ServiceStack application, with the specified name and assembly containing the services.
         /// </summary>
-        public AppHost() : base("StarterTemplate ASP.NET Host", typeof(HelloService).Assembly) { }
+        public RestFilesAppHost() : base("REST Files", typeof(FilesService).Assembly)
+        {
+            Config.DebugMode = true;
+        }
 
         /// <summary>
         /// Configure the container with the necessary routes for your ServiceStack application.
@@ -20,16 +23,16 @@ namespace CustomPath45
         /// <param name="container">The built-in IoC used with ServiceStack.</param>
         public override void Configure(Funq.Container container)
         {
-            container.Register(new TodoRepository());
-        }
-    }
+            //Permit modern browsers (e.g. Firefox) to allow sending of any REST HTTP Method
+            Plugins.Add(new CorsFeature());
 
-    public class Global : System.Web.HttpApplication
-    {
-        void Application_Start(object sender, EventArgs e)
-        {
-            //Initialize your application
-            new AppHost().Init();
+            var config = new AppConfig(AppSettings);
+            container.Register(config);
+
+            if (!Directory.Exists(config.RootDirectory))
+            {
+                Directory.CreateDirectory(config.RootDirectory);
+            }
         }
     }
 }

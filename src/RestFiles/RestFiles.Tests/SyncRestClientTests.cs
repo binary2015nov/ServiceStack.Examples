@@ -1,8 +1,9 @@
 using System;
 using System.IO;
 using NUnit.Framework;
-using RestFiles.ServiceModel;
 using ServiceStack;
+using RestFiles.ServiceInterface;
+using RestFiles.ServiceModel;
 
 /* For syntax highlighting and better readability of this file, view it on GitHub:
  * https://github.com/ServiceStack/ServiceStack.Examples/blob/master/src/RestFiles/RestFiles.Tests/SyncRestClientTests.cs
@@ -19,7 +20,7 @@ namespace RestFiles.Tests
 	[TestFixture]
 	public class SyncRestClientTests
 	{
-		public const string WebServiceHostUrl = "http://localhost:8080/";
+		public const string WebServiceHostUrl = "http://localhost:8081/";
 		private const string ReadmeFileContents = "THIS IS A README FILE";
 		private const string ReplacedFileContents = "THIS README FILE HAS BEEN REPLACED";
 		private const string TestUploadFileContents = "THIS FILE IS USED FOR UPLOADING IN TESTS";
@@ -32,6 +33,7 @@ namespace RestFiles.Tests
 		{
 			appHost = new RestFilesHttpListener();
 			appHost.Init();
+            appHost.Start(WebServiceHostUrl);
 		}
 
 		[OneTimeTearDown]
@@ -45,7 +47,7 @@ namespace RestFiles.Tests
 		public void OnBeforeEachTest()
 		{
 			//Setup the files directory with some test files and folders
-			FilesRootDir = appHost.Config.RootDirectory;
+			FilesRootDir = appHost.Resolve<AppConfig>().RootDirectory;
 			if (Directory.Exists(FilesRootDir))
 			{
 				Directory.Delete(FilesRootDir, true);

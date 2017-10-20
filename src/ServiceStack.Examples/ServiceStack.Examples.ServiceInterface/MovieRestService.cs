@@ -1,7 +1,6 @@
+using ServiceStack.OrmLite;
 using ServiceStack.Examples.ServiceModel;
 using ServiceStack.Examples.ServiceModel.Types;
-using ServiceStack.Logging;
-using ServiceStack.OrmLite;
 
 namespace ServiceStack.Examples.ServiceInterface
 {

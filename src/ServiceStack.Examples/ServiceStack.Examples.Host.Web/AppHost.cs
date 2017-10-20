@@ -1,10 +1,8 @@
 using System;
-using Funq;
 using ServiceStack.Configuration;
 using ServiceStack.Data;
 using ServiceStack.Examples.ServiceInterface;
 using ServiceStack.Examples.ServiceInterface.Support;
-using ServiceStack.Logging;
 using ServiceStack.OrmLite;
 using ServiceStack.OrmLite.Sqlite;
 using ServiceStack.Examples.ServiceModel;
@@ -22,7 +20,7 @@ namespace ServiceStack.Examples.Host.Web
             Config.DebugMode = true;
         }
 
-        public override void Configure(Container container)
+        public override void Configure(Funq.Container container)
         {
             Plugins.Add(new CorsFeature());
 
@@ -42,5 +40,4 @@ namespace ServiceStack.Examples.Host.Web
             //container.Register<ICacheClient>(c => new BasicRedisClientManager());
         }
     }
-
 }

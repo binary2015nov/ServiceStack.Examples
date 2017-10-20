@@ -8,7 +8,7 @@ namespace ServiceStack.Examples.Tests
 	public class GetFactorialTests : TestHostBase
 	{
 		[Test]
-		public void GetFactorial_Test()
+		public void Get_Factorial()
 		{
 			var request = new GetFactorial { ForNumber = 4 };
 

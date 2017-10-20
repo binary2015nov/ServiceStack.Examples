@@ -113,7 +113,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\AppHost.cs" />
+    <Compile Include="App_Start\MovieRestAppHost.cs" />
     <Compile Include="ResetMovies.cs" />
     <Compile Include="MovieService.cs" />
     <Compile Include="Global.asax.cs">

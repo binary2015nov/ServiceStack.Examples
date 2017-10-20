@@ -14,7 +14,6 @@ namespace ServiceStack.Examples.Tests.Integration
 	[TestFixture]
 	public class IntegrationTests : IntegrationTestBase
 	{
-
 		[Test]
 		public void Can_GetFactorial()
 		{
@@ -32,15 +31,5 @@ namespace ServiceStack.Examples.Tests.Integration
 			SendToEachEndpoint<GetFibonacciNumbersResponse>(request, response =>
 				Assert.That(response.Results, Is.EquivalentTo(new List<long> { 5, 8, 13, 21, 34 })));
 		}
-
-		[Test]
-		public void Can_GetNorthwindCustomerOrders()
-		{
-			var request = new GetNorthwindCustomerOrders { CustomerId = "TESTCUSTOMER" };
-
-			SendToEachEndpoint<GetNorthwindCustomerOrdersResponse>(request, response =>
-				Assert.That(response.CustomerOrders.Customer.Id, Is.EqualTo(request.CustomerId)));
-		}
-
 	}
 }

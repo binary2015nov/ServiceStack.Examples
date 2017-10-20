@@ -13,14 +13,10 @@ namespace ServiceStack.Examples.Tests.Integration
 {
 	public class IntegrationTestAppHost : AppHostHttpListenerBase
 	{
-		private static ILog Logger = LogManager.GetLogger(typeof(IntegrationTestAppHost));
-
 		public IntegrationTestAppHost() : base("ServiceStack Examples", typeof(MovieRestService).Assembly) { }
 
 		public override void Configure(Container container)
 		{
-			container.Register<IAppSettings>(AppSettings);
-
 			container.Register(c => new ExampleConfig(c.Resolve<IAppSettings>()));
 			var appConfig = container.Resolve<ExampleConfig>();
 
@@ -35,7 +31,7 @@ namespace ServiceStack.Examples.Tests.Integration
 
 	public class IntegrationTestBase
 	{
-		private const string BaseUrl = "http://127.0.0.1:8080/";
+		private const string BaseUrl = "http://127.0.0.1:8081/";
 
 		private ServiceStackHost appHost;
 
@@ -68,22 +64,11 @@ namespace ServiceStack.Examples.Tests.Integration
 		/// <param name="httpMethod"></param>
 		public void SendToEachEndpoint<TRes>(object request, string httpMethod, Action<TRes> validate)
 		{
-			using (var xmlClient = new XmlServiceClient(BaseUrl))
 			using (var jsonClient = new JsonServiceClient(BaseUrl))
-			using (var jsvClient = new JsvServiceClient(BaseUrl))
 			{
-				xmlClient.HttpMethod = httpMethod;
 				jsonClient.HttpMethod = httpMethod;
-				jsvClient.HttpMethod = httpMethod;
-
-				var xmlResponse = xmlClient.Send<TRes>(request);
-				if (validate != null) validate(xmlResponse);
-
 				var jsonResponse = jsonClient.Send<TRes>(request);
 				if (validate != null) validate(jsonResponse);
-
-				var jsvResponse = jsvClient.Send<TRes>(request);
-				if (validate != null) validate(jsvResponse);
 			}
 		}
 

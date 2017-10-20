@@ -1,5 +1,4 @@
 ﻿using System;
-using Funq;
 using ServiceStack;
 using StarterTemplates.Common;
 
@@ -19,7 +18,7 @@ namespace RootPath45
         /// Configure the container with the necessary routes for your ServiceStack application.
         /// </summary>
         /// <param name="container">The built-in IoC used with ServiceStack.</param>
-        public override void Configure(Container container)
+        public override void Configure(Funq.Container container)
         {
             container.Register(new TodoRepository());
         }

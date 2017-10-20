@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using NUnit.Framework;
+using ServiceStack.Text;
 using ServiceStack.Examples.ServiceInterface.Support;
 using ServiceStack.Examples.ServiceModel;
 using ServiceStack.Examples.ServiceModel.Types;
-using ServiceStack.Text;
 
 namespace ServiceStack.Examples.Tests.Integration
 {
@@ -42,7 +42,7 @@ namespace ServiceStack.Examples.Tests.Integration
 			var updatedMovie = TypeSerializer.Clone(topMovie);
 			updatedMovie.Title = "Updated Movie";
 
-			SendToEachEndpoint<MoviesResponse>(new Movies { Movie = updatedMovie }, HttpMethods.Post, null);
+			SendToEachEndpoint<MoviesResponse>(new Movies { Movie = updatedMovie }, HttpMethods.Put, null);
 
 			SendToEachEndpoint<MoviesResponse>(new Movies { Id = topMovie.Id }, HttpMethods.Get, response =>
 				Assert.That(updatedMovie.Equals(response.Movies[0]), Is.True)
@@ -63,7 +63,7 @@ namespace ServiceStack.Examples.Tests.Integration
 				Genres = new List<string> { "Crime", "Drama", "Thriller" },
 			};
 
-			SendToEachEndpoint<MoviesResponse>(new Movies { Movie = newMovie }, HttpMethods.Put, null);
+			SendToEachEndpoint<MoviesResponse>(new Movies { Movie = newMovie }, HttpMethods.Post, null);
 
 			SendToEachEndpoint<MoviesResponse>(new Movies { Id = newMovie.Id }, HttpMethods.Get, response =>
 				Assert.That(newMovie.Equals(response.Movies[0]), Is.True)
