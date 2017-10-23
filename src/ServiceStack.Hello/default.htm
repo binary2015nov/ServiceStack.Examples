@@ -12,7 +12,7 @@
         <a href="http://mono.servicestack.net/ServiceStack.Hello/">Hello World</a> 
         <a href="http://todos.servicestack.net/">Todos</a>
         <a href="http://redisstackoverflow.servicestack.net/">Redis StackOverflow</a>
-        <a href="http://restfiles.servicestack.net/">Fest Files</a>
+        <a href="http://restfiles.servicestack.net/">Rest Files</a>
         <a href="http://northwind.servicestack.net/">Northwind Database</a>
     </div>
 
@@ -20,8 +20,7 @@
         <img src="Content/Images/btn-github.png" alt="ServiceStack" />
     </a>
 
-    <h1 class="title">
-        Creating a Web service from scratch with ServiceStack</h1>
+    <h1 class="title">Creating a Web Service from Scratch with ServiceStack</h1>
     <p>
         This tutorial will go through and develop and call a simple Hello world Web Service
         from scratch using <a href="http://docs.servicestack.net/">ServiceStack</a> and VS.NET.
@@ -54,13 +53,11 @@
         </p>
     </div>
     <h3>
-        Completing the NuGet Installation</h3>
-    <p>
+        Completing the NuGet Installation
+    </h3>
+    <p style="padding-left:12px;" >
         The NuGet package provides an AppHost template in your project at <b>App_Start\AppHost.cs</b>
-        and some <b>WebServiceExamples.cs</b> to get you started.
-    </p>
-    <p>
-        After looking at the <b>README.txt</b> - <b>Skip the Manual Installation instructions
+        and some <b>WebServiceExamples.cs</b> to get you started. After looking at the <b>README.txt</b> - <b>Skip the Manual Installation instructions
             below</b> and start exploring ServiceStack features at:
     </p>
     <p>
@@ -104,7 +101,7 @@
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">httpHandlers</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">system.web</span><span style="color:blue;">&gt;</span>
  
-<span style="color:blue;">&nbsp;&nbsp;&lt;!--</span><span style="color:green;">&nbsp;Required&nbsp;for&nbsp;IIS7&nbsp;</span><span style="color:blue;">--&gt;</span>
+<span style="color:blue;">&nbsp;&nbsp;&lt;!--</span><span style="color:green;">&nbsp;ServiceStack:&nbsp;Required&nbsp;for&nbsp;IIS7&nbsp;IntegratedMode&nbsp;</span><span style="color:blue;">--&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">system.webServer</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">modules</span><span style="color:blue;">&nbsp;</span><span style="color:red;">runAllManagedModulesForAllRequests</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">true</span>&quot;<span style="color:blue;">/&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">validation</span><span style="color:blue;">&nbsp;</span><span style="color:red;">validateIntegratedModeConfiguration</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">false</span>&quot;<span style="color:blue;">&nbsp;/&gt;</span>
@@ -116,13 +113,11 @@
     <h3 class="hr">
         <a name="custompath"></a>b) You want to use ServiceStack with an existing Web Framework
         - Host web services at: <b>/custompath</b></h3>
-    <p>
+    <p style="padding-left:12px;">
         In order to avoid conflicts with your existing ASP.NET web framework it is recommended
-        to host your ServiceStack web services at a custom path.</p>
-    <p>
-        This will allow you to use ServiceStack together with an existing web framework
-        e.g. <a href="http://www.asp.net/mvc">ASP.NET MVC 3</a> or <a href="https://fubumvc.github.io/">
-            FUBU MVC</a>, etc.</p>
+        to host your ServiceStack web services at a custom path. This will allow you to use ServiceStack together with an existing web framework
+        e.g. <a href="http://www.asp.net/mvc">ASP.NET MVC 3</a> or <a href="https://fubumvc.github.io/">FUBU MVC</a>, etc.
+    </p>
     <h4>
         The location configuration below hosts your webservices at custom path: <b>/servicestack</b></h4>
     <code class="web-config">
@@ -134,7 +129,7 @@
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">httpHandlers</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">system.web</span><span style="color:blue;">&gt;</span>
  
-<span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--</span><span style="color:green;">&nbsp;Required&nbsp;for&nbsp;IIS7&nbsp;</span><span style="color:blue;">--&gt;</span>
+<span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--</span><span style="color:green;">&nbsp;ServiceStack:&nbsp;Required&nbsp;for&nbsp;IIS7&nbsp;IntegratedMode&nbsp;</span><span style="color:blue;">--&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">system.webServer</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">modules</span><span style="color:blue;">&nbsp;</span><span style="color:red;">runAllManagedModulesForAllRequests</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">true</span>&quot;<span style="color:blue;">/&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">validation</span><span style="color:blue;">&nbsp;</span><span style="color:red;">validateIntegratedModeConfiguration</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">false</span>&quot;<span style="color:blue;">&nbsp;/&gt;</span>
@@ -143,16 +138,15 @@
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">handlers</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">system.webServer</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">location</span><span style="color:blue;">&gt;</span>
-<span style="color:blue;">&nbsp;&nbsp;&lt;!--</span><span style="color:green;">&nbsp;Required&nbsp;for&nbsp;MONO&nbsp;</span><span style="color:blue;">--&gt;</span>
+<span style="color:blue;">&nbsp;&nbsp;&lt;!--</span><span style="color:green;">&nbsp;ServiceStack:&nbsp;Required&nbsp;for&nbsp;MONO&nbsp;</span><span style="color:blue;">--&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">system.web</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">httpHandlers</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">add</span><span style="color:blue;">&nbsp;</span><span style="color:red;">path</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">servicestack*</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">type</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">ServiceStack.HttpHandlerFactory,&nbsp;ServiceStack</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">verb</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">*</span>&quot;<span style="color:blue;">/&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">httpHandlers</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">system.web</span><span style="color:blue;">&gt;</span>
-<span style="color:blue;">&nbsp;&nbsp;&lt;!--</span><span style="color:green;">&nbsp;Required&nbsp;for&nbsp;IIS7&nbsp;</span><span style="color:blue;">--&gt;</span>
+<span style="color:blue;">&nbsp;&nbsp;&lt;!--</span><span style="color:green;">&nbsp;ServiceStack:&nbsp;Required&nbsp;for&nbsp;IIS7&nbsp;IntegratedMode&nbsp;</span><span style="color:blue;">--&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">system.webServer</span><span style="color:blue;">&gt;</span>
-<span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--</span><span style="color:green;">&nbsp;ServiceStack:&nbsp;Required&nbsp;</span><span style="color:blue;">--&gt;</span>
-<span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">validation</span><span style="color:blue;">&nbsp;</span><span style="color:red;">validateIntegratedModeConfiguration</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">false</span>&quot;<span style="color:blue;">/&gt;</span>
+<span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">validation</span><span style="color:blue;">&nbsp;</span><span style="color:red;">validateIntegratedModeConfiguration</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">false</span>&quot;<span style="color:blue;">&nbsp;/&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">system.webServer</span><span style="color:blue;">&gt;</span>
     </code>
     <p>
@@ -203,8 +197,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">public</span>&nbsp;<span style="color:blue;">object</span>&nbsp;Any(<span style="color:#2b91af;">Hello</span>&nbsp;request)
 &nbsp;&nbsp;&nbsp;&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">//Looks&nbsp;strange&nbsp;when&nbsp;the&nbsp;name&nbsp;is&nbsp;null&nbsp;so&nbsp;we&nbsp;replace&nbsp;with&nbsp;a&nbsp;generic&nbsp;name.</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">var</span>&nbsp;name&nbsp;=&nbsp;request.Name&nbsp;??&nbsp;<span style="color:#a31515;">&quot;John&nbsp;Doe&quot;</span>;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">return</span>&nbsp;<span style="color:blue;">new</span>&nbsp;<span style="color:#2b91af;">HelloResponse</span>&nbsp;{&nbsp;Result&nbsp;=&nbsp;<span style="color:#a31515;">&quot;Hello,&nbsp;&quot;</span>&nbsp;+&nbsp;name&nbsp;};
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">return</span>&nbsp;<span style="color:blue;">new</span>&nbsp;<span style="color:#2b91af;">HelloResponse</span>&nbsp;{&nbsp;Result&nbsp;=&nbsp;<span style="color:#a31515;">&quot;Hello,&nbsp;&quot;</span>&nbsp;+&nbsp;request.Name&nbsp;??&nbsp;<span style="color:#a31515;">&quot;John&nbsp;Doe</span>&quot;&nbsp;};
 &nbsp;&nbsp;&nbsp;&nbsp;}
 &nbsp;&nbsp;}
     </code>
@@ -272,7 +265,7 @@
     <div>
         The <b>metadata</b> page contains:
         <ul>
-            <li>A list of all your webservices and the endpoints they are available on. </li>
+            <li>A list of all your web services and the endpoints they are available on. </li>
             <li>A list of coding examples showing you how to call each endpoint a number of different
                 ways. </li>
             <li>Links to all the XSD types used by your web services </li>
@@ -299,14 +292,12 @@
         <h3>
             User defined REST-ful urls</h3>
         <p>
-            Accessible via any REST-ful urls defined using the [RestService] Attribute. e.g.
-            in this case:
+            Accessible via any REST-ful urls defined using the [Route] Attribute. e.g. in this case:
         </p>
         <h4>
             /servicestack/<b>hello/<i>{Name}</i></b>
         </h4>
     </div>
-    <a name="predefinedroutes"></a>
     <h2>
         XML, JSON, <a href="https://github.com/ServiceStack/ServiceStack/wiki/HTML5ReportFormat">
             HTML5</a>, <a href="https://github.com/ServiceStack/ServiceStack.Text/wiki/JSV-Format">
@@ -436,7 +427,7 @@
     <p>
         <em>NOTE: ServiceStack also lets you submit any arbitary complex type (using <a
             href="https://github.com/ServiceStack/ServiceStack.Text/wiki/JSV-Format">JSV format</a>)
-            via the query string or form data: <a href="../ServiceStack.Examples.Host.Web/ServiceStack/Json/Reply/StoreLogs?Loggers=[{Id:786,Devices:[{Id:5955,Type:Panel,TimeStamp:1199303309,Channels:[{Name:Temperature,Value:58},{Name:Status,Value:On}]},{Id:5956,Type:Tank,TimeStamp:1199303309,Channels:[{Name:Volume,Value:10035},{Name:Status,Value:Full}]}]}]">
+            via the query string or form data: <a href="http://localhost:64067/ServiceStack/Json/Reply/StoreLogs?Loggers=[{Id:786,Devices:[{Id:5955,Type:Panel,TimeStamp:1199303309,Channels:[{Name:Temperature,Value:58},{Name:Status,Value:On}]},{Id:5956,Type:Tank,TimeStamp:1199303309,Channels:[{Name:Volume,Value:10035},{Name:Status,Value:Full}]}]}]">
                 see this example</a>. </em>
     </p>
     <h4>
