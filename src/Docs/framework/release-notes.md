@@ -479,12 +479,12 @@ Use the **?format=[json|xml|html|csv|jsv]** to toggle and view the same web serv
 ### New ServiceStack.Northwind Example project added
 
 In order to be able to better demonstrate features with a 'real-world' DataSet, a new ServiceStack.Northwind project has been added which inspects the Northwind dataset from an SQLite database.
-A live demo is hosted at [[http://mono.servicestack.net/ServiceStack.Northwind/]]. Here are some links below to better demonstrate the new HTML format with a real-world dataset:
+A live demo is hosted at [[http://northwind.servicestack.net/]]. Here are some links below to better demonstrate the new HTML format with a real-world dataset:
 
 #### Northwind Database REST web services
-  * [All Customers](http://mono.servicestack.net/ServiceStack.Northwind/customers) 
-  * [Customer Detail](http://mono.servicestack.net/ServiceStack.Northwind/customers/ALFKI)
-  * [Customer Orders](http://mono.servicestack.net/ServiceStack.Northwind/customers/ALFKI/orders)
+  * [All Customers](http://northwind.servicestack.net/customers) 
+  * [Customer Detail](http://northwind.servicestack.net/customers/ALFKI)
+  * [Customer Orders](http://northwind.servicestack.net/customers/ALFKI/orders)
 
 
 ### Improved Caching
@@ -510,9 +510,9 @@ The above code caches the most optimal output based on browser capabilities, i.e
 To see the difference caching provides, here are cached equivalents of the above REST web service calls:
 
 #### Northwind Database **Cached** REST web services
-  * [All Customers](http://mono.servicestack.net/ServiceStack.Northwind/cached/customers) 
-  * [Customer Detail](http://mono.servicestack.net/ServiceStack.Northwind/cached/customers/ALFKI)
-  * [Customer Orders](http://mono.servicestack.net/ServiceStack.Northwind/cached/customers/ALFKI/orders)
+  * [All Customers](http://northwind.servicestack.net/cached/customers) 
+  * [Customer Detail](http://northwind.servicestack.net/cached/customers/ALFKI)
+  * [Customer Orders](http://northwind.servicestack.net/cached/customers/ALFKI/orders)
 
 
 ### API Changes

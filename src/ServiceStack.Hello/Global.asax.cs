@@ -48,6 +48,8 @@ namespace ServiceStack.Hello
             /// <param name="container">The built-in IoC used with ServiceStack.</param>
             public override void Configure(Funq.Container container)
             {
+                Plugins.Add(new SoapFormat());
+
                 //Register user-defined REST-ful urls. You can access the service at the url similar to the following.
                 //http://localhost:62577/servicestack/hello or http://localhost:62577/servicestack/hello/John%20Doe
                 //You can change /servicestack/ to a custom path in the web.config.

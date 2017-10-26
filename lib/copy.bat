@@ -19,3 +19,5 @@ COPY ..\..\ServiceStack.OrmLite\src\ServiceStack.OrmLite.Sqlite\bin\%BUILD%\net4
 COPY ..\..\ServiceStack.OrmLite\src\ServiceStack.OrmLite.Sqlite\bin\%BUILD%\net45\System.Data.SQLite.dll
 COPY ..\..\ServiceStack.OrmLite\src\ServiceStack.OrmLite.Sqlite\bin\%BUILD%\net45\x64\* x64
 COPY ..\..\ServiceStack.OrmLite\src\ServiceStack.OrmLite.Sqlite\bin\%BUILD%\net45\x86\* x86
+
+COPY ..\..\ServiceStack\src\ServiceStack.Razor\bin\%BUILD%\net45\ServiceStack.Razor.*

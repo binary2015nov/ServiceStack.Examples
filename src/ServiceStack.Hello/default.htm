@@ -132,7 +132,6 @@
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--</span><span style="color:green;">&nbsp;ServiceStack:&nbsp;Required&nbsp;for&nbsp;IIS7&nbsp;IntegratedMode&nbsp;</span><span style="color:blue;">--&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">system.webServer</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">modules</span><span style="color:blue;">&nbsp;</span><span style="color:red;">runAllManagedModulesForAllRequests</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">true</span>&quot;<span style="color:blue;">/&gt;</span>
-<span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">validation</span><span style="color:blue;">&nbsp;</span><span style="color:red;">validateIntegratedModeConfiguration</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">false</span>&quot;<span style="color:blue;">&nbsp;/&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">handlers</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">add</span><span style="color:blue;">&nbsp;</span><span style="color:red;">path</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">*</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">name</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">ServiceStack.Factory</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">type</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">ServiceStack.HttpHandlerFactory,&nbsp;ServiceStack</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">verb</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">*</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">preCondition</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">integratedMode</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">resourceType</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">Unspecified</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">allowPathInfo</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">true</span>&quot;<span style="color:blue;">&nbsp;/&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">handlers</span><span style="color:blue;">&gt;</span>
@@ -227,8 +226,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:gray;">///</span><span style="color:green;">&nbsp;</span><span style="color:gray;">&lt;param&nbsp;name=</span><span style="color:gray;">&quot;container&quot;</span><span style="color:gray;">&gt;</span><span style="color:green;">The&nbsp;built-in&nbsp;IoC&nbsp;used&nbsp;with&nbsp;ServiceStack.</span><span style="color:gray;">&lt;/param&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">public</span>&nbsp;<span style="color:blue;">override</span>&nbsp;<span style="color:blue;">void</span>&nbsp;Configure(<span style="color:#2b91af;">Container</span>&nbsp;container)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Plugins.Add(new&nbsp;SoapFormat());</span>
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">//Register&nbsp;user-defined&nbsp;REST-ful&nbsp;urls.&nbsp;You&nbsp;can&nbsp;access&nbsp;the&nbsp;service&nbsp;at&nbsp;the&nbsp;url&nbsp;similar&nbsp;to&nbsp;the&nbsp;following.</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">//http://localhost/ServiceStack.Hello/servicestack/hello&nbsp;or&nbsp;http://localhost/ServiceStack.Hello/servicestack/hello/John%20Doe</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">//</span><span style="color:blue">http://localhost:62577/servicestack/hello</span>&nbsp;<span style="color:green;">or</span>&nbsp;<span style="color:blue">http://localhost:62577/servicestack/hello/John%20Doe</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">//You&nbsp;can&nbsp;change&nbsp;/servicestack/&nbsp;to&nbsp;a&nbsp;custom&nbsp;path&nbsp;in&nbsp;the&nbsp;web.config.</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Routes
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Add&lt;<span style="color:#2b91af;">Hello</span>&gt;(<span style="color:#a31515;">&quot;/hello&quot;</span>)
@@ -365,7 +366,7 @@
                     <a href="servicestack/html/reply/Hello?Name=World">/servicestack/html/reply/Hello?Name=World</a>
                 </td>
                 <td>
-                    <a href="servicestack/html/metadata?op=Hello">/servicestack/html/metadata?op=Hello</a>
+                    
                 </td>
                 <td>
                     <form action="servicestack/html/reply/Hello" method="post">

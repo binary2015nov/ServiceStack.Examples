@@ -1,17 +1,16 @@
-﻿using Funq;
-using ServiceStack;
+﻿using ServiceStack;
 
 namespace StarterTemplates.Common
 {
 	//ASP.NET Hosts
 	public class StarterTemplateAppHost : AppHostBase
 	{
-		public StarterTemplateAppHost() : base(string.Empty, typeof(HelloService).Assembly)
+		public StarterTemplateAppHost() : base("", typeof(HelloService).Assembly)
 		{
 			ServiceName = AppSettings.Get("ServiceName") ?? "StarterTemplate ASP.NET Host";
 		}
 
-		public override void Configure(Container container)
+		public override void Configure(Funq.Container container)
 		{
 			container.Register(new TodoRepository());
 		}
@@ -20,12 +19,12 @@ namespace StarterTemplates.Common
 	//HttpListener Hosts
 	public class StarterTemplateAppListenerHost : AppHostHttpListenerBase
 	{
-		public StarterTemplateAppListenerHost() : base(string.Empty, typeof(HelloService).Assembly)
+		public StarterTemplateAppListenerHost() : base("", typeof(HelloService).Assembly)
 		{
 			ServiceName = AppSettings.Get("ServiceName") ?? "StarterTemplate HttpListener";
 		}
 
-		public override void Configure(Container container)
+		public override void Configure(Funq.Container container)
 		{
 			container.Register(new TodoRepository());
 		}

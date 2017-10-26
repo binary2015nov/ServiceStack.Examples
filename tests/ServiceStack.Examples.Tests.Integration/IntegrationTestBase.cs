@@ -24,8 +24,6 @@ namespace ServiceStack.Examples.Tests.Integration
 				 new OrmLiteConnectionFactory(
 					":memory:",			//Use an in-memory database instead
 					SqliteDialect.Provider));
-
-			ConfigureDatabase.Init(container.Resolve<IDbConnectionFactory>());
 		}
 	}
 
@@ -48,6 +46,12 @@ namespace ServiceStack.Examples.Tests.Integration
 		public void TestFixtureTearDown()
 		{
 			appHost.Dispose();
+		}
+
+		[SetUp]
+		public void OnEachMethodBefore()
+		{
+			ConfigureDatabase.Init(appHost.Resolve<IDbConnectionFactory>());
 		}
 
 		public void SendToEachEndpoint<TRes>(object request, Action<TRes> validate)

@@ -7,7 +7,7 @@ namespace Backbone.Todos
         protected void Application_Start(object sender, EventArgs e)
         {
             //Initialize your ServiceStack AppHost
-            new TodosAppHost().Init();
+            new TodoAppHost().Init();
         }
     }
 }

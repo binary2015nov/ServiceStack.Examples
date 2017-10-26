@@ -7,7 +7,8 @@ namespace RestFiles.ServiceInterface.Support
     {
         public static string GetSafePath(this string filePath)
         {
-            if (string.IsNullOrEmpty(filePath)) return string.Empty;
+            if (string.IsNullOrEmpty(filePath))
+                return string.Empty;
 
             //Strip invalid chars
             foreach (var invalidChar in Path.GetInvalidPathChars())

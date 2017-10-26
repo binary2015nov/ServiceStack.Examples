@@ -9,7 +9,7 @@ namespace ConsoleAppHost
 {
     class Program
     {
-        private static readonly string ListeningOn = ConfigUtils.GetAppSetting("ListeningOn");
+        private static readonly string ListeningOn = AppSettings.Default.Get("ListeningOn");
 
         /// <summary>
         /// Create your ServiceStack http listener application with a singleton AppHost.
@@ -43,7 +43,6 @@ namespace ConsoleAppHost
 
 
             Process.Start(ListeningOn);
-            Console.WriteLine("ReadKey()");
             Console.ReadKey();
         }
     }

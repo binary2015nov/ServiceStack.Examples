@@ -4,7 +4,7 @@
 	<title>ServiceStack Movie Database</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="Content/Css/default.css" />
-	<script src="Scripts/jquery-1.10.2.js"></script>
+	<script src="Scripts/jquery-1.10.2.min.js"></script>
 	<script>
 		//Simple string formatting enhancement
 		if (!String.format) { String.prototype.format = function () { var args = arguments; return this.replace(/\{(\d+)\}/g, function (match, number) { return (typeof args[number] !== 'undefined') ? args[number] : match; }); }; }
@@ -152,24 +152,21 @@
 	</script>
 </head>
 <body>
-	<a href="https://servicestack.net" style="position: relative; top:5px; left: 10px; ">
+	<a id="logo" href="https://servicestack.net">
 		<img src="Content/Images/logo-24x24.png" alt="ServiceStack Home" />
 	</a>
 	<div id="header-links">
-		<a href="http://mono.servicestack.net/ServiceStack.Hello/">Hello World</a> <a href="http://todos.servicestack.net/">Todos</a>
-		<a href="http://redisstackoverflow.servicestack.net/">Redis StackOverflow</a> <a href="http://restfiles.servicestack.net/">
-			REST
-			Files
-		</a> <a href="../ServiceStack.MovieRest/">REST Movies</a> <a href="../ServiceStack.Northwind/">
-			Northwind Database
-		</a> <a href="../ServiceStack.Examples.Clients/">Ajax Client</a>
+        <a href="http://mono.servicestack.net/ServiceStack.Hello/">Hello World</a>
+        <a href="http://todos.servicestack.net/">Todos</a>
+        <a href="http://redisstackoverflow.servicestack.net/">Redis StackOverflow</a> 
+        <a href="http://restfiles.servicestack.net/">REST Files</a> 
+        <a href="http://northwind.servicestack.net/">Northwind Database</a>
 	</div>
-	<a class="lnk-src" href="https://github.com/ServiceStack/ServiceStack">
-		<img src="Content/Images/btn-github.png" width="186" height="84" /></a>
-	<h1>
-		<a href="./">Nothing but REST!</a></h1>
+	<a id="github" href="https://github.com/ServiceStack/ServiceStack">
+		<img src="Content/Images/btn-github.png" /></a>
+	<h1>Nothing but REST!</h1>
 	<div id="summary">
-		Clean mark-up, No config &amp; No code-gen - Complete Ajax CRUD app in <a href="https://github.com/ServiceStack/ServiceStack.Examples/blob/master/src/ServiceStack.MovieRest/default.htm">1 page of jQuery</a> and <a href="https://github.com/ServiceStack/ServiceStack.Examples/blob/master/src/ServiceStack.MovieRest/MovieService.cs">1 page of C# server code</a>.
+		Clean mark-up, No config &amp; No code-gen - Complete Ajax CRUD app in <a href="https://github.com/ServiceStack/ServiceStack.Examples/blob/master/src/ServiceStack.MovieRest/Web/default.htm">1 page of jQuery</a> and <a href="https://github.com/ServiceStack/ServiceStack.Examples/blob/master/src/ServiceStack.MovieRest/Web/MovieService.cs">1 page of C# server code</a>.
    
 	</div>
 	<button id="btnReset">Reset Movie Database</button>

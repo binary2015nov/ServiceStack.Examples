@@ -1,7 +1,6 @@
 BODY {
 	background: #fff url(../Images/bg-body-1024.png) repeat-y top left;
 	font: normal normal normal 13.34px/normal helvetica, arial, freesans, clean, sans-serif;
-	padding: 0 5px 20px 10px;
 	width: 940px;
 }
 
@@ -9,16 +8,27 @@ A IMG {
 	border: none;
 }
 
+#logo {
+    position:absolute;
+    top: 5px;
+    left: 10px;
+}
+
 #header-links {
-	top: 10px;
-	left: 270px;
-	position: absolute;
+    display: inline;
+    position: relative;
+    left: 240px;
 }
 
 	#header-links A, #footer-links A {
 		color: #00F;
 		margin-left: 0.5em;
 	}
+
+#github {
+    clear: right;
+    float: right;
+}
 
 code {
 	background-color: ghostWhite !important;
@@ -71,18 +81,8 @@ INPUT[type=text] {
 	display: inline;
 }
 
-H1 A {
-	background: url(http://www.servicestack.net/logo-servicestack.png) no-repeat;
-	display: block;
-	height: 40px;
-	padding: 70px 30px 0 120px;
-	color: #051;
-	margin: 0 50px 20px 0;
-	text-decoration: none;
-}
-
 #summary {
-	margin: 0 0 20px 0;
+	margin: 30px 0 20px 0;
 	padding: 10px;
 	background: #ffc;
 	color: green;
@@ -156,7 +156,7 @@ SELECT[name=genres] {
 }
 
 #csvformat {
-	background: url(http://www.servicestack.net/excel16x16.gif) no-repeat top left;
+	background: url(https://servicestack.net/excel16x16.gif) no-repeat top left;
 	padding: 0 0 0 20px;
 	margin: 15px 0 0 0;
 }

@@ -3,20 +3,15 @@ using System.Collections.Generic;
 
 namespace ServiceStack.Examples.ServiceModel.Types
 {
-	public class Movie 
+	public class Movie
 	{
-		public Movie()
-		{
-			this.Genres = new List<string>();
-		}
-
 		public string Id { get; set; }		
 		public string Title { get; set; }		
 		public decimal Rating { get; set; }		
 		public string Director { get; set; }		
 		public DateTime ReleaseDate { get; set; }		
-		public string TagLine { get; set; }		
-		public List<string> Genres { get; set; }
+		public string TagLine { get; set; }
+		public List<string> Genres { get; set; } = new List<string>();
 
 		/// <summary>
 		/// AutoGen ReSharper code, only required by tests

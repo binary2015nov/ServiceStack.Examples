@@ -48,7 +48,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ServiceStack, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ServiceStack, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\ServiceStack.dll</HintPath>
     </Reference>
@@ -63,6 +63,9 @@
     <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Razor">
+      <HintPath>..\..\lib\ServiceStack.Razor.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Text, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -82,6 +85,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="img\favicon.png" />
     <Content Include="Views\Shared\_Layout.shtml" />
     <Content Include="css\default.css" />
     <Content Include="css\styles.css" />
@@ -90,8 +94,6 @@
     <Content Include="img\arr-2.gif" />
     <Content Include="img\boat.jpg" />
     <Content Include="img\date.png" />
-    <Content Include="img\favicon.bmp" />
-    <Content Include="favicon.ico" />
     <Content Include="img\field.gif" />
     <Content Include="img\has_dropdown-hover.png" />
     <Content Include="img\ico-rss-2.png" />
@@ -123,7 +125,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="contrib\servicestack-contrib.md" />
@@ -141,7 +142,6 @@
     <None Include="markdown\about.md" />
     <None Include="markdown\markdown-razor.md" />
     <None Include="markdown\markdown-features.md" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="ormlite\ormlite-overview.md" />
     <None Include="Pages.json" />
     <None Include="redis-admin-ui\redis-admin-ui-overview.md" />

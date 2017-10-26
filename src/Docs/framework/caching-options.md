@@ -8,11 +8,11 @@ for the following cache providers:
 
 # Live Example and code
 
-A live demo of the ICacheClient is available in [The ServiceStack.Northwind's example project](http://mono.servicestack.net/ServiceStack.Northwind/). Here are some requests to cached services:
+A live demo of the ICacheClient is available in [The ServiceStack.Northwind's example project](http://northwind.servicestack.net/). Here are some requests to cached services:
 
-  * [/customers](http://mono.servicestack.net/ServiceStack.Northwind/cached/customers)
-  * [/customers/ALFKI](http://mono.servicestack.net/ServiceStack.Northwind/cached/customers/ALFKI)
-  * [/customers/ALFKI/orders](http://mono.servicestack.net/ServiceStack.Northwind/cached/customers/ALFKI/orders)
+  * [/customers](http://northwind.servicestack.net/cached/customers)
+  * [/customers/ALFKI](http://northwind.servicestack.net/cached/customers/ALFKI)
+  * [/customers/ALFKI/orders](http://northwind.servicestack.net/cached/customers/ALFKI/orders)
 
 Which are simply existing web services wrapped using **ICacheClient** that are contained in [CachedServices.cs](https://github.com/ServiceStack/ServiceStack.Examples/blob/master/src/ServiceStack.Northwind/ServiceStack.Northwind.ServiceInterface/CachedServices.cs)
 

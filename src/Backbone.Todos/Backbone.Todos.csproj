@@ -105,7 +105,7 @@
     <Content Include="Scripts\backbone.js" />
     <Content Include="Scripts\jquery-1.5.js" />
     <Content Include="Scripts\underscore-1.1.5.js" />
-    <Content Include="Content\Css\todos.css" />
+    <Content Include="Content\Css\default.css" />
     <Content Include="Scripts\todos.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -116,7 +116,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TodosAppHost.cs" />
+    <Compile Include="TodoAppHost.cs" />
+    <Compile Include="TodoService.cs" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

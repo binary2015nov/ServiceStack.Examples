@@ -14,7 +14,7 @@ namespace ServiceStack.MovieRest.App_Start
 		{
 			Config.DebugMode = true; //Show StackTraces for easier debugging (default auto inferred by Debug/Release builds)
 			Config.UseCamelCase = true; //Set JSON web services to return idiomatic JSON camelCase properties
-			JsConfig.DateHandler = DateHandler.ISO8601;
+			JsConfig.DateHandler = DateHandler.ISO8601DateOnly;
 		}
 
 		public override void Configure(Container container)
@@ -29,7 +29,7 @@ namespace ServiceStack.MovieRest.App_Start
 		{
 			using (var resetMovies = Resolve<ResetMoviesService>())
 			{
-				resetMovies.Any(null);
+				resetMovies.Any(new ResetMovies());
 			}
 		}
 	}

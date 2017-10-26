@@ -1,8 +1,7 @@
 ﻿using System.Linq;
-using Docs.Logic;
-using Funq;
 using ServiceStack;
 using ServiceStack.Formats;
+using Docs.Logic;
 
 namespace Docs
 {
@@ -12,15 +11,13 @@ namespace Docs
 
         protected override void OnBeforeInit()
         {
-            var baseUrl = AppSettings.Get("WebHostUrl");
-            PageManager.Instance.Init("~/Pages.json".MapServerPath(), baseUrl);
-            Config.WebHostUrl = baseUrl; //replaces ~/ with Url
-            Config.MarkdownBaseType = typeof(CustomMarkdownPage); //set custom base for all Markdown pages
+            Config.WebHostUrl = AppSettings.Get("WebHostUrl");
+            PageManager.Instance.Init(WebHostPhysicalPath.AppendPath("Pages.json"), Config.WebHostUrl);
         }
 
-        public override void Configure(Container container)
+        public override void Configure(Funq.Container container)
         {
-            container.Register(PageManager.Instance);
+            Plugins.Add(new MarkdownFormat());
 
             Routes
                 .Add<Page>("/pages")
@@ -30,7 +27,6 @@ namespace Docs
                 .Add<Search>("/search/{Query}");
 
             var plugin = (MarkdownFormat)Plugins.First(x => x is MarkdownFormat);
-            var page = plugin.FindByPathInfo("/about");
         }
     }
 }

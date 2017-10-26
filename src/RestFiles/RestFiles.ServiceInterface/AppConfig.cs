@@ -13,13 +13,13 @@ namespace RestFiles.ServiceInterface
 			this.ExcludeDirectories = new List<string>();
 		}
 
-		public AppConfig(IAppSettings resources)
+		public AppConfig(IAppSettings settings)
 		{
-			this.RootDirectory = resources.Get("RootDirectory").MapHostAbsolutePath()
+			this.RootDirectory = settings.Get("RootDirectory").MapHostAbsolutePath()
 				.Replace('\\', Path.DirectorySeparatorChar);
 
-			this.TextFileExtensions = resources.GetList("TextFileExtensions");
-			this.ExcludeDirectories = resources.GetList("ExcludeDirectories");
+			this.TextFileExtensions = settings.GetList("TextFileExtensions");
+			this.ExcludeDirectories = settings.GetList("ExcludeDirectories");
 		}
 
 		public string RootDirectory { get; set; }

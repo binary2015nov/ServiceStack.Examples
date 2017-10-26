@@ -95,7 +95,7 @@ namespace ServiceStack.MovieRest
 		/// <summary>
 		/// GET /movies/{Id}
 		/// </summary>
-		public MovieResponse Get(Movie movie)
+		public object Get(Movie movie)
 		{
 			return new MovieResponse
 			{
@@ -124,7 +124,7 @@ namespace ServiceStack.MovieRest
 			{
 				StatusCode = HttpStatusCode.Created,
 				Headers = {
-					{HttpHeaders.Location, base.Request.AbsoluteUri.CombineWith(newMovieId.ToString())}
+					{ HttpHeaders.Location, base.Request.AbsoluteUri.AppendPath(newMovieId.ToString()) }
 				}
 			};
 		}
@@ -140,7 +140,7 @@ namespace ServiceStack.MovieRest
 			{
 				StatusCode = HttpStatusCode.NoContent,
 				Headers = {
-					{ HttpHeaders.Location, this.Request.AbsoluteUri.CombineWith(movie.Id.ToString()) }
+					{ HttpHeaders.Location, this.Request.AbsoluteUri.AppendPath(movie.Id.ToString()) }
 				}
 			};
 		}
@@ -156,7 +156,7 @@ namespace ServiceStack.MovieRest
 			{
 				StatusCode = HttpStatusCode.NoContent,
 				Headers = {
-					{HttpHeaders.Location, this.Request.AbsoluteUri.CombineWith(request.Id.ToString())}
+					{ HttpHeaders.Location, this.Request.AbsoluteUri.AppendPath(request.Id.ToString()) }
 				}
 			};
 		}
