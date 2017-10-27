@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisStackOverflow.ServiceInterface", "RedisStackOverflow.ServiceInterface\RedisStackOverflow.ServiceInterface.csproj", "{41C8C157-B2A4-4DDE-B153-233E46109F39}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisStackOverflow", "RedisStackOverflow\RedisStackOverflow.csproj", "{CCAC74EA-08EE-41A8-BF01-8F1B7D207144}"

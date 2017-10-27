@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestIntro", "RestIntro\RestIntro.csproj", "{2E71EB42-595D-4181-A27B-BD85DCA739D1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestIntro.ServiceModel", "RestIntro.ServiceModel\RestIntro.ServiceModel.csproj", "{8ED227D1-0C83-4A1D-91D0-1B9DFCD8E114}"
