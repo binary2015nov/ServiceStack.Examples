@@ -6,7 +6,7 @@ namespace RedisStackOverflow.ServiceInterface
    /// <summary>
     /// Create your ServiceStack rest-ful web service implementation. 
     /// </summary>
-    public class QuestionsService : Service
+    public class QuestionService : Service
     {
         /// <summary>
         /// Gets or sets the repository. The built-in IoC used with ServiceStack autowires this property.

@@ -6,7 +6,7 @@
 </head>
 <body>
     <a id="logo" href="https://servicestack.net">
-        <img src="Content/Images/logo-24x24.png" alt="ServiceStack Home" /></a>
+        <img src="Content/Images/logo-24x24.png" alt="ServiceStack.net" /></a>
 
     <div id="header-links">
         <a href="http://mono.servicestack.net/ServiceStack.Hello/">Hello World</a> 
@@ -16,19 +16,18 @@
         <a href="http://northwind.servicestack.net/">Northwind Database</a>
     </div>
 
-    <a id="github" href="https://github.com/ServiceStack/ServiceStack">
-        <img src="Content/Images/btn-github.png" alt="ServiceStack" />
+    <a id="github" href="https://github.com/binary2015nov/ServiceStack.Examples" title="View source on GitHub">
+        <img src="Content/Images/btn-github.png" alt="GitHub" />
     </a>
 
-    <h1 class="title">Creating a Web Service from Scratch with ServiceStack</h1>
+    <h1 style="border:none;">Creating a Web Service from Scratch with ServiceStack</h1>
     <p>
-        This tutorial will go through and develop and call a simple Hello world Web Service
-        from scratch using <a href="http://docs.servicestack.net/">ServiceStack</a> and VS.NET.
+        This tutorial will go through and develop and call a simple Hello World web service
+        from scratch using <a href="https://servicestack.net/">ServiceStack</a> and VS.NET.
     </p>
     <h2>Install Automatically</h2>
     <p>
-        You can skip steps 1 - 3 below by installing one of the NuGet
-        Host packages below:
+        You can skip steps 1 - 3 below by installing one of the NuGet Host packages below:
     </p>
     <h3>
         Install ServiceStack Only at root path <b style="font-size: 20px; line-height: 20px">/</b>
@@ -55,7 +54,7 @@
     <h3>
         Completing the NuGet Installation
     </h3>
-    <p style="padding-left:12px;" >
+    <p>
         The NuGet package provides an AppHost template in your project at <b>App_Start\AppHost.cs</b>
         and some <b>WebServiceExamples.cs</b> to get you started. After looking at the <b>README.txt</b> - <b>Skip the Manual Installation instructions
             below</b> and start exploring ServiceStack features at:
@@ -85,15 +84,14 @@
         application <strong>Web.config</strong>:
     </p>
     <h3 class="hr">
-        <a name="rootpath"></a>a) You do not require an existing Web Framework - Host from
-        the root path: <b>/</b></h3>
+        a) You do not require an existing Web Framework - Host from the root path: <b>/</b></h3>
     <p>
         You can host at the root path <b>/</b> when you don't need to use an existing Web
         Framework with your ServiceStack web services (i.e. project only has static files)
     </p>
     <h4>
-        The configuration below allows you to host your webservices from the root path:
-        <b>/</b></h4>
+        The configuration below allows you to host your webservices from the root path:<b>/</b>
+    </h4>
     <code class="web-config">
 <span style="color:blue;">&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">system.web</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">httpHandlers</span><span style="color:blue;">&gt;</span>
@@ -157,12 +155,10 @@
         method e.g: <b>routes.IgnoreRoute ("servicestack/{*pathInfo}");</b>
     </p>
     <a name="create"></a>
-    <h2>
-        3. Creating your first Web Service</h2>
+    <h2>3. Creating your first Web Service</h2>
     <p>
         For simplicity we will add the Web Service and the start up script all in the same
-        Global.asax.cs. To do this Right-click on your project and go </p>
-        <p><strong>Add -&gt; New Item</strong> then select the <strong>Global Application class</strong>.
+        Global.asax.cs. To do this Right-click on your project and go <strong>Add -&gt; New Item</strong> then select the <strong>Global Application class</strong>.
     </p>
     <p>
         Within the same file add the following code:
@@ -203,8 +199,7 @@
     <h2>
         4. Registering your web services and starting your application</h2>
     <p>
-        The final step is to Configure setup to tell ServiceStack where to find your web
-        services: <a name="AppHost"></a>
+        The final step is to Configure setup to tell ServiceStack where to find your web services: <a name="AppHost"></a>
     </p>
     <h4>
         Web Service AppHost Singleton</h4>
@@ -226,7 +221,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:gray;">///</span><span style="color:green;">&nbsp;</span><span style="color:gray;">&lt;param&nbsp;name=</span><span style="color:gray;">&quot;container&quot;</span><span style="color:gray;">&gt;</span><span style="color:green;">The&nbsp;built-in&nbsp;IoC&nbsp;used&nbsp;with&nbsp;ServiceStack.</span><span style="color:gray;">&lt;/param&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">public</span>&nbsp;<span style="color:blue;">override</span>&nbsp;<span style="color:blue;">void</span>&nbsp;Configure(<span style="color:#2b91af;">Container</span>&nbsp;container)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Plugins.Add(new&nbsp;SoapFormat());</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Plugins.Add(new&nbsp;<span style="color:blue;">SoapFormat()</span>);</span>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">//Register&nbsp;user-defined&nbsp;REST-ful&nbsp;urls.&nbsp;You&nbsp;can&nbsp;access&nbsp;the&nbsp;service&nbsp;at&nbsp;the&nbsp;url&nbsp;similar&nbsp;to&nbsp;the&nbsp;following.</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">//</span><span style="color:blue">http://localhost:62577/servicestack/hello</span>&nbsp;<span style="color:green;">or</span>&nbsp;<span style="color:blue">http://localhost:62577/servicestack/hello/John%20Doe</span>
@@ -248,8 +243,7 @@
         Done! You now have a working application :)
     </p>
     <a name="view-webservice"></a>
-    <h1>
-        Viewing your Web Services</h1>
+    <h1>Viewing your Web Services</h1>
     <p>
         Now that you have a working Web Service lets see what ServiceStack does for you
         out of the box:
@@ -450,7 +444,7 @@
 &nbsp;&nbsp;&nbsp;<span style="color:blue;">&lt;</span><span style="color:maroon;">input</span>&nbsp;<span style="color:red;">type</span><span style="color:blue;">=</span><span style="color:blue;">&quot;submit&quot;</span>&nbsp;<span style="color:blue;">/&gt;</span>
 <span style="color:blue;">&lt;/</span><span style="color:maroon;">form</span><span style="color:blue;">&gt;</span></code>
     <div>
-        Example:<br />
+        Example:
         <form action="servicestack/xml/reply/Hello" method="post">
         <label>Name:</label>
         <input type="text" name="Name" value="World!" />

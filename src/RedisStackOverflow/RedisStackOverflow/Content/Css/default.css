@@ -1,20 +1,33 @@
-BODY
-{
+BODY {
     background: #fff url(../Images/bg-body-1024.png) repeat-y top left;
     font: normal normal normal 13.34px/normal helvetica, arial, freesans, clean, sans-serif;
     width: 940px;
+    margin:0 auto; 
+    background-position-x:center;
+}
+
+#logo {
+    position: relative;
+    top: 5px;
+    left: 10px;
 }
 
 #header-links
 {
-    top: 10px;
-    left: 270px;
+    display:inline;
+    left: 240px;
     position:relative;
 }
 #header-links A, #footer-links A
 {
     color: #0000FF;
     margin-left: 0.5em;
+}
+
+#github {
+    clear: right;
+    padding: 18px 18px 0 0;
+    float: right;
 }
 
 DD, DL, DT, UL, LI {
@@ -55,12 +68,7 @@ INPUT[type=text]
     width: 400px;
     padding: 2px 5px;
 }
-#github
-{
-    clear: right;
-    padding: 26px 17px 0 0;
-    float: right;
-}
+
 .ib
 {
     position: relative;

@@ -3,7 +3,7 @@ using ServiceStack;
 
 namespace Docs.Logic
 {
-	public class Category
+	public class Category : IReturn<CategoryResponse>
 	{
 		public string Name { get; set; }
 	}

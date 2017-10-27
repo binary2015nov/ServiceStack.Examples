@@ -1,9 +1,9 @@
 using NUnit.Framework;
+using ServiceStack.OrmLite;
+using ServiceStack.OrmLite.Legacy;
 using ServiceStack.Examples.ServiceInterface;
 using ServiceStack.Examples.ServiceModel;
 using ServiceStack.Examples.ServiceModel.Types;
-using ServiceStack.OrmLite;
-using ServiceStack.OrmLite.Legacy;
 
 namespace ServiceStack.Examples.Tests
 {

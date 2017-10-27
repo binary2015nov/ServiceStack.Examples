@@ -108,6 +108,4 @@ namespace RedisStackOverflow.ServiceModel
         public long VotesDownCount { get; set; }
         public List<AnswerResult> Answers { get; set; }
     }
-
-
 }

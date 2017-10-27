@@ -37,9 +37,7 @@ namespace ConsoleAppHost
             appHost.Init();
             appHost.Start(ListeningOn);
 
-            Console.WriteLine("Started listening on: " + ListeningOn);
-
-            Console.WriteLine("AppHost Created at {0}, listening on {1}", appHost.CreatedAt, ListeningOn);
+            Console.WriteLine("AppHost created at {0}, listening on {1}", appHost.CreatedAt, ListeningOn);
 
 
             Process.Start(ListeningOn);

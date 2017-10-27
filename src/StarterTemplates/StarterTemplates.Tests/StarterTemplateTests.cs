@@ -19,7 +19,7 @@ namespace StarterTemplates.Tests
 		{
 			try
 			{
-				var webReq = (HttpWebRequest)WebRequest.Create(url);
+				var webReq = WebRequest.CreateHttp(url);
 				var webRes = (HttpWebResponse)webReq.GetResponse();
 				var statusCode = (int)webRes.StatusCode;				
 
@@ -118,7 +118,6 @@ namespace StarterTemplates.Tests
 		{
 			public ConsoleAppHostTests() : base(BaseUrl + ":82") { }
 		}
-
 
 		/// <summary>
 		/// IIS apps

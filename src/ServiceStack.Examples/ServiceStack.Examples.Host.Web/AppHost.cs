@@ -16,7 +16,6 @@ namespace ServiceStack.Examples.Host.Web
     {
         public AppHost() : base("ServiceStack Examples", typeof(GetFactorialService).Assembly)
         {
-            //Permit modern browsers (e.g. Firefox) to allow sending of any REST HTTP Method
             Config.DebugMode = true;
         }
 
