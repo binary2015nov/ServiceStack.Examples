@@ -10,24 +10,22 @@
 <body class="soap-page">
 
     <div id="header-links">
-        <a href="../ServiceStack.Hello/">Hello World</a>
-        <a href="../Backbone.Todos/">Todos</a>
-        <a href="../RedisStackOverflow/">Redis StackOverflow</a>
-        <a href="../RestFiles/">REST Files</a>
-        <a href="../ServiceStack.MovieRest/">REST Movies</a>
-        <a href="../ServiceStack.Northwind/">Northwind Database</a>
-        <a href="../ServiceStack.Examples.Clients/">Ajax Client</a>
-        <a href="../ServiceStack.Examples.Clients/Soap12.aspx">Soap 1.2</a>
+        <a href="http://mono.servicestack.net/ServiceStack.Hello/">Hello World</a> 
+        <a href="http://todos.servicestack.net/">Todos</a>
+        <a href="http://redisstackoverflow.servicestack.net/">Redis StackOverflow</a>
+        <a href="http://restfiles.servicestack.net/">Rest Files</a>
+        <a href="http://northwind.servicestack.net/">Northwind Database</a>
+        <a href="Soap11.aspx">Soap 1.1</a>
     </div>
 
-    <a href="https://servicestack.net"><img src="img/demo-logo-servicestack.png" alt="Service Stack Demo" /></a>
+    <a href="https://servicestack.net"><img src="img/demo-logo-servicestack.png" alt="ServiceStack" /></a>
 
     <h1>Trying ServiceStack's SOAP 1.2 Web Service Examples</h1>
     
     <div class="note">
         Testing ServiceStack's SOAP 1.2 Web services using 
         VS.NET 'Add Service Reference' code-generated proxy.<br />
-        The source code for this ASP.NET page is <a href="https://github.com/ServiceStack/ServiceStack.Examples/blob/master/src/ServiceStack.Examples.Clients/Soap12.aspx.cs">available here</a>.
+        The source code for this ASP.NET page is <a href="https://github.com/ServiceStack/ServiceStack.Examples/tree/master/src/ServiceStack.Examples/ServiceStack.Examples.Clients/Soap12.aspx.cs">available here</a>.
     </div>
     
     <form id="form1" runat="server">

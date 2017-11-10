@@ -1,10 +1,10 @@
 using System;
 using ServiceStack.Configuration;
 using ServiceStack.Data;
-using ServiceStack.Examples.ServiceInterface;
-using ServiceStack.Examples.ServiceInterface.Support;
 using ServiceStack.OrmLite;
 using ServiceStack.OrmLite.Sqlite;
+using ServiceStack.Examples.ServiceInterface;
+using ServiceStack.Examples.ServiceInterface.Support;
 using ServiceStack.Examples.ServiceModel;
 
 namespace ServiceStack.Examples.Host.Web
@@ -21,10 +21,10 @@ namespace ServiceStack.Examples.Host.Web
 
         public override void Configure(Funq.Container container)
         {
+            Plugins.Add(new SoapFormat());
             Plugins.Add(new CorsFeature());
 
-            container.Register<IAppSettings>(new AppSettings());
-            container.Register(c => new ExampleConfig(c.Resolve<IAppSettings>()));
+            container.Register(c => new ExampleConfig(AppSettings));
 
             var appConfig = container.Resolve<ExampleConfig>();
 

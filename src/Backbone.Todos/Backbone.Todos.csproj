@@ -83,30 +83,15 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\logo.png" />
     <Content Include="default.htm" />
     <Content Include="Content\Images\destroy.png" />
-    <Content Include="docs\backbone-localstorage.html" />
-    <Content Include="docs\backbone.html" />
-    <Content Include="docs\docco.css" />
-    <Content Include="docs\images\arrows.png" />
-    <Content Include="docs\images\backbone-mobile.png" />
-    <Content Include="docs\images\backbone.png" />
-    <Content Include="docs\images\background.png" />
-    <Content Include="docs\images\basecamp-mobile.png" />
-    <Content Include="docs\images\dc-workspace.png" />
-    <Content Include="docs\images\instagreat.png" />
-    <Content Include="docs\images\quietwrite.png" />
-    <Content Include="docs\images\substance.png" />
-    <Content Include="docs\images\tilemill.png" />
-    <Content Include="docs\images\todos.png" />
-    <Content Include="docs\images\tzigla.png" />
-    <Content Include="docs\todos.html" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\backbone.js" />
-    <Content Include="Scripts\jquery-1.5.js" />
-    <Content Include="Scripts\underscore-1.1.5.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Content\Css\default.css" />
     <Content Include="Scripts\todos.js" />
+    <Content Include="Scripts\underscore.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

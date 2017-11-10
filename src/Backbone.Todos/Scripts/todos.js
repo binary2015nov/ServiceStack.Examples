@@ -20,18 +20,18 @@ $(function(){
 
     // Ensure that each todo created has `content`.
     initialize: function() {
-      if (!this.get("content")) {
-        this.set({"content": this.defaults.content});
-      }
+        if (!this.get("content")) {
+            this.set({ "content": this.defaults.content });
+        }
     },
 
     // Toggle the `done` state of this todo item.
-    toggle: function() {
-      this.save({done: !this.get("done")});
+    toggle: function () {
+        this.save({ done: !this.get("done") });
     },
-      
-    url : function() {
-    	return this.get("id") ? 'todos/' + this.get("id") : 'todos';
+
+    url: function () {
+        return this.get("id") ? 'todos/' + this.get("id") : 'todos';
     },
 
     // Remove this Todo from *localStorage* and delete its view.
@@ -148,7 +148,7 @@ $(function(){
 
     // If you hit `enter`, we're through editing the item.
     updateOnEnter: function(e) {
-      if (e.keyCode == 13) this.close();
+      if (e.keyCode === 13) this.close();
     },
 
     // Remove this view from the DOM.
@@ -232,7 +232,7 @@ $(function(){
     // If you hit return in the main input field, create new **Todo** model,
     // persisting it to *localStorage*.
     createOnEnter: function(e) {
-      if (e.keyCode != 13) return;
+      if (e.keyCode !== 13) return;
       Todos.create(this.newAttributes());
       this.input.val('');
     },
@@ -250,7 +250,7 @@ $(function(){
       var val = this.input.val();
       tooltip.fadeOut();
       if (this.tooltipTimeout) clearTimeout(this.tooltipTimeout);
-      if (val == '' || val == this.input.attr('placeholder')) return;
+      if (val === '' || val === this.input.attr('placeholder')) return;
       var show = function(){ tooltip.show().fadeIn(); };
       this.tooltipTimeout = _.delay(show, 1000);
     }

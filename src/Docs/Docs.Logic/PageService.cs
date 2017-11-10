@@ -101,7 +101,7 @@ namespace Docs.Logic
 
 		public string AbsoluteUrl
 		{
-			get { return PageManager.Instance.BaseUrl + this.Category.SafeName() + "/" + this.Slug; }
+			get { return PageManager.Default.BaseUrl + this.Category.SafeName() + "/" + this.Slug; }
 		}
 	}
 	

@@ -11,13 +11,14 @@ namespace ServiceStack.Examples.ServiceModel
 
 		public ExampleConfig() { }
 
-		public ExampleConfig(IAppSettings appConfig)
+		public ExampleConfig(IAppSettings appSettings)
 		{
-			ConnectionString = appConfig.Get("ConnectionString");
-			DefaultFibonacciLimit = appConfig.Get("DefaultFibonacciLimit", 10);
+			ConnectionString = appSettings.Get("ConnectionString");
+			DefaultFibonacciLimit = appSettings.Get("DefaultFibonacciLimit", 10);
 		}
 
 		public string ConnectionString { get; set; }
+
 		public int DefaultFibonacciLimit { get; set; }
 	}
 }

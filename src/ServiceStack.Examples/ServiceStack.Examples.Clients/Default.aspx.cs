@@ -11,7 +11,7 @@ namespace ServiceStack.Examples.Clients
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			Response.Redirect("Default.htm");
+			Response.Redirect("default.htm");
 		}
 	}
 }

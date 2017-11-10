@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using ServiceStack.Data;
-using ServiceStack.Examples.ServiceModel.Types;
 using ServiceStack.OrmLite;
+using ServiceStack.Examples.ServiceModel.Types;
 
 namespace ServiceStack.Examples.ServiceInterface.Support
 {

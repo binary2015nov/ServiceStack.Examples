@@ -11,9 +11,9 @@ namespace ServiceStack.Examples.Host.Console
 
 		static void Main(string[] args)
 		{
-            LogManager.LogFactory = new ConsoleLogFactory();
+			LogManager.LogFactory = new ConsoleLogFactory();
 
-            var appHost = new AppHost();
+			var appHost = new AppHost();
 			appHost.Init();
 			appHost.Start(ListeningOn);
 

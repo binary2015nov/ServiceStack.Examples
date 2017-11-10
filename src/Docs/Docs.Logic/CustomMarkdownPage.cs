@@ -41,11 +41,11 @@ namespace Docs.Logic
 		{
 			var sb = new StringBuilder();
 			sb.Append("<ul>\n");
-			foreach (var kvp in PageManager.Instance.CategoriesMap)
+			foreach (var kvp in PageManager.Default.CategoriesMap)
 			{
 				var category = kvp.Key;
 				var categoryPages = kvp.Value;
-				var categoryUrl = PageManager.Instance.BaseUrl + "category/" + category;
+				var categoryUrl = PageManager.Default.BaseUrl + "category/" + category;
 
 				if (category == selectedPage.Category)
 					sb.AppendFormat("<li><b><a href='{0}'>{1}</a></b> ({2})\n", categoryUrl, category, categoryPages.Count);
@@ -57,7 +57,7 @@ namespace Docs.Logic
 					sb.Append("<ul class='children'>\n");
 					foreach (var page in categoryPages)
 					{
-						var pageUrl = PageManager.Instance.BaseUrl + page.RelativeUrl;
+						var pageUrl = PageManager.Default.BaseUrl + page.RelativeUrl;
 						var cls = selectedPage.FilePath == page.FilePath ? " class='active'" : "";
 						sb.AppendFormat("<li{0}><a href='{1}'>{2}</a></li>\n", cls, pageUrl, page.Name);
 					}

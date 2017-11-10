@@ -7,6 +7,7 @@ namespace ServiceStack.Examples.ServiceModel.Types
 	public class ArrayOfUser : List<User>
 	{
 		public ArrayOfUser() { }
+
 		public ArrayOfUser(IEnumerable<User> collection) : base(collection) { }
 	}
 }

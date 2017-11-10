@@ -3,10 +3,10 @@ using Funq;
 using NUnit.Framework;
 using ServiceStack.Configuration;
 using ServiceStack.Data;
-using ServiceStack.Examples.ServiceInterface;
-using ServiceStack.Examples.ServiceInterface.Support;
 using ServiceStack.Logging;
 using ServiceStack.OrmLite;
+using ServiceStack.Examples.ServiceInterface;
+using ServiceStack.Examples.ServiceInterface.Support;
 using ServiceStack.Examples.ServiceModel;
 
 namespace ServiceStack.Examples.Tests.Integration
@@ -27,7 +27,7 @@ namespace ServiceStack.Examples.Tests.Integration
 		}
 	}
 
-	public class IntegrationTestBase
+	public abstract class IntegrationTestBase
 	{
 		private const string BaseUrl = "http://127.0.0.1:8081/";
 
@@ -72,7 +72,7 @@ namespace ServiceStack.Examples.Tests.Integration
 			{
 				jsonClient.HttpMethod = httpMethod;
 				var jsonResponse = jsonClient.Send<TRes>(request);
-				if (validate != null) validate(jsonResponse);
+                validate?.Invoke(jsonResponse);
 			}
 		}
 

@@ -8,7 +8,7 @@ namespace Docs.Logic
 {
 	public class PageManager
 	{
-		public static PageManager Instance = new PageManager();
+		public readonly static PageManager Default = new PageManager();
 
 		public List<Page> Pages { get; set; }
 		public Dictionary<string, Page> PageMap { get; set; }

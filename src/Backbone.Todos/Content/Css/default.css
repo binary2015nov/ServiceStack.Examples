@@ -18,8 +18,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 
 #logo {
-    display: block;
-    position: absolute; 
+    position: absolute;
     top: 5px;
     left: 5px;   
 }
@@ -222,7 +221,7 @@ color: #333333;
  */
 .ui-tooltip, .ui-tooltip-top, .ui-tooltip-right, .ui-tooltip-bottom, .ui-tooltip-left {
   color:#ffffff;
-  cursor:normal;
+  cursor:default;
   display:-moz-inline-stack;
   display:inline-block;
   font-size:12px;

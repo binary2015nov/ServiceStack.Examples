@@ -125,7 +125,7 @@
     <Content Include="js\jquery.dump.js" />
     <Content Include="js\ServiceStack.js" />
     <Content Include="Silverlight.htm" />
-    <Content Include="Default.htm" />
+    <Content Include="default.htm" />
     <Content Include="js\Silverlight.js" />
     <Content Include="Silverlight.js" />
     <Content Include="Soap11.aspx" />

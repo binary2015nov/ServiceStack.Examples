@@ -1,8 +1,8 @@
 using ServiceStack.Data;
+using ServiceStack.OrmLite;
 using ServiceStack.Examples.ServiceInterface.Support;
 using ServiceStack.Examples.ServiceModel;
 using ServiceStack.Examples.ServiceModel.Types;
-using ServiceStack.OrmLite;
 
 namespace ServiceStack.Examples.ServiceInterface
 {

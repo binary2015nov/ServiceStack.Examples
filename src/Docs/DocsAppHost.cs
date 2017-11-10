@@ -7,12 +7,15 @@ namespace Docs
 {
     public class DocsAppHost : AppHostBase
     {
-        public DocsAppHost() : base("ServiceStack Docs", typeof(PageService).Assembly) { }
+        public DocsAppHost() : base("ServiceStack Docs", typeof(PageService).Assembly)
+        {
+            Config.WebHostUrl = AppSettings.Get("WebHostUrl");
+        }
 
         protected override void OnBeforeInit()
         {
-            Config.WebHostUrl = AppSettings.Get("WebHostUrl");
-            PageManager.Instance.Init(WebHostPhysicalPath.AppendPath("Pages.json"), Config.WebHostUrl);
+            string filePath = WebHostPhysicalPath.CombineWith("Pages.json");
+            PageManager.Default.Init(filePath, Config.WebHostUrl);
         }
 
         public override void Configure(Funq.Container container)
@@ -25,8 +28,6 @@ namespace Docs
                 .Add<Category>("/category/{Name}")
                 .Add<Search>("/search")
                 .Add<Search>("/search/{Query}");
-
-            var plugin = (MarkdownFormat)Plugins.First(x => x is MarkdownFormat);
         }
     }
 }
