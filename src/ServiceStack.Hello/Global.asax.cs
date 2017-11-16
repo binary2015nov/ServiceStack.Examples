@@ -1,20 +1,27 @@
 ﻿using System;
+using System.Runtime.Serialization;
+using ServiceStack.Text;
 
 namespace ServiceStack.Hello
 {
     /// <summary>
     /// Define your ServiceStack web service request (i.e. the Request DTO).
     /// </summary>    
+    [DataContract(Namespace = "http://schemas.servicestack.net/types")]
     public class Hello : IReturn<HelloResponse>
     {
+        [DataMember]
         public string Name { get; set; }
     }
 
     /// <summary>
     /// Define your ServiceStack web service response (i.e. Response DTO).
     /// </summary>
+
+    [DataContract(Namespace = "http://schemas.servicestack.net/types")]
     public class HelloResponse
     {
+        [DataMember]
         public string Result { get; set; }
     }
 

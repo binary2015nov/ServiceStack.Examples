@@ -221,7 +221,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:gray;">///</span><span style="color:green;">&nbsp;</span><span style="color:gray;">&lt;param&nbsp;name=</span><span style="color:gray;">&quot;container&quot;</span><span style="color:gray;">&gt;</span><span style="color:green;">The&nbsp;built-in&nbsp;IoC&nbsp;used&nbsp;with&nbsp;ServiceStack.</span><span style="color:gray;">&lt;/param&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">public</span>&nbsp;<span style="color:blue;">override</span>&nbsp;<span style="color:blue;">void</span>&nbsp;Configure(<span style="color:#2b91af;">Container</span>&nbsp;container)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Plugins.Add(new&nbsp;<span style="color:blue;">SoapFormat()</span>);</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Plugins.Add(new&nbsp;<span style="color:#2b91af;">SoapFormat</span>());</span>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">//Register&nbsp;user-defined&nbsp;REST-ful&nbsp;urls.&nbsp;You&nbsp;can&nbsp;access&nbsp;the&nbsp;service&nbsp;at&nbsp;the&nbsp;url&nbsp;similar&nbsp;to&nbsp;the&nbsp;following.</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">//</span><span style="color:blue">http://localhost:62577/servicestack/hello</span>&nbsp;<span style="color:green;">or</span>&nbsp;<span style="color:blue">http://localhost:62577/servicestack/hello/John%20Doe</span>
@@ -451,8 +451,9 @@
         <input type="submit" />
         </form>
     </div>
-    <h2>
-        SOAP Web Services</h2>
+    <h2>SOAP Web Services</h2>
+    <p>If you want to support SOAP, you have to ensure you adhere to some additional constraints where each method needs to be defined with the Any() or Post() and each DTO needs to be 
+    decorated with [DataContract] and [DataMember] attributes so their metadata is generated in your Services XSD and WSDL metadata.</p>
     <table>
         <thead>
             <tr>
