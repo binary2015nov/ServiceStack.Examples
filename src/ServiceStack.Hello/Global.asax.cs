@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Runtime.Serialization;
-using ServiceStack.Text;
 
 namespace ServiceStack.Hello
 {
@@ -41,7 +40,7 @@ namespace ServiceStack.Hello
     {
         /// <summary>
         /// Create your ServiceStack web service application with a singleton HelloAppHost.
-        /// </summary>        
+        /// </summary>
         public class HelloAppHost : AppHostBase
         {
             /// <summary>

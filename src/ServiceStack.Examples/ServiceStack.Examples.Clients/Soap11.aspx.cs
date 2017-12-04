@@ -23,7 +23,7 @@ namespace ServiceStack.Examples.Clients
 
         protected void Page_Load(object sender, EventArgs e) { }
 
-        protected void btnGetFactorial_Click(object sender, EventArgs e)
+        protected void BtnGetFactorial_Click(object sender, EventArgs e)
         {
             litGetFactorialResult.Text = litGetFactorialError.Text = "";
             try
@@ -38,7 +38,7 @@ namespace ServiceStack.Examples.Clients
             }
         }
 
-        protected void btnGetFibonacci_Click(object sender, EventArgs e)
+        protected void BtnGetFibonacci_Click(object sender, EventArgs e)
         {
             litGetFibonacciResult.Text = litGetFibonacciError.Text = "";
             try
@@ -59,7 +59,7 @@ namespace ServiceStack.Examples.Clients
             }
         }
 
-        protected void btnStoreNewUser_Click(object sender, EventArgs e)
+        protected void BtnStoreNewUser_Click(object sender, EventArgs e)
         {
             litStoreNewUserResult.Text = litStoreNewUserError.Text = "";
             try
@@ -94,7 +94,7 @@ namespace ServiceStack.Examples.Clients
             }
         }
 
-        protected void btnDeleteAllUsers_Click(object sender, EventArgs e)
+        protected void BtnDeleteAllUsers_Click(object sender, EventArgs e)
         {
             litStoreNewUserResult.Text = litStoreNewUserError.Text = "";
             try
@@ -109,7 +109,7 @@ namespace ServiceStack.Examples.Clients
             }
         }
 
-        protected void btnGetUsers_Click(object sender, EventArgs e)
+        protected void BtnGetUsers_Click(object sender, EventArgs e)
         {
             litGetUsersResult.Text = litGetUsersError.Text = "";
             try

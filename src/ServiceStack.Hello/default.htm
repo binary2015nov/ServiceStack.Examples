@@ -22,8 +22,8 @@
 
     <h1 style="border:none;">Creating a Web Service from Scratch with ServiceStack</h1>
     <p>
-        This tutorial will go through and develop and call a simple Hello World web service
-        from scratch using <a href="https://servicestack.net/">ServiceStack</a> and VS.NET.
+        This tutorial will go through and develop and call a simple hello world web service
+        from scratch using ServiceStack and VS.NET.
     </p>
     <h2>Install Automatically</h2>
     <p>
@@ -102,9 +102,9 @@
 <span style="color:blue;">&nbsp;&nbsp;&lt;!--</span><span style="color:green;">&nbsp;ServiceStack:&nbsp;Required&nbsp;for&nbsp;IIS7&nbsp;IntegratedMode&nbsp;</span><span style="color:blue;">--&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">system.webServer</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">modules</span><span style="color:blue;">&nbsp;</span><span style="color:red;">runAllManagedModulesForAllRequests</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">true</span>&quot;<span style="color:blue;">/&gt;</span>
-<span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">validation</span><span style="color:blue;">&nbsp;</span><span style="color:red;">validateIntegratedModeConfiguration</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">false</span>&quot;<span style="color:blue;">&nbsp;/&gt;</span>
+<span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">validation</span><span style="color:blue;">&nbsp;</span><span style="color:red;">validateIntegratedModeConfiguration</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">false</span>&quot;<span style="color:blue;">/&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">handlers</span><span style="color:blue;">&gt;</span>
-<span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">add</span><span style="color:blue;">&nbsp;</span><span style="color:red;">path</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">*</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">name</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">ServiceStack.Factory</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">type</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">ServiceStack.HttpHandlerFactory,&nbsp;ServiceStack</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">verb</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">*</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">preCondition</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">integratedMode</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">resourceType</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">Unspecified</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">allowPathInfo</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">true</span>&quot;<span style="color:blue;">&nbsp;/&gt;</span>
+<span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">add</span><span style="color:blue;">&nbsp;</span><span style="color:red;">path</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">*</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">name</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">ServiceStack.Factory</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">type</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">ServiceStack.HttpHandlerFactory,&nbsp;ServiceStack</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">verb</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">*</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">preCondition</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">integratedMode</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">resourceType</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">Unspecified</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">allowPathInfo</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">true</span>&quot;<span style="color:blue;">/&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">handlers</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">system.webServer</span><span style="color:blue;">&gt;</span>
     </code>
@@ -114,7 +114,7 @@
     <p style="padding-left:12px;">
         In order to avoid conflicts with your existing ASP.NET web framework it is recommended
         to host your ServiceStack web services at a custom path. This will allow you to use ServiceStack together with an existing web framework
-        e.g. <a href="http://www.asp.net/mvc">ASP.NET MVC 3</a> or <a href="https://fubumvc.github.io/">FUBU MVC</a>, etc.
+        e.g. <a href="http://www.asp.net/mvc">ASP.NET MVC</a> or <a href="https://fubumvc.github.io/">FUBU MVC</a>, etc.
     </p>
     <h4>
         The location configuration below hosts your webservices at custom path: <b>/servicestack</b></h4>
@@ -131,7 +131,7 @@
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">system.webServer</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">modules</span><span style="color:blue;">&nbsp;</span><span style="color:red;">runAllManagedModulesForAllRequests</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">true</span>&quot;<span style="color:blue;">/&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">handlers</span><span style="color:blue;">&gt;</span>
-<span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">add</span><span style="color:blue;">&nbsp;</span><span style="color:red;">path</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">*</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">name</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">ServiceStack.Factory</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">type</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">ServiceStack.HttpHandlerFactory,&nbsp;ServiceStack</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">verb</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">*</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">preCondition</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">integratedMode</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">resourceType</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">Unspecified</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">allowPathInfo</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">true</span>&quot;<span style="color:blue;">&nbsp;/&gt;</span>
+<span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">add</span><span style="color:blue;">&nbsp;</span><span style="color:red;">path</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">*</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">name</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">ServiceStack.Factory</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">type</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">ServiceStack.HttpHandlerFactory,&nbsp;ServiceStack</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">verb</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">*</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">preCondition</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">integratedMode</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">resourceType</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">Unspecified</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">allowPathInfo</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">true</span>&quot;<span style="color:blue;">/&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">handlers</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">system.webServer</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">location</span><span style="color:blue;">&gt;</span>
@@ -143,7 +143,7 @@
 <span style="color:blue;">&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">system.web</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&lt;!--</span><span style="color:green;">&nbsp;ServiceStack:&nbsp;Required&nbsp;for&nbsp;IIS7&nbsp;IntegratedMode&nbsp;</span><span style="color:blue;">--&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">system.webServer</span><span style="color:blue;">&gt;</span>
-<span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">validation</span><span style="color:blue;">&nbsp;</span><span style="color:red;">validateIntegratedModeConfiguration</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">false</span>&quot;<span style="color:blue;">&nbsp;/&gt;</span>
+<span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">validation</span><span style="color:blue;">&nbsp;</span><span style="color:red;">validateIntegratedModeConfiguration</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">false</span>&quot;<span style="color:blue;">/&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">system.webServer</span><span style="color:blue;">&gt;</span>
     </code>
     <p>
@@ -158,7 +158,7 @@
     <h2>3. Creating your first Web Service</h2>
     <p>
         For simplicity we will add the Web Service and the start up script all in the same
-        Global.asax.cs. To do this Right-click on your project and go <strong>Add -&gt; New Item</strong> then select the <strong>Global Application class</strong>.
+        Global.asax.cs. To do this <strong>Right-click</strong> on your project and go <strong>Add -&gt; New Item</strong> then select the <strong>Global Application class</strong>.
     </p>
     <p>
         Within the same file add the following code:
@@ -199,7 +199,7 @@
     <h2>
         4. Registering your web services and starting your application</h2>
     <p>
-        The final step is to Configure setup to tell ServiceStack where to find your web services: <a name="AppHost"></a>
+        The final step is to configure setup to tell ServiceStack where to find your web services: <a name="AppHost"></a>
     </p>
     <h4>
         Web Service AppHost Singleton</h4>
@@ -253,7 +253,7 @@
     <p>
         If everything is configured correctly you can go to the <strong><a href="servicestack/metadata">
             /servicestack/metadata</a></strong> to see a list of your web services and the
-        various end points its available on.
+        various end points it's available on.
     </p>
     <p>
         <img src="Content/Images/MetadataIndex.png" alt="ServiceStack Metadata page" /></p>
@@ -564,16 +564,16 @@
     <p>
         All REST and ServiceClients share the same interfaces so they can easily be replaced
         (for increased perf/debuggability/etc) with a single line of code as seen in the
-        <a href="https://github.com/ServiceStack/ServiceStack/blob/master/tests/ServiceStack.WebHost.IntegrationTests/Tests/HelloWorldServiceClientTests.cs">
+        <a href="https://github.com/binary2015nov/ServiceStack/blob/master/tests/ServiceStack.WebHost.IntegrationTests/Tests/HelloWorldServiceClientTests.cs">
             Hello Service Integration tests</a>.
     </p>
     <p>
-        C#/.NET Clients can call the above Hello Service using any of the <a href="https://github.com/ServiceStack/ServiceStack/wiki/C%23-client">
+        C#/.NET Clients can call the above Hello Service using any of the <a href="http://docs.servicestack.net/csharp-client">
             JSON, JSV, XML or SOAP Service Clients</a> as well as a 
-            <a href="https://github.com/ServiceStack/ServiceStack/wiki/SilverlightServiceClient">Silverlight</a>, 
-            <a href="https://github.com/ServiceStack/ServiceStack/wiki/Javascript-client">JavaScript</a>, 
-            <a href="https://github.com/ServiceStack/ServiceStack/wiki/Dart-Client">Dart</a> or even
-            <a href="https://github.com/ServiceStack/ServiceStack/wiki/Messaging-and-redis">MQ Client</a>.
+            <a href="http://docs.servicestack.net/silverlight-client">Silverlight</a>, 
+            <a href="http://docs.servicestack.net/javascript-client">JavaScript</a>, 
+            <a href="http://docs.servicestack.net/dart-client">Dart</a> or even
+            <a href="http://docs.servicestack.net/messaging#mq-client-architecture">MQ Client</a>.
     </p>
     <a name="links"></a>
     <h2>Where to now?</h2>

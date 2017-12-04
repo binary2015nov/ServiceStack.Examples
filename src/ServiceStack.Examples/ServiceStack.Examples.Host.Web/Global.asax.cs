@@ -1,5 +1,4 @@
 ﻿using System;
-using ServiceStack.Logging;
 
 namespace ServiceStack.Examples.Host.Web
 {
