@@ -33,26 +33,18 @@ namespace Docs.Logic
 
 		public void SaveRemoteContent(string baseUrl, bool overwrite)
 		{
-			try
-			{
-				if (!overwrite && this.FilePath != null)
-				{
-					var fi = new FileInfo(this.FilePath);
-					if (fi.Length > 0)
-						return;
-				}
+            if (!overwrite && this.FilePath != null)
+            {
+                var fi = new FileInfo(this.FilePath);
+                if (fi.Length > 0)
+                    return;
+            }
 
-				this.Slug = this.Name.SafeName();
+            this.Slug = this.Name.SafeName();
 
-				var remoteContent = GetRemoteContent();
-				Save(baseUrl, remoteContent);
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine(ex);
-				throw;
-			}
-		}
+            var remoteContent = GetRemoteContent();
+            Save(baseUrl, remoteContent);
+        }
 
 		public void LoadContent()
 		{

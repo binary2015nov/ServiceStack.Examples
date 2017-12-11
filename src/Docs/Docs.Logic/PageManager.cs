@@ -34,7 +34,7 @@ namespace Docs.Logic
 			}
 
 			this.PageMap = new Dictionary<string, Page>(StringComparer.CurrentCultureIgnoreCase);
-			Pages.Where(x => !x.FilePath.IsNullOrEmpty()).Each(x => PageMap[x.FilePath] = x);
+			Pages.Where(x => !x.FilePath.IsNullOrEmpty()).Each(x => PageMap[x.RelativeUrl] = x);
 
 			CategoriesMap = new Dictionary<string, List<Page>>(StringComparer.CurrentCultureIgnoreCase);
 			foreach (var page in Pages)

@@ -2,43 +2,43 @@
 follow [@demisbellot](http://twitter.com/demisbellot) and [@ServiceStack](http://twitter.com/servicestack)
 for twitter updates. 
 
-#Example Projects built with [ServiceStack](~/framework/overview), [C# RedisClient](~/redis-client/redis-client), [OrmLite](~/ormlite/ormlite-overview), etc
+#Example Projects built with [ServiceStack](https://github.com/ServiceStack/ServiceStack), [C# RedisClient](https://github.com/ServiceStack/ServiceStack.Redis), [OrmLite](https://github.com/ServiceStack/ServiceStack.OrmLite), etc
 
-## Live Demo
+## [Download](https://github.com/ServiceStack/ServiceStack.Examples/archive/master.zip)
 
-A live demo and tutorials are available at the following locations:
+Download the tarball:
 
-### [Backbone.js TODO app with REST and Redis backend](http://mono.servicestack.net/Backbone.Todos/)
-[![Backbone REST and Redis TODOs](http://mono.servicestack.net/showcase/img/todos-400x350.png)](http://mono.servicestack.net/Backbone.Todos/)
+[https://github.com/ServiceStack/ServiceStack.Examples/archive/master.zip](https://github.com/ServiceStack/ServiceStack.Examples/archive/master.zip)
+
+or clone this repo to download the source:
+
+    git clone git://github.com/ServiceStack/ServiceStack.Examples.git
+
+
+## [Live Demos](https://github.com/ServiceStackApps/LiveDemos)
+
+[Live demos](https://github.com/ServiceStackApps/LiveDemos) and tutorials are available at the following locations:
+
+### [Backbone.js TODO app with REST and Redis backend](http://todos.servicestack.net)
+[![Backbone REST and Redis TODOs](http://servicestack.net/showcase/img/todos-400x350.png)](http://todos.servicestack.net)
 
 ### [Creating a Hello World Web service from scratch](http://mono.servicestack.net/ServiceStack.Hello/)
-[![ServiceStacks Hello, World!](http://mono.servicestack.net/showcase/img/hello-400x350.png)](http://mono.servicestack.net/ServiceStack.Hello/)
+[![ServiceStacks Hello, World!](http://servicestack.net/showcase/img/hello-400x350.png)](http://mono.servicestack.net/ServiceStack.Hello/)
 
-### [GitHub-like browser to manage remote filesystem over REST](http://mono.servicestack.net/RestFiles/)
-[![GitHub-like REST Files](http://mono.servicestack.net/showcase/img/restfiles-400x350.png)](http://mono.servicestack.net/RestFiles/)
+### [GitHub-like browser to manage remote filesystem over REST](http://restfiles.servicestack.net)
+[![GitHub-like REST Files](http://servicestack.net/showcase/img/restfiles-400x350.png)](http://restfiles.servicestack.net)
 
-### [Creating a StackOverflow-like app in Redis](http://mono.servicestack.net/RedisStackOverflow/)
-[![Redis StackOverflow](http://mono.servicestack.net/showcase/img/redisstackoverflow-400x350.png)](http://mono.servicestack.net/RedisStackOverflow/)
+### [Creating a StackOverflow-like app in Redis](http://redisstackoverflow.servicestack.net)
+[![Redis StackOverflow](http://servicestack.net/showcase/img/redisstackoverflow-400x350.png)](http://redisstackoverflow.servicestack.net)
 
-### [Complete REST Web service example](http://mono.servicestack.net/ServiceStack.MovieRest/)
-[![REST at the Movies!](http://mono.servicestack.net/showcase/img/movierest-400x350.png)](http://mono.servicestack.net/ServiceStack.MovieRest/)
-
-### [Calling Web Services with Ajax](http://mono.servicestack.net/ServiceStack.Examples.Clients/)
-[![Ajax Example](http://mono.servicestack.net/showcase/img/ajaxexample-400x350.png)](http://mono.servicestack.net/ServiceStack.Examples.Clients/)
+### [Northwind dataset services](http://northwind.servicestack.net)
+[![Redis StackOverflow](http://servicestack.net/showcase/img/northwind-400x350.png)](http://northwind.servicestack.net)
 
 ### Other examples
-* [Calling Web Services with Mono Touch](http://www.servicestack.net/monotouch/remote-info/)
+* [Calling Web Services with Mono Touch](http://mono.servicestack.net/monotouch/remote-info/)
 * [Calling Web Services using Silverlight](http://mono.servicestack.net/ServiceStack.Examples.Clients/Silverlight.htm)
 * [Calling SOAP 1.1 Web Service Examples](http://mono.servicestack.net/ServiceStack.Examples.Clients/Soap11.aspx)
 * [Calling SOAP 1.2 Web Service Examples](http://mono.servicestack.net/ServiceStack.Examples.Clients/Soap12.aspx)
-
-_All live examples hosted on CentOS/Nginx/FastCGI/Mono_
-
-# Download
-
-You can find the latest releases for download at:
-
-* [ServiceStack.Examples/downloads](https://github.com/ServiceStack/ServiceStack.Examples/downloads)
 
 
 ### Troubleshooting

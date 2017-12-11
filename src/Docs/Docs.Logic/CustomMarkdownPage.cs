@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ServiceStack;
 using ServiceStack.Markdown;
 
 namespace Docs.Logic
@@ -14,12 +15,11 @@ namespace Docs.Logic
 	{
 		public override void OnLoad()
 		{
-			Page page;
 			var pageManager = AppHost.TryResolve<PageManager>();
-			pageManager.PageMap.TryGetValue(MarkdownPage.FilePath, out page);
 
-			object cat;
-			this.ScopeArgs.TryGetValue("Category", out cat);
+            pageManager.PageMap.TryGetValue(MarkdownPage.FilePath.WithoutExtension(), out Page page);
+
+			this.ScopeArgs.TryGetValue("Category", out object cat);
 			
 			if (page == null)
 				page = new Page { Category = cat != null ? cat.ToString() : "Framework" };
@@ -68,11 +68,6 @@ namespace Docs.Logic
 			}
 			sb.Append("</ul>\n");
 			return sb.ToString();
-		}
-
-		public int Len<T>(IEnumerable<T> items)
-		{
-			return items.Count();
 		}
 	}
 }

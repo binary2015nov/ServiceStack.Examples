@@ -30,16 +30,12 @@ a img {
   border: none;
 }
 
-html {
-  background: #eeeeee;
-}
-
 body {
-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-font-size: 14px;
-line-height: 1.4em;
-background: #eeeeee;
-color: #333333;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4em;
+    background: ghostwhite;
+    color: #333333;
 }
 
 #todoapp {

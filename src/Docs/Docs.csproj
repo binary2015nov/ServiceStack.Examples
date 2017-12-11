@@ -90,9 +90,7 @@
     <Content Include="css\default.css" />
     <Content Include="css\styles.css" />
     <Content Include="Global.asax" />
-    <Content Include="default.htm" />
     <Content Include="img\arr-2.gif" />
-    <Content Include="img\boat.jpg" />
     <Content Include="img\date.png" />
     <Content Include="img\field.gif" />
     <Content Include="img\has_dropdown-hover.png" />
@@ -117,7 +115,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DocsAppHost.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -128,22 +125,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="contrib\servicestack-contrib.md" />
+    <Content Include="default.md" />
     <None Include="examples\servicestack-examples.md" />
-    <None Include="framework\accessing-ihttprequest.md" />
-    <None Include="framework\caching-options.md" />
-    <None Include="framework\history-of-webservices.md" />
-    <None Include="framework\csv-format.md" />
-    <None Include="framework\home.md" />
-    <None Include="framework\json-report-format.md" />
-    <None Include="framework\nuget.md" />
-    <None Include="framework\overview.md" />
-    <None Include="framework\release-notes.md" />
     <None Include="logging\logging-overview.md" />
-    <None Include="markdown\about.md" />
+    <None Include="about.md" />
     <None Include="markdown\markdown-razor.md" />
     <None Include="markdown\markdown-features.md" />
     <None Include="ormlite\ormlite-overview.md" />
-    <None Include="Pages.json" />
     <None Include="redis-admin-ui\redis-admin-ui-overview.md" />
     <None Include="redis-client\designing-nosql-database.md" />
     <None Include="redis-client\distributed-locking-with-redis.md" />
@@ -158,8 +146,19 @@
     <None Include="redis-client\redis-transactions.md" />
     <None Include="redis-client\schemaless-nosql-migrations.md" />
     <None Include="redis-client\useful-redis-links.md" />
+    <Content Include="servicestack\accessing-ihttprequest.md" />
+    <Content Include="servicestack\caching-options.md" />
+    <Content Include="servicestack\csv-format.md" />
+    <Content Include="servicestack\history-of-webservices.md" />
+    <Content Include="servicestack\home.md" />
+    <Content Include="servicestack\json-report-format.md" />
+    <Content Include="servicestack\nuget.md" />
+    <Content Include="servicestack\overview.md" />
+    <Content Include="servicestack\release-notes.md" />
     <None Include="text-serializers\json-csv-jsv-serializers.md" />
-    <None Include="text-serializers\jsv-format.md" />
+    <Content Include="text-serializers\json-serializer.md" />
+    <None Include="servicestack\jsv-format.md" />
+    <Content Include="text-serializers\override-mvc-jsonresult.md" />
     <None Include="Views\Category.md" />
     <None Include="Views\Search.md" />
   </ItemGroup>
