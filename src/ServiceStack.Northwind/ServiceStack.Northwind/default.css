@@ -1,0 +1,114 @@
+﻿body {
+    background: #fff url(img/bg-body-1024.png) repeat-y top center;
+    font: normal normal normal 13.34px/normal helvetica, arial, freesans, clean, sans-serif;
+    width: 940px;
+    margin: 0 auto;
+}
+
+p {
+    padding: 0 4px 0 0;
+}
+
+a {
+    color: #00F;
+}
+a image {
+    border: none;
+}
+
+h1 {
+    margin: 70px 0 10px 0;
+    padding: 0 0 0 70px;
+    line-height: 60px;
+    background: url(img/database-icon.jpg) no-repeat;
+}
+
+h2 {
+    margin: 40px 0 20px 0;
+    padding: 10px 0 0 0;
+    border-top: solid 4px #ccc;
+}
+
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+code {
+    background-color: ghostWhite !important;
+    border: 1px solid #DEDEDE !important;
+    color: #444 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    margin: 1em 0px !important;
+    overflow: auto !important;
+    padding: 0.5em !important;
+    display: block;
+    font-family: monospace;
+    margin: 1em 0px;
+    white-space: pre;
+}
+
+table {
+    border-collapse: collapse;
+    border: solid 1px #ccc;
+    margin: 0 0 20px 0;
+}
+
+th {
+    text-align: left;
+    text-shadow: #fff 1px 1px -1px;
+    background: #f1f1f1;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+th, td {
+    padding: 4px 8px;
+    font-size: 13px;
+    font-family: Arial;
+}
+
+td {
+    vertical-align: top;
+}
+
+td.c3 a {
+    padding: 0 10px;
+    line-height: 13px;
+    border-right: solid 1px #eee;
+}
+
+td.c3 a:first-child {
+    padding-left: 0;
+}
+
+td.c4 {
+color: #888;
+}
+
+#logo {
+    position: relative;
+    top: 5px;
+    left: 10px;
+    text-decoration:none;
+}
+
+#header-links {
+    position: relative;
+    display: inline-block;
+    left: 240px;
+}
+#header-links A {
+    color: #0000FF;
+    margin-left: 0.5em;
+}
+
+#github {
+    clear: right;
+    padding: 12px 18px 0 0;
+    float: right;
+}
+#github img {
+    height: 64px;
+}

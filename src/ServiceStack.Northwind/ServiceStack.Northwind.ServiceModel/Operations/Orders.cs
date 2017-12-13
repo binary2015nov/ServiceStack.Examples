@@ -1,8 +1,8 @@
+using System.Collections.Generic;
+using ServiceStack.Northwind.ServiceModel.Types;
+
 namespace ServiceStack.Northwind.ServiceModel.Operations
 {
-	using System.Collections.Generic;
-	using Types;
-
     [Route("/orders")]
 	[Route("/orders/page/{Page}")]
 	[Route("/customers/{CustomerId}/orders")]

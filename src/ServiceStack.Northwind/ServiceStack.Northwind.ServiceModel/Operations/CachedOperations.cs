@@ -1,12 +1,10 @@
+using System.Runtime.Serialization;
+
 namespace ServiceStack.Northwind.ServiceModel.Operations
 {
-	using System.Runtime.Serialization;
-
     [DataContract]
 	[Route("/cached/customers")]
-	public class CachedCustomers
-	{
-	}
+	public class CachedCustomers { }
 
 	[DataContract]
 	[Route("/cached/customers/{Id}")]

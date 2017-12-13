@@ -51,8 +51,7 @@ namespace ServiceStack.Northwind.ServiceInterface
             sw.WriteLine("EMAIL;TYPE=PREF,INTERNET:" + customer.Email);
             sw.WriteLine("TEL;HOME;VOICE:" + customer.Phone);
             sw.WriteLine("TEL;WORK;FAX:" + customer.Fax);
-            sw.WriteLine("ADR;TYPE=HOME;"
-                         + new[] { customer.Address, customer.City, customer.PostalCode }.Join(";"));
+            sw.WriteLine("ADR;TYPE=HOME;" + new[] { customer.Address, customer.City, customer.PostalCode }.Join(";"));
             sw.WriteLine("END:VCARD");
         }
 

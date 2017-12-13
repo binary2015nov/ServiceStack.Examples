@@ -1,8 +1,8 @@
 using System;
 using System.Net;
+using ServiceStack.OrmLite;
 using ServiceStack.Northwind.ServiceModel.Operations;
 using ServiceStack.Northwind.ServiceModel.Types;
-using ServiceStack.OrmLite;
 
 namespace ServiceStack.Northwind.ServiceInterface
 {
@@ -16,7 +16,7 @@ namespace ServiceStack.Northwind.ServiceInterface
                     new ArgumentException("Customer does not exist: " + request.Id));
 
             var ordersService = base.ResolveService<OrdersService>();
-            var ordersResponse = (OrdersResponse) ordersService.Get(new Orders {CustomerId = customer.Id});
+            var ordersResponse = (OrdersResponse) ordersService.Get(new Orders { CustomerId = customer.Id });
 
             return new CustomerDetailsResponse
             {

@@ -98,6 +98,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="default.css" />
     <Content Include="default.htm" />
     <Content Include="Global.asax" />
     <Content Include="img\bg-body-1024.png" />
@@ -111,7 +112,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NorthwindAppHost.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

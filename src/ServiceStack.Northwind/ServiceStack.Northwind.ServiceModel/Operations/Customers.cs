@@ -1,14 +1,12 @@
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+using ServiceStack.Northwind.ServiceModel.Types;
+
 namespace ServiceStack.Northwind.ServiceModel.Operations
 {
-	using System.Collections.Generic;
-	using System.Runtime.Serialization;
-	using Types;
-
     [DataContract]
-	[Route("/customers")]
-	public class Customers
-	{
-	}
+    [Route("/customers")]
+	public class Customers { }
 
 	[DataContract]
 	public class CustomersResponse : IHasResponseStatus

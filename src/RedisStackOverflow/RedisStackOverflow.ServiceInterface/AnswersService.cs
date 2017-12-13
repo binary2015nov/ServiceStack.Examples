@@ -1,9 +1,8 @@
-using RedisStackOverflow.ServiceModel;
 using ServiceStack;
+using RedisStackOverflow.ServiceModel;
 
 namespace RedisStackOverflow.ServiceInterface
 {
-
     /// <summary>
     /// Create your ServiceStack rest-ful web service implementation. 
     /// </summary>

@@ -1,16 +1,14 @@
-﻿body 
-{
+﻿body {
     background: ghostWhite url(../Images/bg-body-1024.png) repeat-y top center;
     font: 13.34px/normal helvetica, arial, freesans, clean, sans-serif;
     width: 940px;
     margin: 0 auto;
 }
 
-#logo
-{
+#logo {
     position: relative;
     top: 5px;
-    left: 5px;
+    left: 10px;
 }
 
 #header-links {

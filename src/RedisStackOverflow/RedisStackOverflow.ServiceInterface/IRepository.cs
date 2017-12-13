@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using RedisStackOverflow.ServiceModel;
 using ServiceStack;
 using ServiceStack.Redis;
+using RedisStackOverflow.ServiceModel;
 
 namespace RedisStackOverflow.ServiceInterface
 {
