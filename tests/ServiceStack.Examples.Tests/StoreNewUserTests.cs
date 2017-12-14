@@ -17,7 +17,6 @@ namespace ServiceStack.Examples.Tests
             Password = "password"
         };
 
-
         [Test]
         public void StoreNewUser_Test()
         {
@@ -31,7 +30,7 @@ namespace ServiceStack.Examples.Tests
                     Email = "StoreNewUser@test.com",
                     Password = "password"
                 };
-                var response = service.Any(newUserRequest);
+                var response = (StoreNewUserResponse)service.Any(newUserRequest);
 
                 var storedUser = db.Single<User>("UserName = @UserName", newUserRequest);
                 Assert.That(storedUser.Id, Is.EqualTo(response.UserId));
@@ -48,7 +47,7 @@ namespace ServiceStack.Examples.Tests
                 db.Insert(new User { UserName = request.UserName });
 
                 var service = appHost.Resolve<StoreNewUserService>();
-                var response = service.Any(request);
+                var response = (StoreNewUserResponse)service.Any(request);
 
                 Assert.That(response.ResponseStatus.ErrorCode, Is.EqualTo("UserNameMustBeUnique"));
             }

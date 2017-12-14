@@ -19,7 +19,7 @@ namespace ServiceStack.Examples.ServiceInterface
 			this.config = config;
 		}
 
-        public GetFibonacciNumbersResponse Any(GetFibonacciNumbers request)
+        public object Any(GetFibonacciNumbers request)
 		{
 			var skip = request.Skip.GetValueOrDefault(0);
 			var take = request.Take.GetValueOrDefault(config.DefaultFibonacciLimit);

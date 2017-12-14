@@ -1,19 +1,18 @@
-BODY {
-    background: #fff url(../Images/bg-body-1024.png) repeat-y top left;
+body {
+    background: #fff url(../Images/bg-body-1024.png) repeat-y top center;
     font: normal normal normal 13.34px/normal helvetica, arial, freesans, clean, sans-serif;
     width: 940px;
     margin:0 auto; 
-    background-position-x:center;
 }
 
 #logo {
     position: relative;
     top: 5px;
     left: 10px;
+    text-decoration: none;
 }
 
-#header-links
-{
+#header-links {
     display:inline;
     left: 240px;
     position:relative;
@@ -26,9 +25,13 @@ BODY {
 
 #github {
     clear: right;
-    padding: 18px 18px 0 0;
+    padding: 12px 18px 0 0;
     float: right;
 }
+#github img {
+    height: 64px;
+}
+
 
 DD, DL, DT, UL, LI {
     margin: 0;
@@ -412,6 +415,7 @@ H4 EM
 {
     margin: 0 60px 0 0;
     padding: 0 0 60px 0;
+    text-decoration: none;
 }
 
 #disclaimer
@@ -440,13 +444,12 @@ H4 EM
     color: #333;	
 }
 
-#footer
-{
-    position:fixed;
-    height: 30px;
+#footer {
+    position: fixed;
     bottom: 0;
-    margin:auto;
+    height: 30px;
+    width: 940px;
     border-top: solid 1px #999;
     background: #f1f1f1;
-    padding: 10px 0 10px 0;
+    padding: 10px 0 10px 0px;
 }

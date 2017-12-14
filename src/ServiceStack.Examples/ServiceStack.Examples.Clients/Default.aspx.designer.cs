@@ -10,8 +10,6 @@
 
 namespace ServiceStack.Examples.Clients
 {
-
-
 	public partial class Default
 	{
 

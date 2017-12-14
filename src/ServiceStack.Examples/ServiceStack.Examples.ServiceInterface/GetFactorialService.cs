@@ -8,14 +8,19 @@ namespace ServiceStack.Examples.ServiceInterface
 	/// </summary>
 	public class GetFactorialService : Service
 	{
-		public GetFactorialResponse Any(GetFactorial request)
+		public object Any(GetFactorial request)
 		{
 			return new GetFactorialResponse { Result = GetFactorial(request.ForNumber) };
 		}
 
 		static long GetFactorial(long n)
 		{
-			return n > 1 ? n * GetFactorial(n - 1) : 1;
+            var result = 1L;
+            while (n >= 2)
+            {
+                checked { result *= n; n--; }
+            }
+            return result;
 		}
 	}
 }

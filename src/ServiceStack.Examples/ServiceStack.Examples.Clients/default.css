@@ -1,36 +1,49 @@
-BODY
-{
-    background: #fff url(img/bg-body-1024.png) repeat-y top left;
+body {
+    background: #fff url(img/bg-body-1024.png) repeat-y top center;
     font: normal normal normal 13.34px/normal helvetica, arial, freesans, clean, sans-serif;
-    padding: 10px 5px 20px 10px;
     width: 940px;
+    margin:0 auto;
 }
-#header-links
-{
-    top: 10px;
-    left:270px;
-    position: absolute;
+
+p {
+    padding: 0 10px;
 }
-#header-links A, #footer-links A
-{
+
+#logo {
+    position: relative;
+    top: 5px;
+    left: 10px;
+    text-decoration: none;
+}
+
+#header-links {
+    position: relative;
+    display: inline;
+    left: 240px;
+}
+
+#header-links A {
     color: #0000FF;
     margin-left: 0.5em;
 }
+
+#github {
+    clear: right;
+    padding: 12px 18px 0 0;
+    float: right;
+}
+#github img {
+    height: 64px;
+}
+
 #footer-links
 {
-	margin: 9em 0 2em;
-	padding-top: 1em;
+	padding: 1em;
 	text-align: center;
 	font-size: larger;
 	border-top: 1px solid #DCDCDC;
-	margin-left: -10px;
-	padding-left: 10px;
 }
-#footer-links IMG
-{
-	float: left;
-	margin-top: -10px;
-}
+
 .r
 {
 	clear: both;
@@ -40,27 +53,24 @@ A IMG
 {
 	border: none;
 }
-P
-{
-	width: 768px;
-}
+
 CODE
 {
 	display: block;
 	background-color: #F1F9F1;
 	white-space: pre;
 	color: #333;
-	width: 880px;
+    padding: 10px;
 }
-H1
-{
+
+h1 {
 	font: 28px/34px "Trebuchet MS";
 	color: #063;
 	border-top: 1px solid #DCDCDC;
 	padding-top: 5px;
-	padding-left: 10px;
-	margin-left: -10px;
+	margin-top: 60px;
 }
+
 H4
 {
 	clear: left;
@@ -80,10 +90,9 @@ ACRONYM
 {
 	background-color: rgb(249, 246, 183);
 	border: 1px solid rgb(196, 194, 149);
-	margin: 1ex 0px;
+	margin: 10px;
 	min-height: 35px;
-	width: 700px;
-	padding: 5px 30px;
+	padding: 5px;
 }
 .service
 {
@@ -137,8 +146,7 @@ ACRONYM
 {
 	display: none;
 	position: absolute;
-	margin: 10px 0;
-	left: 2em;
+    margin: 10px;
 	border: 5px solid #555;
 	border-top: none;
 }
@@ -166,10 +174,7 @@ ACRONYM
 {
 	background-color: #F5F9C7;
 }
-#silverlightControlHost
-{
-	width: 1041px;
-}
+
 
 .soap-page FORM
 {
@@ -203,4 +208,5 @@ ACRONYM
     display: block;
     margin: 15px 0;
     text-align: center;
+    text-decoration :none;
 }

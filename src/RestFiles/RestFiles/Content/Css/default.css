@@ -10,6 +10,7 @@ body {
     position: relative;
     top: 5px;
     left: 10px;
+    text-decoration: none;
 }
 
 #header-links {
@@ -17,16 +18,18 @@ body {
     left: 270px;
     position: relative;
 }
-
-    #header-links A, #footer-links A {
-        color: #0000FF;
-        margin-left: 0.5em;
-    }
+#header-links A, #footer-links A {
+    color: #0000FF;
+    margin-left: 0.5em;
+}
 
 #github {
     clear: right;
-    padding: 36px 18px 0 0;
     float: right;
+    padding: 12px 18px 0 0;
+}
+#github img {
+    height: 64px;
 }
 
 html, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -159,7 +162,7 @@ Author: Demis Bellot (demis.bellot@gmail.com)
     border: 1px solid #BEDCE7;
     overflow: hidden;
     width: 918px;	
-    margin: 60px 0 10px 20px;
+    margin: 20px 0 10px 20px;
     color: #000;
     font-size: 12px;
     font-family: Monaco, 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;

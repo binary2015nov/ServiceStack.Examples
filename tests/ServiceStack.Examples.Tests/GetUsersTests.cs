@@ -1,10 +1,10 @@
 ﻿using NUnit.Framework;
 using ServiceStack.Data;
+using ServiceStack.OrmLite;
+using ServiceStack.Testing;
 using ServiceStack.Examples.ServiceInterface;
 using ServiceStack.Examples.ServiceModel;
 using ServiceStack.Examples.ServiceModel.Types;
-using ServiceStack.OrmLite;
-using ServiceStack.Testing;
 
 namespace ServiceStack.Examples.Tests
 {
@@ -33,9 +33,9 @@ namespace ServiceStack.Examples.Tests
 					db.Insert(new User { Id = 3, UserName = "User3" });
 					db.Insert(new User { Id = 4, UserName = "User4" });
 
-					var handler = appHost.Resolve<GetUsersService>();
+					var service = appHost.Resolve<GetUsersService>();
 
-					var response = handler.Any(request);
+					var response = (GetUsersResponse)service.Any(request);
 
 					Assert.That(response.Users.Count, Is.EqualTo(4));
 				}

@@ -12,10 +12,10 @@ namespace ServiceStack.Examples.Tests
 		{
 			var request = new GetFibonacciNumbers { Take = 5 };
 
-			var handler = new GetFibonacciNumbersService(
+			var service = new GetFibonacciNumbersService(
 				new ExampleConfig { DefaultFibonacciLimit = 10 });
 
-			var response = handler.Any(request);
+			var response = (GetFibonacciNumbersResponse)service.Any(request);
 
 			Assert.That(response.Results.Count, Is.EqualTo(request.Take));
 			Assert.That(response.Results, Is.EqualTo(new[] { 1, 2, 3, 5, 8 }));

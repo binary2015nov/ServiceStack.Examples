@@ -1,17 +1,38 @@
-BODY {
-	background: #fff url(../Images/bg-body-1024.png) repeat-y top left;
+body {
+	background: #fff url(../Images/bg-body-1024.png) repeat-y top center;
 	font: normal normal normal 13.34px/normal helvetica, arial, freesans, clean, sans-serif;
 	width: 940px;
+    margin:0 auto;
 }
 
-A IMG {
-	border: none;
+h1 {
+    font-size: 170% !important;
+    margin-top: 1em;
+    padding-top: 0.5em;
+}
+
+h4 {
+    position: relative;
+    top: 60px;
+    left: 560px;
+}
+
+a img {
+    border: none;
+}
+
+#existing h2 {
+    border-top: 4px solid #E0E0E0 !important;
+    font-size: 150% !important;
+    margin-top: 1.5em !important;
+    padding-top: 0.5em !important;
 }
 
 #logo {
-    position:absolute;
+    position:relative;
     top: 5px;
     left: 10px;
+    text-decoration: none;
 }
 
 #header-links {
@@ -19,45 +40,41 @@ A IMG {
     position: relative;
     left: 240px;
 }
-
-	#header-links A, #footer-links A {
-		color: #00F;
-		margin-left: 0.5em;
-	}
+#header-links A {
+	color: #00F;
+	margin-left: 0.5em;
+}
 
 #github {
+    clear: right;
+    padding: 12px 18px 0 0;
+    float: right;
+}
+#github img {
+    height: 64px;
+}
+
+#summary {
+    margin: 30px 0 20px 0;
+    padding: 10px;
+    background: #ffc;
+    color: green;
+    font-size: 16px;
+    border: solid 1px #ccc;
+    font-weight: bold;
+    text-align: center;
+}
+#summary A {
+    color: #00F;
+}
+
+#btnReset {
     clear: right;
     float: right;
 }
 
-code {
-	background-color: ghostWhite !important;
-	border: 1px solid #DEDEDE !important;
-	color: #444 !important;
-	font-size: 12px !important;
-	line-height: 1.5em !important;
-	margin: 1em 0 !important;
-	overflow: auto !important;
-	padding: 0.5em !important;
-	display: block;
-	font-family: monospace;	
-	white-space: pre;
-}
 
-H1 {
-	font-size: 170% !important;
-	margin-top: 0.65em;
-	padding-top: 0.5em;
-}
-
-H2 {
-	border-top: 4px solid #E0E0E0 !important;
-	font-size: 150% !important;
-	margin-top: 1.5em !important;
-	padding-top: 0.5em !important;
-}
-
-INPUT[type=text] {
+input[type=text] {
 	width: 400px;
 	padding: 2px 5px;
 }
@@ -81,27 +98,7 @@ INPUT[type=text] {
 	display: inline;
 }
 
-#summary {
-	margin: 30px 0 20px 0;
-	padding: 10px;
-	background: #ffc;
-	color: green;
-	font-size: 16px;
-	border: solid 1px #ccc;
-	font-weight: bold;
-	text-align: center;
-}
-
-	#summary A {
-		color: #00F;
-	}
-
-#btnReset {
-	float: right;
-	margin: 20px 0 0 0;
-}
-
-DT {
+dt {
 	margin: 10px 0 5px 0;
 }
 
@@ -116,36 +113,37 @@ DT {
 	cursor: pointer;
 }
 
-H4 {
-	position: absolute;
-	top: 270px;
-	left: 580px;
-}
-
 #restlog {
-	position: absolute;
-	top: 290px;
-	left: 580px;
-	width: 360px;
-	height: 600px;
-	overflow-y: scroll;
-	font-size: 14px !important;
-	line-height: 18px !important;
+    width: 360px;
+    height: 600px;
+    overflow-y: scroll;
+    font-size: 14px !important;
+    line-height: 18px !important;
+    clear: both;
+    float: right;
+    background-color: ghostWhite !important;
+    border: 1px solid #DEDEDE !important;
+    color: #444 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    margin: 4em 0 !important;
+    overflow: auto !important;
+    padding: 0.5em !important;
+    /*display: block;*/
+    font-family: monospace;
+    white-space: pre;
+}
+#restlog B {
+	width: 70px;
 }
 
-	#restlog B {
-		width: 70px;
-	}
-
-FORM {
+#addMovie {
 	display: none;
 }
 
 SELECT[name=genres] {
-	padding: 4px;
-	position: absolute;
+	position: relative;
 	left: 345px;
-	margin-top: 20px;
 }
 
 #btn-download {
@@ -160,9 +158,8 @@ SELECT[name=genres] {
 	padding: 0 0 0 20px;
 	margin: 15px 0 0 0;
 }
-
-	#csvformat B {
-		color: #00f;
-		text-decoration: underline;
-		cursor: pointer;
-	}
+#csvformat B {
+	color: #00f;
+	text-decoration: underline;
+	cursor: pointer;
+}

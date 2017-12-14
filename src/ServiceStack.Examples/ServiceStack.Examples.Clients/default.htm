@@ -19,7 +19,6 @@
 
         $(function()
         {
-
             $("#btnGetFactorial").click(function()
             {
                 gateway.getFromService({
@@ -27,7 +26,8 @@
                     },
                     function(e) {
                         $("#serviceGetFactorial .result").html(e.Result);
-                    });
+                    }
+                );
             });
 
             $("#btnGetFibonacciNumbers").click(function()
@@ -108,7 +108,7 @@
                 var codePreview = link.next();
                 if (codePreview.is(":visible"))
                 {
-                    codePreview.slideUp(function()
+                    codePreview.slideUp(function ()
                     {
                         link.html("show");
                     });
@@ -125,11 +125,14 @@
             });
 
         });
-    -->
     </script>
 
 </head>
 <body>
+
+    <a id="logo" href="https://servicestack.net">
+        <img src="img/logo-24x24.png" alt="ServiceStack.net" />
+    </a>
 
     <div id="header-links">
         <a href="http://mono.servicestack.net/ServiceStack.Hello/">Hello World</a>
@@ -137,19 +140,18 @@
         <a href="http://redisstackoverflow.servicestack.net/">Redis StackOverflow</a>
         <a href="http://restfiles.servicestack.net/">Rest Files</a>
         <a href="http://northwind.servicestack.net/">Northwind Database</a>
-        <a href="Soap11.aspx">Soap11</a>
-        <a href="Soap12.aspx">Soap12</a>
-        <a href="Silverlight.htm">Silverlight</a>
     </div>
 
-    <a href="https://servicestack.net"><img src="img/demo-logo-servicestack.png" alt="Service Stack Demo" /></a>
+    <a id="github" href="https://github.com/binary2015nov/ServiceStack.Examples" title="View Source on GitHub">
+        <img src="img/btn-github.png" alt="GitHub" />
+    </a>
 
     <h1>Calling ServiceStack Web Services with Ajax</h1>
 
     <p>
         For performance reasons, the preferred to call ServiceStack services for Ajax clients
-        is using JSON via the JSON endpoint at: <br />
-        <em>~/servicestack/json/reply/{ServiceName}</em>
+        is using JSON via the JSON endpoint at:&nbsp;
+        <em>/servicestack/json/reply/{ServiceName}</em>
     </p>
     <p>
         As this endpoint is just a standard JSON service we can use any ajax client to call them with.
@@ -157,69 +159,64 @@
     </p>
 
     <h4>1. First step is to initialize the ServiceClient</h4>
-    <code>
-        //Create a ClientGateway passing in the baseUrl where your services are hosted.
-        var gateway = new servicestack.ClientGateway(
-                location.protocol + "//" + location.host + '/ServiceStack/');
-    </code>
+    <code>//Create a ClientGateway passing in the baseUrl where your services are hosted.
+var gateway = new servicestack.ClientGateway(
+    location.protocol + "//" + location.host + '/ServiceStack/');</code>
 
     <h4>2. After that calling a service becomes as easy as:</h4>
-    <code>
-        gateway.getFromService({
-                GetFactorial: { ForNumber: $("#txtGetFactorial").val() }
-            },
-            function(e) {
-                $("#serviceGetFactorial .result").html(e.Result);
-            });
-    </code>
+    <code>gateway.getFromService({
+    GetFactorial: { ForNumber: $("#txtGetFactorial").val() }
+    },
+    function(e) {
+        $("#serviceGetFactorial .result").html(e.Result);
+});</code>
 
     <h4>3. Try the live examples yourself:</h4>
     <div id="services">
         <div id="serviceGetFactorial" class="service">
 
-                <div class="code-link">
-                    <span>show</span>
-                    <div class="code-preview">
-                        <h5>Client code</h5>
-                        <code class="client-code">
-    gateway.getFromService({
-            GetFactorial: { ForNumber: $("#txtGetFactorial").val() }
-        },
-        function(e) {
-            $("#serviceGetFactorial .result").html(e.Result);
-        });
-                        </code>
-                        <div class="dtos">
-                            <h5>Request and Response DataContracts (DTOs)</h5>
-                            <code class="dto">
-    public class GetFactorial
-    {
-        public long ForNumber { get; set; }
-    }
+            <div class="code-link">
+                <span>show</span>
+                <div class="code-preview">
+                    <h5>Client code</h5>
+                    <code class="client-code">gateway.getFromService({
+    GetFactorial: { ForNumber: $("#txtGetFactorial").val() }
+    },
+    function(e) {
+        $("#serviceGetFactorial .result").html(e.Result);
+});</code>
+                    <div class="dtos">
+                        <h5>Request and Response DataContracts (DTOs)</h5>
+                        <code class="dto">public class GetFactorial
+{
+    public long ForNumber { get; set; }
+}
 
-    public class GetFactorialResponse
-    {
-        public long Result { get; set; }
-    }
-                            </code>
-                        </div>
-                        <h5>Server code</h5>
-                        <code class="server-code">
-    public class GetFactorialService : IService&lt;GetFactorial&gt;
-    {
-        public object Execute(GetFactorial request)
-        {
-            return new GetFactorialResponse { Result = GetFactorial(request.ForNumber) };
-        }
-
-        static long GetFactorial(long n)
-        {
-            return n &gt; 1 ? n * GetFactorial(n - 1) : 1;
-        }
-    }
-                        </code>
+public class GetFactorialResponse
+{
+    public long Result { get; set; }
+}</code>
                     </div>
+                    <h5>Server code</h5>
+                    <code class="server-code">public class GetFactorialService : Service
+{
+    public object Execute(GetFactorial request)
+    {
+        return new GetFactorialResponse { Result = GetFactorial(request.ForNumber) };
+    }
+
+    static long GetFactorial(long n)
+    {
+        var result = 1L;
+        while (n &gt;= 2)
+        {
+            checked { result *= n; n--; }
+        }
+        return result;
+    }
+}</code>
                 </div>
+            </div>
 
             <div class="input">
                 <h3>Get Factorial Service</h3>
@@ -234,94 +231,87 @@
 
         <div id="serviceGetFibonacciNumbers" class="service">
 
-                <div class="code-link">
-                    <span>show</span>
-                    <div class="code-preview">
-                        <h5>Client code</h5>
-                        <code class="client-code">
-    gateway.getFromService({
-            GetFibonacciNumbers: {
-                Skip: $("#txtGetFibonacciNumbersSkip").val(),
-                Take: $("#txtGetFibonacciNumbersTake").val()
-            }
-        },
-        function(e) {
-            var resultHtml = "&lt;ul&gt;";
-            $(e.Results).each(function(i, fibNo)
-            {
-                resultHtml += "&lt;li&gt;" + fibNo + "&lt;/li&gt;";
-            });
-            resultHtml += "&lt;/ul&gt;";
-
-            $("#serviceGetFibonacciNumbers .result").html(resultHtml);
+            <div class="code-link">
+                <span>show</span>
+                <div class="code-preview">
+                    <h5>Client code</h5>
+                    <code class="client-code">gateway.getFromService({
+    GetFibonacciNumbers: {
+        Skip: $("#txtGetFibonacciNumbersSkip").val(),
+        Take: $("#txtGetFibonacciNumbersTake").val()
+        }
+    },
+    function(e) {
+        var resultHtml = "&lt;ul&gt;";
+        $(e.Results).each(function(i, fibNo)
+        {
+            resultHtml += "&lt;li&gt;" + fibNo + "&lt;/li&gt;";
         });
-                        </code>
-                        <div class="dtos">
-                            <h5>Request and Response DataContracts (DTOs)</h5>
-                            <code class="dto">
-    public class GetFibonacciNumbers
-    {
-        public long? Skip { get; set; }
+        resultHtml += "&lt;/ul&gt;";
 
-        public long? Take { get; set; }
-    }
+        $("#serviceGetFibonacciNumbers .result").html(resultHtml);
+});</code>
+                    <div class="dtos">
+                        <h5>Request and Response DataContracts (DTOs)</h5>
+                        <code class="dto">public class GetFibonacciNumbers
+{
+    public long? Skip { get; set; }
 
-    public class GetFibonacciNumbersResponse
-    {
-        public ArrayOfLong Results { get; set; }
-    }
-                            </code>
-                        </div>
-                        <h5>Server code</h5>
-                        <code class="server-code">
-    public class GetFibonacciNumbersService
-        : IService&lt;GetFibonacciNumbers&gt;
-    {
-        private readonly ExampleConfig config;
+    public long? Take { get; set; }
+}
 
-        //Example of ServiceStack's built-in Funq IOC constructor injection
-        public GetFibonacciNumbersService(ExampleConfig config)
-        {
-            this.config = config;
-        }
-
-        public object Execute(GetFibonacciNumbers request)
-        {
-            var skip = request.Skip.GetValueOrDefault(0);
-            var take = request.Take.GetValueOrDefault(config.DefaultFibonacciLimit);
-
-            var results = new List&lt;long&gt;();
-
-            var i = 0;
-            foreach (var fibonacciNumber in GetFibonacciNumbersNumbers())
-            {
-                if (i++ &lt; skip) continue;
-
-                results.Add(fibonacciNumber);
-
-                if (results.Count == take) break;
-            }
-
-            return new GetFibonacciNumbersResponse { Results = new ArrayOfLong(results) };
-        }
-
-        static IEnumerable&lt;long&gt; GetFibonacciNumbersNumbers()
-        {
-            long n1 = 0;
-            long n2 = 1;
-
-            while (true)
-            {
-                var n3 = n1 + n2;
-                yield return n3;
-                n1 = n2;
-                n2 = n3;
-            }
-        }
-    }
-                        </code>
+public class GetFibonacciNumbersResponse
+{
+    public ArrayOfLong Results { get; set; }
+}</code>
                     </div>
+                    <h5>Server code</h5>
+                    <code class="server-code">public class GetFibonacciNumbersService : Service
+{
+    private readonly ExampleConfig config;
+
+    //Example of ServiceStack's built-in Funq IOC constructor injection
+    public GetFibonacciNumbersService(ExampleConfig config)
+    {
+        this.config = config;
+    }
+
+    public object Execute(GetFibonacciNumbers request)
+    {
+        var skip = request.Skip.GetValueOrDefault(0);
+        var take = request.Take.GetValueOrDefault(config.DefaultFibonacciLimit);
+
+        var results = new List&lt;long&gt;();
+
+        var i = 0;
+        foreach (var fibonacciNumber in GetFibonacciNumbersNumbers())
+        {
+            if (i++ &lt; skip) continue;
+
+            results.Add(fibonacciNumber);
+
+            if (results.Count == take) break;
+        }
+
+        return new GetFibonacciNumbersResponse { Results = new ArrayOfLong(results) };
+    }
+
+    static IEnumerable&lt;long&gt; GetFibonacciNumbersNumbers()
+    {
+        long n1 = 0;
+        long n2 = 1;
+
+        while (true)
+        {
+            var n3 = n1 + n2;
+            yield return n3;
+            n1 = n2;
+            n2 = n3;
+        }
+    }
+}</code>
                 </div>
+            </div>
 
             <div class="input">
 
@@ -342,93 +332,83 @@
 
         <div id="serviceStoreNewUser" class="service">
 
-                <div class="code-link">
-                    <span>show</span>
-                    <div class="code-preview">
-                        <h5>Client code</h5>
-                        <code class="client-code">
-    gateway.postToService({
-            StoreNewUser: {
-                UserName: $("#txtUserName").val(),
-                Password: $("#txtUserName").val(),
-                Email: $("#txtEmail").val()
-            }
-        },
-        function(e) {
-            $("#serviceStoreNewUser .result").html(e.UserId);
-
-            var userIds = $("#txtUserIds").val();
-            if (userIds.length > 0) userIds += ",";
-            $("#txtUserIds").val(userIds + e.UserId);
-        },
-        function(ex) {
-            alert("Error creating new User: " + ex);
-        });
-                        </code>
-                        <div class="dtos">
-                            <h5>Request and Response DataContracts (DTOs)</h5>
-                            <code class="dto">
-    public class StoreNewUser
-    {
-        public string UserName { get; set; }
-
-        public string Email { get; set; }
-
-        public string Password { get; set; }
-    }
-
-    public class StoreNewUserResponse
-    {
-        public StoreNewUserResponse()
-        {
-            this.ResponseStatus = new ResponseStatus();
+            <div class="code-link">
+                <span>show</span>
+                <div class="code-preview">
+                    <h5>Client code</h5>
+                    <code class="client-code">gateway.postToService({
+    StoreNewUser: {
+        UserName: $("#txtUserName").val(),
+        Password: $("#txtUserName").val(),
+        Email: $("#txtEmail").val()
         }
+    },
+    function(e) {
+        $("#serviceStoreNewUser .result").html(e.UserId);
 
-        public long UserId { get; set; }
+        var userIds = $("#txtUserIds").val();
+        if (userIds.length > 0) userIds += ",";
+        $("#txtUserIds").val(userIds + e.UserId);
+    },
+    function(ex) {
+        alert("Error creating new User: " + ex);
+});</code>
+                    <div class="dtos">
+                        <h5>Request and Response DataContracts (DTOs)</h5>
+                        <code class="dto">public class StoreNewUser
+{
+    public string UserName { get; set; }
 
-        public ResponseStatus ResponseStatus { get; set; }
-    }
-                            </code>
-                        </div>
-                        <h5>Server code</h5>
-                        <code class="server-code">
-    public class StoreNewUserService : IService&lt;StoreNewUser&gt;
+    public string Email { get; set; }
+
+    public string Password { get; set; }
+}
+
+public class StoreNewUserResponse
+{
+    public StoreNewUserResponse()
     {
-        //Example of ServiceStack's built-in Funq IOC property injection
-        public IDbConnectionFactory ConnectionFactory { get; set; }
-
-        public object Execute(StoreNewUser request)
-        {
-            using (var dbConn = ConnectionFactory.OpenDbConnection())
-            using (var dbCmd = dbConn.CreateCommand())
-            {
-                var existingUsers = dbCmd.Select&lt;User&gt;("UserName = {0}",
-                  request.UserName).ToList();
-
-                if (existingUsers.Count &gt; 0)
-                {
-                    return new StoreNewUserResponse {
-                        ResponseStatus = new ResponseStatus {
-                          ErrorCode = "UserNameMustBeUnique"
-                        }
-                    };
-                }
-
-                var newUser = new User {
-                    UserName = request.UserName,
-                    Email = request.Email,
-                    Password = request.Password
-                };
-
-                dbCmd.Insert(newUser);
-
-                return new StoreNewUserResponse { UserId = dbCmd.GetLastInsertId() };
-            }
-        }
+        this.ResponseStatus = new ResponseStatus();
     }
-                        </code>
+
+    public long UserId { get; set; }
+
+    public ResponseStatus ResponseStatus { get; set; }
+}</code>
                     </div>
+                    <h5>Server code</h5>
+                    <code class="server-code">public class StoreNewUserService : Service
+{
+    private const string ErrorAlreadyExists = "UserNameMustBeUnique";
+
+    public object Execute(StoreNewUser request)
+    {
+        var existingUsers = Db.Select&lt;User&gt;(q => q.UserName == request.UserName);
+
+        if (existingUsers.Count &gt; 0)
+        {
+            return new StoreNewUserResponse {
+                ResponseStatus = new ResponseStatus {
+                    ErrorCode = ErrorAlreadyExists
+                    Message = ErrorAlreadyExists.ToEnglish()
+                }
+            };
+        }
+
+        var newUser = new User {
+            UserName = request.UserName,
+            Email = request.Email,
+            Password = request.Password,
+            GlobalId = Guid.NewGuid()
+        };
+
+        Db.Save(newUser);
+
+        return new StoreNewUserResponse { UserId = newUser.Id };
+    }
+}</code>
                 </div>
+            </div>
 
             <div class="input">
                 <h3>Store New User Service</h3>
@@ -455,81 +435,67 @@
 
         <div id="serviceGetUsers" class="service">
 
-                <div class="code-link">
-                    <span>show</span>
-                    <div class="code-preview">
-                        <h5>Client code</h5>
-                        <code class="client-code">
-    gateway.getFromService({
-            GetUsers: { UserIds: $("#txtUserIds").val() }
-        },
-        function(e) {
-            var resultHtml = "&lt;div&gt;";
-            $(e.Users).each(function(i, user)
-            {
-                resultHtml += '&lt;div class="user"&gt;'
-                + user.UserName + "&lt;br /&gt;"
-                + user.Email
-                + "&lt;/div&gt;";
-            });
-            $("#serviceGetUsers .result").html(resultHtml);
-        });
-                        </code>
-                        <div class="dtos">
-                            <h5>Request and Response DataContracts (DTOs)</h5>
-                            <code class="dto">
-    public class GetUsers
-    {
-        public ArrayOfLong UserIds { get; set; }
+            <div class="code-link">
+                <span>show</span>
+                <div class="code-preview">
+                    <h5>Client code</h5>
+                    <code class="client-code">gateway.getFromService({
+    GetUsers: { UserIds: $("#txtUserIds").val() }
+    },
+    function(e) {
+        var resultHtml = "&lt;div&gt;";
+        $(e.Users).each(function(i, user) {
+            resultHtml += '&lt;div class="user"&gt;'
+            + user.UserName + "&lt;br /&gt;"
+            + user.Email
+            + "&lt;/div&gt;";
+    });
+    $("#serviceGetUsers .result").html(resultHtml);
+});</code>
+                    <div class="dtos">
+                        <h5>Request and Response DataContracts (DTOs)</h5>
+                        <code class="dto">public class GetUsers
+{
+    public ArrayOfLong UserIds { get; set; }
 
-        public ArrayOfString UserNames { get; set; }
+    public ArrayOfString UserNames { get; set; }
+}
+
+public class GetUsersResponse
+{
+    public GetUsersResponse()
+    {
+        this.ResponseStatus = new ResponseStatus();
     }
 
-    public class GetUsersResponse
-    {
-        public GetUsersResponse()
-        {
-            this.ResponseStatus = new ResponseStatus();
-        }
+    public ArrayOfUser Users { get; set; }
 
-        public ArrayOfUser Users { get; set; }
-
-        public ResponseStatus ResponseStatus { get; set; }
-    }
-                            </code>
-                        </div>
-                        <h5>Server code</h5>
-                        <code class="server-code">
-    public class GetUsersService : IService&lt;GetUsers&gt;
-    {
-        //Example of ServiceStack's built-in Funq IOC property injection
-        public IDbConnectionFactory ConnectionFactory { get; set; }
-
-        public object Execute(GetUsers request)
-        {
-            using (var dbConn = ConnectionFactory.OpenDbConnection())
-            using (var dbCmd = dbConn.CreateCommand())
-            {
-                var users = new List&lt;User&gt;();
-
-                if (request.UserIds != null &amp;&amp; request.UserIds.Count &gt; 0)
-                {
-                    users.AddRange(dbCmd.GetByIds&lt;User&gt;(request.UserIds));
-                }
-
-                if (request.UserNames != null &amp;&amp; request.UserNames.Count &gt; 0)
-                {
-                    users.AddRange(dbCmd.Select&lt;User&gt;(
-                        "UserName IN ({0})", request.UserNames.SqlInValues()));
-                }
-
-                return new GetUsersResponse { Users = new ArrayOfUser(users) };
-            }
-        }
-    }
-                        </code>
+    public ResponseStatus ResponseStatus { get; set; }
+}</code>
                     </div>
+                    <h5>Server code</h5>
+                    <code class="server-code">public class GetUsersService : Service
+{
+    public object Execute(GetUsers request)
+{
+    var users = new List&lt;User&gt;();
+
+    if (request.UserIds != null &amp;&amp; request.UserIds.Count &gt; 0)
+    {
+        users.AddRange(Db.GetByIds&lt;User&gt;(request.UserIds));
+    }
+
+    if (request.UserNames != null &amp;&amp; request.UserNames.Count &gt; 0)
+    {
+        users.AddRange(Db.Select&lt;User&gt;(Db.Select<User>
+            (q => request.UserNames.Contains(q.UserName)));
+        }
+
+        return new GetUsersResponse { Users = new ArrayOfUser(users) };
+    }
+}</code>
                 </div>
+            </div>
 
             <div class="input">
                 <h3>Get Users Service</h3>
@@ -558,11 +524,15 @@
         This means that calling your services using XML is as easy as sending your request to a different end point.
         So calling your service via XML is as easy as:
         <ol>
-            <li><a href="http://localhost:64067/servicestack/xml/reply/GetFactorial?ForNumber=3" target="_blank">
-                servicestack/xml/reply/GetFactorial?ForNumber=3</a>
+            <li>
+                <a href="http://localhost:64067/servicestack/xml/reply/GetFactorial?ForNumber=3" target="_blank">
+                    servicestack/xml/reply/GetFactorial?ForNumber=3
+                </a>
             </li>
-            <li><a href="http://localhost:64067/ServiceStack/xml/reply/GetFibonacciNumbers?Skip=3&Take=20" target="_blank">
-                servicestack/xml/reply/GetFibonacciNumbers?Skip=3&Take=20</a>
+            <li>
+                <a href="http://localhost:64067/ServiceStack/xml/reply/GetFibonacciNumbers?Skip=3&Take=20" target="_blank">
+                    servicestack/xml/reply/GetFibonacciNumbers?Skip=3&Take=20
+                </a>
             </li>
         </ol>
         <br />
@@ -576,26 +546,14 @@
     <h4>5. View the source code online or Download:</h4>
     <p>
         The complete source code for this example is
-        <a href="https://github.com/ServiceStack/ServiceStack.Examples/tree/master/src/ServiceStack.Examples/ServiceStack.Examples.Clients/">
+        <a href="https://github.com/binary2015nov/ServiceStack.Examples/tree/master/src/ServiceStack.Examples/ServiceStack.Examples.Clients/">
             viewable online
         </a>
         or available to download as zip package from the link below:
 
-        <a id="btn-download" href="https://github.com/ServiceStack/ServiceStack.Examples/archive/master.zip">
+        <a id="btn-download" href="https://github.com/binary2015nov/ServiceStack.Examples/archive/master.zip">
             <img src="img/btn-download.gif" alt="Download ServiceStack.Examples.zip" />
         </a>
     </p>
-
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-7722718-7']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
 </body>
 </html>

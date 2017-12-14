@@ -41,9 +41,6 @@ namespace RedisStackOverflow
     {
         protected void Application_Start(object sender, EventArgs e)
         {
-            if (AppSettings.Default.Get("log", false))           
-                LogManager.LogFactory = new ConsoleLogFactory();
-            
             //Initialize your application
             new QuestionsAppHost().Init();
         }

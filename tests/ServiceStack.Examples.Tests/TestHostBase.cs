@@ -3,13 +3,13 @@ using Funq;
 using NUnit.Framework;
 using ServiceStack.Configuration;
 using ServiceStack.Data;
-using ServiceStack.Examples.ServiceInterface;
-using ServiceStack.Examples.ServiceInterface.Support;
 using ServiceStack.Host;
 using ServiceStack.Logging;
 using ServiceStack.OrmLite;
 using ServiceStack.Testing;
 using ServiceStack.Web;
+using ServiceStack.Examples.ServiceInterface;
+using ServiceStack.Examples.ServiceInterface.Support;
 
 namespace ServiceStack.Examples.Tests
 {

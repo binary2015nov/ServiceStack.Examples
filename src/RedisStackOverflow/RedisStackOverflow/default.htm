@@ -377,7 +377,7 @@
 <body>
 
     <a id="logo" href="https://servicestack.net">
-        <img src="Content/Images/logo-24x24.png" alt="ServiceStack Home" />
+        <img src="Content/Images/logo-24x24.png" alt="ServiceStack.net" />
     </a>
 
     <div id="header-links">
@@ -388,7 +388,7 @@
         <a href="http://northwind.servicestack.net/">Northwind Database</a>
     </div>
 
-    <a id="github" href="https://github.com/binary2015nov/ServiceStack.Examples" title="View source on GitHub">
+    <a id="github" href="https://github.com/binary2015nov/ServiceStack.Examples" title="View Source on GitHub">
         <img src="Content/Images/btn-github.png" alt="GitHub" />
     </a>
 
@@ -422,14 +422,14 @@
             <h3>Application Features</h3>
             <dl>
                 <dd>
-                    <a href="https://github.com/ServiceStack/ServiceStack.Examples/blob/master/src/RedisStackOverflow/RedisStackOverflow/default.htm">
+                    <a href="https://github.com/binary2015nov/ServiceStack.Examples/blob/master/src/RedisStackOverflow/RedisStackOverflow/default.htm">
                         App uses only 1 static html page
                     </a>
                     using only jQuery
                 </dd>
                 <dd>
                     Uses Redis for all data access.
-                    <a href="https://github.com/ServiceStack/ServiceStack.Examples/blob/master/src/RedisStackOverflow/RedisStackOverflow.ServiceInterface/IRepository.cs">
+                    <a href="https://github.com/binary2015nov/ServiceStack.Examples/blob/master/src/RedisStackOverflow/RedisStackOverflow.ServiceInterface/IRepository.cs">
                         Fits in 1 C# class
                     </a>
                 </dd>
@@ -455,7 +455,7 @@
                 </dd>
             </dl>
 
-            <a id="btn-download" href="https://github.com/ServiceStack/ServiceStack.Examples/archive/master.zip">
+            <a id="btn-download" href="https://github.com/binary2015nov/ServiceStack.Examples/archive/master.zip">
                 <img src="Content/Images/btn-download.gif" alt="Download ServiceStack.Examples.zip" />
             </a>
 
@@ -473,30 +473,13 @@
     <div id="footer">
         Simple StackOverlow-like Ajax website using only <a href="http://jquery.com">jQuery</a> for UI,
         calling <a href="https://servicestack.net">ServiceStack</a>'s REST-ful web services,
-        powered entirely by <a href="http://redis.io">Redis</a>
-        on <a href="http://redisstackoverflow.servicestack.net/">redisstackoverflow</a>.
-        <br />
-
+        powered entirely by <a href="http://redis.io">Redis</a>.
         Takes advantage of
         <a href="http://redis.io/commands#string">STRING</a>,
         <a href="http://redis.io/commands#set">SET</a> and
         <a href="http://redis.io/commands#sorted_set">SORTED SET</a>
-        data structures in
-        <a href="http://redis.io">Redis</a>
-        to provide effectively,
+        data structures in Redis to provide effectively,
         the fastest implementation of a StackOverflow-like website.
     </div>
-
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-7722718-7']);
-        _gaq.push(['_trackPageview']);
-
-        (function () {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
 </body>
 </html>

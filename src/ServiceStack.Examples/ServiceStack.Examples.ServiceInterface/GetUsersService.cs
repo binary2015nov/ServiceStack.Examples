@@ -13,7 +13,7 @@ namespace ServiceStack.Examples.ServiceInterface
     /// </summary>
     public class GetUsersService : Service
     {
-        public GetUsersResponse Any(GetUsers request)
+        public object Any(GetUsers request)
         {
             var users = new List<User>();
 

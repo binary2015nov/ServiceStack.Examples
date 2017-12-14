@@ -12,9 +12,9 @@ namespace ServiceStack.Examples.Tests
 		{
 			var request = new GetFactorial { ForNumber = 4 };
 
-			var handler = new GetFactorialService();
+			var service = new GetFactorialService();
 			
-			var response = handler.Any(request);
+			var response = (GetFactorialResponse)service.Any(request);
 
 			Assert.That(response.Result, Is.EqualTo(4 * 3 * 2 * 1));
 		}

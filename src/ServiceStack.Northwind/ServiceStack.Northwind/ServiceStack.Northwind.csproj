@@ -106,6 +106,8 @@
     <Content Include="img\database-18x18.jpg" />
     <Content Include="img\database-icon.jpg" />
     <Content Include="img\logo-24x24.png" />
+    <Content Include="img\vcard-ALFKI-200.png" />
+    <Content Include="img\vcard-ALFKI.png" />
     <Content Include="vcard-format.htm" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

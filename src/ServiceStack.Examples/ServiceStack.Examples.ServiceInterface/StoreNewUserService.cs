@@ -19,7 +19,7 @@ namespace ServiceStack.Examples.ServiceInterface
     {
         private const string ErrorAlreadyExists = "UserNameMustBeUnique";
 
-        public StoreNewUserResponse Any(StoreNewUser request)
+        public object Any(StoreNewUser request)
         {
             var existingUsers = Db.Select<User>(q => q.UserName == request.UserName);
 
