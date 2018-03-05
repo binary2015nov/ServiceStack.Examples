@@ -7,7 +7,7 @@
 Although ServiceStack is an opinionated web service framework (i.e. includes most components required to make high-performance web services), each feature is built around pure/clean, dependency-free 
 C# interfaces enabling the use of alternate, pluggable, xml/config-free and testable C# components.
 
-By default ServiceStack includes high-performance replacements for [ASP.NET's Session, Caching, Logging, Authentication, Membership and Configuration providers](http://www.servicestack.net/mvc-powerpack/) 
+By default ServiceStack includes high-performance replacements for [ASP.NET's Session, Caching, Logging, Authentication, Membership and Configuration providers](https://servicestack.net/mvc-powerpack/) 
 yielding config-free, testable and mockable alternatives that can be hosted in or outside of an ASP.NET web host.
 
 Whilst any providers contributed by the community that require any external dependencies are kept here (with links to their NuGet packages):

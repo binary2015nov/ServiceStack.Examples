@@ -151,7 +151,7 @@
     <Content Include="servicestack\csv-format.md" />
     <Content Include="servicestack\history-of-webservices.md" />
     <Content Include="servicestack\home.md" />
-    <Content Include="servicestack\json-report-format.md" />
+    <Content Include="servicestack\html5-report-format.md" />
     <Content Include="servicestack\nuget.md" />
     <Content Include="servicestack\overview.md" />
     <Content Include="servicestack\release-notes.md" />

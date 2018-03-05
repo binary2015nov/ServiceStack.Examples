@@ -16,7 +16,7 @@
         <a href="http://northwind.servicestack.net/">Northwind Database</a>
     </div>
 
-    <a id="github" href="https://github.com/binary2015nov/ServiceStack.Examples" title="View source on GitHub">
+    <a id="github" href="https://github.com/binary2015nov/ServiceStack.Examples" title="View Source on GitHub">
         <img src="Content/Images/btn-github.png" alt="GitHub" />
     </a>
 
@@ -93,13 +93,14 @@
         The configuration below allows you to host your webservices from the root path:<b>/</b>
     </h4>
     <code class="web-config">
+<span style="color:blue;">&nbsp;&nbsp;&lt;!--</span><span style="color:green;">&nbsp;ServiceStack:&nbsp;Required&nbsp;for&nbsp;IIS 6/Mono&nbsp;</span><span style="color:blue;">--&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">system.web</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">httpHandlers</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">add</span><span style="color:blue;">&nbsp;</span><span style="color:red;">path</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">*</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">type</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">ServiceStack.HttpHandlerFactory,&nbsp;ServiceStack</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">verb</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">*</span>&quot;<span style="color:blue;">/&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">httpHandlers</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">system.web</span><span style="color:blue;">&gt;</span>
  
-<span style="color:blue;">&nbsp;&nbsp;&lt;!--</span><span style="color:green;">&nbsp;ServiceStack:&nbsp;Required&nbsp;for&nbsp;IIS7&nbsp;IntegratedMode&nbsp;</span><span style="color:blue;">--&gt;</span>
+<span style="color:blue;">&nbsp;&nbsp;&lt;!--</span><span style="color:green;">&nbsp;ServiceStack:&nbsp;Required&nbsp;for&nbsp;IIS 7+&nbsp;</span><span style="color:blue;">--&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">system.webServer</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">modules</span><span style="color:blue;">&nbsp;</span><span style="color:red;">runAllManagedModulesForAllRequests</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">true</span>&quot;<span style="color:blue;">/&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">validation</span><span style="color:blue;">&nbsp;</span><span style="color:red;">validateIntegratedModeConfiguration</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">false</span>&quot;<span style="color:blue;">/&gt;</span>
@@ -119,7 +120,7 @@
     <h4>
         The location configuration below hosts your webservices at custom path: <b>/servicestack</b></h4>
     <code class="web-config">
-<span style="color:blue;">&nbsp;&nbsp;&lt;!--</span><span style="color:green;">&nbsp;ServiceStack:&nbsp;Required&nbsp;to&nbsp;host&nbsp;at:&nbsp;/servicestack&nbsp;</span><span style="color:blue;">--&gt;</span>
+<span style="color:blue;">&nbsp;&nbsp;&lt;!--</span><span style="color:green;">&nbsp;ServiceStack:&nbsp;Required&nbsp;to&nbsp;host&nbsp;at:&nbsp;/custompath&nbsp;</span><span style="color:blue;">--&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">location</span><span style="color:blue;">&nbsp;</span><span style="color:red;">path</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">servicestack</span>&quot;<span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">system.web</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">httpHandlers</span><span style="color:blue;">&gt;</span>
@@ -127,7 +128,7 @@
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">httpHandlers</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">system.web</span><span style="color:blue;">&gt;</span>
  
-<span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--</span><span style="color:green;">&nbsp;ServiceStack:&nbsp;Required&nbsp;for&nbsp;IIS7&nbsp;IntegratedMode&nbsp;</span><span style="color:blue;">--&gt;</span>
+<span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--</span><span style="color:green;">&nbsp;ServiceStack:&nbsp;Required&nbsp;for&nbsp;IIS 7+&nbsp;</span><span style="color:blue;">--&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">system.webServer</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">modules</span><span style="color:blue;">&nbsp;</span><span style="color:red;">runAllManagedModulesForAllRequests</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">true</span>&quot;<span style="color:blue;">/&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">handlers</span><span style="color:blue;">&gt;</span>
@@ -141,7 +142,7 @@
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">add</span><span style="color:blue;">&nbsp;</span><span style="color:red;">path</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">servicestack*</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">type</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">ServiceStack.HttpHandlerFactory,&nbsp;ServiceStack</span>&quot;<span style="color:blue;">&nbsp;</span><span style="color:red;">verb</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">*</span>&quot;<span style="color:blue;">/&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">httpHandlers</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">system.web</span><span style="color:blue;">&gt;</span>
-<span style="color:blue;">&nbsp;&nbsp;&lt;!--</span><span style="color:green;">&nbsp;ServiceStack:&nbsp;Required&nbsp;for&nbsp;IIS7&nbsp;IntegratedMode&nbsp;</span><span style="color:blue;">--&gt;</span>
+<span style="color:blue;">&nbsp;&nbsp;&lt;!--</span><span style="color:green;">&nbsp;ServiceStack:&nbsp;Required&nbsp;for&nbsp;IIS 7+&nbsp;</span><span style="color:blue;">--&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">system.webServer</span><span style="color:blue;">&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515;">validation</span><span style="color:blue;">&nbsp;</span><span style="color:red;">validateIntegratedModeConfiguration</span><span style="color:blue;">=</span>&quot;<span style="color:blue;">false</span>&quot;<span style="color:blue;">/&gt;</span>
 <span style="color:blue;">&nbsp;&nbsp;&lt;/</span><span style="color:#a31515;">system.webServer</span><span style="color:blue;">&gt;</span>

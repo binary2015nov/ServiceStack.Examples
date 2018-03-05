@@ -16,7 +16,6 @@ namespace ServiceStack.Hello
     /// <summary>
     /// Define your ServiceStack web service response (i.e. Response DTO).
     /// </summary>
-
     [DataContract(Namespace = "http://schemas.servicestack.net/types")]
     public class HelloResponse
     {

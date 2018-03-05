@@ -25,14 +25,14 @@ where in our case we sprinkle a little jQuery to apply a simple slide and fade e
 
 ### Dynamic content with Markdown Razor
 Although most of this website is static it contains a couple of dynamic pages that makes use of the new
-Markdown Razor View engine template in ServiceStack. The [Search](~/search/Redis) 
-and [Category](~/category/Redis%20Client) web services both have
+Markdown Razor View engine template in ServiceStack. The [Search](/search/Redis) 
+and [Category](/category/Redis%20Client) web services both have
 view templates which when defined take over the **html format** for that REST service. Unlike other
 web frameworks these dynamic pages are **first-class web services** where you can optionally use 
 REST clients to consume these services in JSON, XML, ... formats e.g. here are the above pages in JSON: 
 
-  - [/search/Redis?format=json](~/search/Redis?format=json)
-  - [/category/Redis Client?format=json](~/category/Redis%20Client?format=json)
+  - [/search/Redis?format=json](/search/Redis?format=json)
+  - [/category/Redis Client?format=json](/category/Redis%20Client?format=json)
 
 ### Extensible output
 Each markdown page is configured to inherit from the **CustomMarkdownPage.cs** base class which is used to 

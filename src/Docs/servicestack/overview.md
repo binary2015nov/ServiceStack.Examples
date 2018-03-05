@@ -370,7 +370,7 @@ Each library is released under its respective licence:
 
 ## Find out More
 
-Follow [@ServiceStack](https://twitter.com/ServiceStack) and 
+Follow [&#64;ServiceStack](https://twitter.com/ServiceStack) and 
 [+ServiceStack](https://plus.google.com/u/0/communities/112445368900682590445) for project updates.
 
 -----
